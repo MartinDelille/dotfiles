@@ -1,5 +1,5 @@
-# Add RVM
-export PATH=$PATH:$HOME/.rvm/bin 
+#Add my custom script
+export PATH=$PATH:$HOME/.dotfiles/bin 
 # Add Qt
 #export PATH=$PATH:$HOME/Qt/5.2.1/clang_64/bin
 # Load RVM into a shell session *as a function*
