@@ -1,4 +1,8 @@
-dotfiles
-========
+# Dotfiles
 
-My custom dotfiles
+My custom dotfiles.
+
+## Installation
+
+    cd
+    git clone git@github.com:MartinDelille/dotfiles.git .dotfiles
