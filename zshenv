@@ -1,7 +1,7 @@
 #Add my custom script
 export PATH=$PATH:$HOME/.dotfiles/bin 
 # Add Qt
-export PATH=$PATH:$HOME/Qt/5.2.1/clang_64/bin
+export PATH=$PATH:$HOME/Qt/5.4/clang_64/bin
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
 # Pyenv
@@ -13,8 +13,10 @@ export GISTY_DIR=~/dev/gists
 # Android utility
 export PATH=~/dev/libs/adt-bundle-mac-x86_64-20140321/sdk/platform-tools:$PATH
 # IRC info
-export IRCNICK=martindelille
+export IRCNICK=capradmar
 export IRCSERVER=irc.freenode.net
+# Other
+export HOMEBREW_EDITOR=vi
 
 # Various alias
 alias j="cd ~/dev/Joker"
