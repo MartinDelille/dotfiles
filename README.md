@@ -6,3 +6,4 @@ My custom dotfiles.
 
     cd
     git clone git@github.com:MartinDelille/dotfiles.git .dotfiles
+    .dotfiles/bin/dotfiles_setup.sh
