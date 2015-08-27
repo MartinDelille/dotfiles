@@ -35,8 +35,6 @@ set smartcase
 "" Others settings
 ""
 
-color desert
-
 " noremap <leader>w :w<cr>
 
 filetype off                  " required
@@ -52,11 +50,18 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'ntpeters/vim-better-whitespace'
 " Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'bling/vim-airline'
+Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()            " required
 
 filetype plugin on
 filetype plugin indent on
 
+" Airline setup
 let g:airline_powerline_fonts = 1
 set laststatus=2
+
+" Solarized setup
+let g:solarized_termcolors=256
+set background=dark
+color solarized
