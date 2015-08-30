@@ -51,6 +51,9 @@ Plugin 'ntpeters/vim-better-whitespace'
 " Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'bling/vim-airline'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'ervandew/supertab'
+Plugin 'scrooloose/nerdcommenter'
 
 call vundle#end()            " required
 
