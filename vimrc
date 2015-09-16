@@ -8,6 +8,7 @@ set ruler
 set t_Co=256
 syntax enable
 set encoding=utf-8
+set autowrite
 
 ""
 "" Whitespace
@@ -52,8 +53,11 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'bling/vim-airline'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
 Plugin 'ervandew/supertab'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'shutnik/jshint2.vim'
+Plugin 'kchmck/vim-coffee-script'
 
 call vundle#end()            " required
 
