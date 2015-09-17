@@ -1,3 +1,3 @@
-# Haxe specific settings
+" Haxe specific settings
 set makeprg=lime\ test\ neko
 

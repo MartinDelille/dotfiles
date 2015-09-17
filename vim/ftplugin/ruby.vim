@@ -1,2 +1,2 @@
-# Ruby specific settings
+" Ruby specific settings
 set makeprg=ruby\ %
