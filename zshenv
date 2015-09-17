@@ -15,6 +15,7 @@ export IRCNICK=capradmar
 export IRCSERVER=irc.freenode.net
 # Other
 export HOMEBREW_EDITOR=vi
+export TERM="xterm-256color"
 
 # Various alias
 alias j="cd ~/dev/Joker"
