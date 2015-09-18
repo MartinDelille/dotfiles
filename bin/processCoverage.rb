@@ -25,7 +25,8 @@ mab.html do
       covered_lines = 0
       line_number = 0
       pre do
-        file['source'].each_line do |line|
+        f = File.open(name, "r")
+        f.read.each_line do |line|
           span.number line_number.to_s
           if coverage[line_number]
             if coverage[line_number].to_i == 0
@@ -41,6 +42,7 @@ mab.html do
           span.cl
           line_number += 1
         end
+        f.close
       end
       file_coverage = 0
       if covered_lines + not_covered_lines > 0
