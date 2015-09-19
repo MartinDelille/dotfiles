@@ -1,9 +1,20 @@
 #!/usr/bin/env ruby
 
+require 'optparse'
 require 'json'
 require 'markaby'
 
-js = JSON.parse(ARGF.read)
+payload = "payload.json"
+root = "."
+OptionParser.new do |opts|
+  opts.banner = "Usage: processCoverage.rb [options]"
+  opts.on("--payload FILE") { |o| payload = o }
+  opts.on("--root DIR") { |o| root = o }
+end.parse!
+
+puts "Processing coverage data..."
+data = File.read(payload)
+js = JSON.parse(data)
 
 total_line_count = 0
 total_covered_lines = 0
@@ -19,30 +30,36 @@ mab.html do
 
     js['source_files'].each do |file|
       name = file['name']
+      print name + ': '
       h2 name
       coverage = file['coverage']
       not_covered_lines = 0
       covered_lines = 0
       line_number = 0
       pre do
-        f = File.open(name, "r")
-        f.read.each_line do |line|
-          span.number line_number.to_s
-          if coverage[line_number]
-            if coverage[line_number].to_i == 0
-              span.code.bad line
-              not_covered_lines += 1
+        begin
+          f = File.open(File.join(root, name), "r")
+          f.read.each_line do |line|
+            span.number line_number.to_s
+            if coverage[line_number]
+              if coverage[line_number].to_i == 0
+                span.code.bad line
+                not_covered_lines += 1
+              else
+                span.code.good line
+                covered_lines += 1
+              end
             else
-              span.code.good line
-              covered_lines += 1
+              span.code line
             end
-          else
-            span.code line
+            span.cl ""
+            line_number += 1
           end
-          span.cl
-          line_number += 1
+          f.close
+          puts covered_lines
+        rescue
+          puts "Error!"
         end
-        f.close
       end
       file_coverage = 0
       if covered_lines + not_covered_lines > 0
@@ -64,3 +81,4 @@ File.open("out.html", 'w') do |f|
   f.write mab.to_s
 end
 
+puts "Done!"
