@@ -36,10 +36,14 @@ mab.html do
 
     js['source_files'].each do |file|
       name = file['name']
+      coverage = file['coverage']
       print name + ': '
+      if coverage.count(nil) == coverage.length
+        puts "Skipped"
+        next
+      end
       a '', :id => name
       h2 name
-      coverage = file['coverage']
       not_covered_lines = 0
       covered_lines = 0
       line_number = 0
