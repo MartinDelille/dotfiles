@@ -29,8 +29,15 @@ mab.html do
     h1 'Code coverage'
 
     js['source_files'].each do |file|
+      p do
+        a file['name'], :href => '#' + file['name']
+      end
+    end
+
+    js['source_files'].each do |file|
       name = file['name']
       print name + ': '
+      a '', :id => name
       h2 name
       coverage = file['coverage']
       not_covered_lines = 0
