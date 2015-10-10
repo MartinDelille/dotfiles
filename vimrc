@@ -55,9 +55,10 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'ervandew/supertab'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'shutnik/jshint2.vim'
+" Plugin 'scrooloose/nerdcommenter'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'editorconfig/editorconfig-vim'
 
 call vundle#end()            " required
 
