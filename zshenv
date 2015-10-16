@@ -9,7 +9,7 @@ export PATH=~/.pyenv/shims:$PATH
 export GISTY_DIR=~/dev/gists
 #export GISTY_ACCESS_TOKEN= I don't want to publish that
 # Android utility
-#export PATH=~/dev/libs/adt-bundle-mac-x86_64-20140321/sdk/platform-tools:$PATH
+export PATH=~/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools:$PATH
 # IRC info
 export IRCNICK=capradmar
 export IRCSERVER=irc.freenode.net
