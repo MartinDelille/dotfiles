@@ -24,6 +24,6 @@ lg = !"git lg1"
 	editor = vim
 	excludesfile = $HOME/.gitignore
 [credential]
-	helper = osxkeychain
+	helper = $GIT_CREDENTIAL
 [push]
 	default = simple
