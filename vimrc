@@ -9,6 +9,8 @@ set t_Co=256
 syntax enable
 set encoding=utf-8
 set autowrite
+let mapleader = ","
+map <Leader>m :!make<Enter>
 
 ""
 "" Whitespace
