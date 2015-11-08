@@ -7,8 +7,6 @@
 	email = martin@phonations.com
 [merge]
 	tool = opendiff
-#[diff]
-#	external = /Users/martin/bin/git-diff.sh
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
@@ -24,7 +22,7 @@ lg = !"git lg1"
 
 [core]
 	editor = vim
-	excludesfile = /Users/martin/.gitignore
+	excludesfile = $HOME/.gitignore
 [credential]
 	helper = osxkeychain
 [push]
