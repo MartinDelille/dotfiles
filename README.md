@@ -13,8 +13,6 @@ My custom dotfiles.
 Here are the paquet required to use this *dotfiles*:
 
     sudo apt-get install git
-    sudo apt-get install vim
-    sudo apt-get install zsh
 
 Here are some more step to configure Zsh:
 
