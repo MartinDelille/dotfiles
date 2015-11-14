@@ -2,13 +2,24 @@
 
 if [ $# -eq 0 ]
 then
-  mkdir -p /Volumes/freebox
-  mount_afp afp://192.168.1.254/Disque\ dur /Volumes/freebox
-  ls -l /Volumes/freebox
+  if [[ "$OSTYPE" = darwin* ]]; then
+    mkdir -p /Volumes/freebox
+    mount_afp afp://mafreebox.freebox.fr/Disque\ dur /Volumes/freebox
+    ls -l /Volumes/freebox
+  else
+    sudo mkdir -p /media/freebox
+    sudo mount //mafreebox.freebox.fr/Disque\ dur /media/freebox -t cifs -o uid=1000,gid=1000,rw
+    ls -l /media/freebox
+  fi
 elif [ $1 = "x" ]
 then
   echo "Unmounting freebox"
-  umount /Volumes/freebox
+  if [[ "$OSTYPE" = darwin* ]]; then
+    umount /Volumes/freebox
+  else
+    sudo umount /media/freebox
+    sudo rm -r /media/freebox
+  fi
 else
   echo "Bad argument: $1"
 fi
