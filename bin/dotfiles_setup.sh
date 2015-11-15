@@ -2,7 +2,6 @@
 
 if [[ "$OSTYPE" = linux* ]]; then
   sudo apt-get install vim zsh
-  sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe restricted multiverse"
 fi
 
 ln -s ~/.dotfiles/zshenv ~/.zshenv
