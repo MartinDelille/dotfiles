@@ -1,7 +1,10 @@
 #!/bin/bash
 
 if [[ "$OSTYPE" = linux* ]]; then
-  sudo apt-get install vim zsh
+  sudo apt-get install -y git vim zsh
+  if [[ ! -d ~/.dotfiles ]]; then
+    git clone https://github.com/MartinDelille/dotfiles ~/.dotfiles
+  fi
 fi
 
 ln -s ~/.dotfiles/zshenv ~/.zshenv
