@@ -73,6 +73,8 @@ set laststatus=2
 set noshowmode
 
 " Solarized setup
-let g:solarized_termcolors=256
-set background=dark
-color solarized
+if isdirectory(expand("~/.vim/bundle/vim-colors-solarized"))
+  let g:solarized_termcolors=256
+  set background=dark
+  color solarized
+end
