@@ -5,7 +5,7 @@ if [[ "$OSTYPE" = linux* ]]; then
   sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu/ trusty main restricted universe"
   sudo apt-get update
   echo "### Linux specific: Install Git, Vim and ZSH ###"
-  sudo apt-get install -y git vim zsh
+  sudo apt-get install -y git vim zsh openssh-server
 fi
 
 if [[ ! -d ~/.dotfiles ]]; then
