@@ -25,6 +25,11 @@ if [[ ! -d ~/.vim/bundle/Vundle.vim ]]; then
 fi
 vim +PluginInstall +qall
 
-echo "### Install Oh my Zsh ###"
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+if [[ ! -d ~/.dotfiles ]]; then
+  echo "### Install Oh my Zsh ###"
+  sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+else
+  echo "### Upgrade Oh my Zsh ###"
+  upgrade_oh_my_zsh
+fi
 
