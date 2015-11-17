@@ -25,7 +25,7 @@ if [[ ! -d ~/.vim/bundle/Vundle.vim ]]; then
 fi
 vim +PluginInstall +qall
 
-if [[ ! -d ~/.dotfiles ]]; then
+if [[ ! -d ~/.oh-my-zsh ]]; then
   echo "### Install Oh my Zsh ###"
   sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 else
