@@ -5,6 +5,7 @@
 [user]
 	name = Martin Delille
 	email = martin@phonations.com
+	username = MartinDelille
 [merge]
 	tool = opendiff
 [filter "hawser"]
