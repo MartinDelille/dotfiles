@@ -15,7 +15,7 @@ fi
 export GISTY_DIR=~/dev/gists
 #export GISTY_ACCESS_TOKEN= I don't want to publish that
 # Android utility
-export PATH=~/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools:$PATH
+export PATH=~/dev/libs/android-sdk-macosx/tools:~/dev/libs/android-sdk-macosx/platform-tools:$PATH
 # IRC info
 export IRCNICK=capradmar
 export IRCSERVER=irc.freenode.net
