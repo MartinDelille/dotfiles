@@ -5,7 +5,7 @@ if [[ "$OSTYPE" = linux* ]]; then
   sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu/ trusty main restricted universe"
   sudo apt-get update
   echo "### Linux specific: Install Git, Vim and ZSH ###"
-  sudo apt-get install -y git vim zsh openssh-server
+  sudo apt-get install -y git vim zsh openssh-server curl
 fi
 
 if [[ ! -d ~/.dotfiles ]]; then
@@ -26,6 +26,7 @@ if [[ ! -d ~/.vim/bundle/Vundle.vim ]]; then
   echo "### Install Vundle ###"
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
+echo "### Install Vim plugin ###"
 vim +PluginInstall +qall
 
 if [[ ! -d ~/.oh-my-zsh ]]; then
