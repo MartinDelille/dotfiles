@@ -29,6 +29,16 @@ fi
 echo "### Install Vim plugin ###"
 vim +PluginInstall +qall
 
+echo "### Install Powerline font"
+if [[ "$OSTYPE" = linux* ]]; then
+  wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
+  wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
+  mv PowerlineSymbols.otf ~/.fonts/
+  fc-cache -vf ~/.fonts/
+  mkdir -p ~/.config/fontconfig/conf.d/
+  mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
+fi
+
 if [[ ! -d ~/.oh-my-zsh ]]; then
   echo "### Install Oh my Zsh ###"
   sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
