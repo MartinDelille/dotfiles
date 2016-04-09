@@ -1,3 +1,3 @@
 " Python specific settings
-set makeprg=python\ %
+map <Leader>m :!python %<Enter>
 
