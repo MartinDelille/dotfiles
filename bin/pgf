@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# This script run the ping command until it fails
+
+ip4regex='^[0-9]+[.][0-9]+[.][0-9]+[.][0-9]+$'
+ip3regex='^[0-9]+[.][0-9]+[.][0-9]+$'
+ip2regex='^[0-9]+[.][0-9]+$'
+ip1regex='^[0-9]+$'
+host=$@
+if [[ $# == 0 ]]; then
+  host="8.8.8.8"
+elif [[ $@ =~ $ip4regex ]]; then
+  host="$@"
+elif [[ $@ =~ $ip3regex ]]; then
+  host="192.$@"
+elif [[ $@ =~ $ip2regex ]]; then
+  host="192.168.$@"
+elif [[ $@ =~ $ip1regex ]]; then
+  host="192.168.0.$@"
+fi
+
+while :
+do
+  ping -t 2 $host
+  result=$?
+  if [ $result -eq 2 ]; then
+      echo $result
+      exit 0
+  fi
+  sleep 1
+done
