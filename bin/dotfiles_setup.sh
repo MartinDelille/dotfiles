@@ -2,7 +2,7 @@
 
 if [[ "$OSTYPE" = linux* ]]; then
   echo "### Ubuntu specific: Add universe repository ###"
-  sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu/ trusty main restricted universe"
+  sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu/ main restricted universe"
   sudo apt-get update
   echo "### Linux specific: Install Git, Vim and ZSH ###"
   sudo apt-get install -y git vim zsh openssh-server curl
@@ -28,6 +28,16 @@ if [[ ! -d ~/.vim/bundle/Vundle.vim ]]; then
 fi
 echo "### Install Vim plugin ###"
 vim +PluginInstall +qall
+
+echo "### Install Powerline font"
+if [[ "$OSTYPE" = linux* ]]; then
+  wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
+  wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
+  mv PowerlineSymbols.otf ~/.fonts/
+  fc-cache -vf ~/.fonts/
+  mkdir -p ~/.config/fontconfig/conf.d/
+  mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
+fi
 
 if [[ ! -d ~/.oh-my-zsh ]]; then
   echo "### Install Oh my Zsh ###"
