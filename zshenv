@@ -31,5 +31,6 @@ export TERM="xterm-256color"
 
 # Various alias
 alias j="cd ~/dev/Joker"
+alias y="cd ~/dev/YouDub"
 alias pbpc="pbpaste | pbcopy"
 alias ip="ifconfig | grep inet"
