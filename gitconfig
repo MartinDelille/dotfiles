@@ -23,7 +23,7 @@ lg = !"git lg1"
 
 [core]
 	editor = vim
-	excludesfile = $HOME/.gitignore
+	excludesfile = ~/.gitignore
 [credential]
 	helper = $GIT_CREDENTIAL
 [push]
