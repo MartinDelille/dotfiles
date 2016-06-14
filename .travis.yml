@@ -1,4 +1,5 @@
-matrix:
-  - os: osx
-  - os: linux
+language: ruby
+os:
+  - osx
+  - linux
 script: bin/dotfiles_setup.sh
