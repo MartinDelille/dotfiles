@@ -11,6 +11,7 @@ set encoding=utf-8
 set autowrite
 let mapleader = ","
 map <Leader>m :!make<Enter>
+map <Leader>n :NERDTree<Enter>
 
 ""
 "" Whitespace
@@ -61,6 +62,9 @@ Plugin 'ervandew/supertab'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'joonty/vdebug'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tomlion/vim-solidity'
 
 call vundle#end()            " required
 

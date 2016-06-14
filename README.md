@@ -2,6 +2,8 @@
 
 My custom dotfiles.
 
+![Screenshot](screenshot.png)
+
 ## Installation
 
     cd

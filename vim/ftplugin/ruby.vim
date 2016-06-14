@@ -1,2 +1,2 @@
 " Ruby specific settings
-set makeprg=ruby\ %
+map <Leader>m :!clear;ruby %<Enter>

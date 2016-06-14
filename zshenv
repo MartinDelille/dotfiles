@@ -1,3 +1,5 @@
+# Oh my zsh
+export DEFAULT_USER=martin
 #Add my custom script
 export PATH=$PATH:$HOME/.dotfiles/bin
 # Add Qt
@@ -34,3 +36,5 @@ alias j="cd ~/dev/Joker"
 alias y="cd ~/dev/YouDub"
 alias pbpc="pbpaste | pbcopy"
 alias ip="ifconfig | grep inet"
+alias ccat="pygmentize -g"
+alias pgss="pgs && say kowabunga"
