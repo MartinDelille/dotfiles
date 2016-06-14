@@ -1,0 +1,4 @@
+matrix:
+  - os: osx
+  - os: linux
+script: bin/dotfiles_setup.sh
