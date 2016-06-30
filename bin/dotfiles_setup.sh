@@ -21,6 +21,9 @@ ln -s ~/.dotfiles/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/gitignore ~/.gitignore
 ln -s ~/.dotfiles/vimrc ~/.vimrc
 ln -s ~/.dotfiles/vim/ ~/.vim/
+if [[ "$OSTYPE" = darwin* ]]; then
+    ln -s ~/.dotfiles/my.env.plist ~/Library/LaunchAgents/my.env.plist
+fi
 
 if [[ ! -d ~/.vim/bundle/Vundle.vim ]]; then
   echo "### Install Vundle ###"
