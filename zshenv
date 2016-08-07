@@ -32,8 +32,10 @@ export HOMEBREW_EDITOR=vi
 export TERM="xterm-256color"
 
 # Various alias
-alias j="cd ~/dev/Joker"
+alias j="cd ~/dev/Phonations/Joker"
+alias s="cd ~/dev/Phonations/Silcrow"
 alias y="cd ~/dev/YouDub"
+alias n="open ~/Dropbox/notes.md"
 alias pbpc="pbpaste | pbcopy"
 alias ip="ifconfig | grep inet"
 alias cat="pygmentize -g"
