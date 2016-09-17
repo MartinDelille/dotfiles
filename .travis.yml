@@ -2,4 +2,6 @@ language: ruby
 os:
   - osx
   - linux
-script: bin/dotfiles_setup.sh
+script:
+  - cat bin/dotfiles_setup.sh
+  - bin/dotfiles_setup.sh
