@@ -49,7 +49,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-Plug 'VundleVim/Vundle.vim'
 Plug 'ntpeters/vim-better-whitespace'
 " Plug 'bronson/vim-trailing-whitespace'
 Plug 'bling/vim-airline'
