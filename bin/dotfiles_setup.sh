@@ -25,12 +25,12 @@ if [[ "$OSTYPE" = darwin* ]]; then
     ln -s ~/.dotfiles/my.env.plist ~/Library/LaunchAgents/my.env.plist
 fi
 
-if [[ ! -d ~/.vim/bundle/Vundle.vim ]]; then
-  echo "### Install Vundle ###"
-  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-fi
+echo "### Install vim-plug ###"
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 echo "### Install Vim plugin ###"
-vim +PluginInstall +qall
+vim +PlugInstall
 
 echo "### Install Powerline font"
 if [[ "$OSTYPE" = linux* ]]; then

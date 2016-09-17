@@ -41,32 +41,31 @@ set smartcase
 
 " noremap <leader>w :w<cr>
 
-filetype off                  " required
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
 
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+call plug#begin('~/.vim/plugged')
+Plug 'VundleVim/Vundle.vim'
+Plug 'ntpeters/vim-better-whitespace'
+" Plug 'bronson/vim-trailing-whitespace'
+Plug 'bling/vim-airline'
+Plug 'altercation/vim-colors-solarized'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'ervandew/supertab'
+" Plug 'scrooloose/nerdcommenter'
+Plug 'kchmck/vim-coffee-script'
+Plug 'digitaltoad/vim-jade'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'joonty/vdebug'
+Plug 'scrooloose/nerdtree'
+Plug 'tomlion/vim-solidity'
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'ntpeters/vim-better-whitespace'
-" Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'bling/vim-airline'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-fugitive'
-Plugin 'ervandew/supertab'
-" Plugin 'scrooloose/nerdcommenter'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'digitaltoad/vim-jade'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'joonty/vdebug'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tomlion/vim-solidity'
-
-call vundle#end()            " required
+call plug#end()
 
 filetype plugin on
 filetype plugin indent on
@@ -77,7 +76,7 @@ set laststatus=2
 set noshowmode
 
 " Solarized setup
-if isdirectory(expand("~/.vim/bundle/vim-colors-solarized"))
+if isdirectory(expand("~/.vim/plugged/vim-colors-solarized"))
   let g:solarized_termcolors=256
   set background=light
   color solarized
