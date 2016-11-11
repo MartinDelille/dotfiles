@@ -1,5 +1,7 @@
 # Dotfiles
 
+[![Build Status](https://travis-ci.org/MartinDelille/dotfiles.svg?branch=master)](https://travis-ci.org/MartinDelille/dotfiles)
+
 My custom dotfiles.
 
 ![Screenshot](screenshot.png)
