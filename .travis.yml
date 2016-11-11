@@ -3,5 +3,5 @@ os:
   - osx
   - linux
 script:
-  - cat bin/dotfiles_setup.sh
+  - cat vimrc
   - bin/dotfiles_setup.sh
