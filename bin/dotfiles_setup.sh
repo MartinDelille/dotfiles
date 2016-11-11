@@ -1,8 +1,6 @@
 #!/bin/bash
 
 if [[ "$OSTYPE" = linux* ]]; then
-  echo "### Ubuntu specific: Add universe repository ###"
-  sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu/ main restricted universe"
   sudo apt-get update
   echo "### Linux specific: Install Git, Vim and ZSH ###"
   sudo apt-get install -y git vim zsh openssh-server curl
