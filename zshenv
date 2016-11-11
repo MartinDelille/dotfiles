@@ -14,11 +14,7 @@ export PATH=~/tools/cov-analysis-macosx-7.7.0.4/bin:$PATH
 export GOPATH=~/.go
 export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
 # Git
-if [[ "$OSTYPE" = darwin* ]]; then
-  export GIT_CREDENTIAL=osxkeychain
-else
-  export GIT_CREDENTIAL="cache --timeout=3600"
-fi
+export GIT_CREDENTIAL="cache --timeout=3600"
 # Gisty
 export GISTY_DIR=~/dev/gists
 #export GISTY_ACCESS_TOKEN= I don't want to publish that
