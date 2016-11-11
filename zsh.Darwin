@@ -1,3 +1,4 @@
 export GIT_CREDENTIAL=osxkeychain
+export GIT_MERGETOOL=opendiff
 
 alias f="mdfind -onlyin ."

@@ -15,6 +15,7 @@ export GOPATH=~/.go
 export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
 # Git
 export GIT_CREDENTIAL="cache --timeout=3600"
+export GIT_MERGETOOL=vimdiff
 # Gisty
 export GISTY_DIR=~/dev/gists
 #export GISTY_ACCESS_TOKEN= I don't want to publish that
