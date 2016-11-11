@@ -50,6 +50,6 @@ if [[ ! -d ~/.oh-my-zsh ]]; then
   sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 else
   echo "### Upgrade Oh my Zsh ###"
-  upgrade_oh_my_zsh
+  sh ~/.oh-my-zsh/tools/upgrade.sh
 fi
 
