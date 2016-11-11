@@ -10,6 +10,9 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=~/.pyenv/shims:$PATH
 # Coverity tools
 export PATH=~/tools/cov-analysis-macosx-7.7.0.4/bin:$PATH
+# Go
+export GOPATH=~/.go
+export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
 # Git
 if [[ "$OSTYPE" = darwin* ]]; then
   export GIT_CREDENTIAL=osxkeychain
