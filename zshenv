@@ -44,3 +44,12 @@ alias ip="ifconfig | grep inet"
 alias ccat="pygmentize -g"
 alias pgss="pgs && say kowabunga"
 alias acki="ack -i"
+
+## Sourcing OS-specific things
+OS=$(uname -s); export OS
+if [[ -f ~/.dotfiles/zsh.${OS} ]]; then
+    if [[ ! -z $ZSHDEBUG ]]; then
+        echo +++ ~/.dotfiles/zsh.${OS}
+    fi
+    source ~/.dotfiles/zsh.${OS}
+fi
