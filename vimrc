@@ -63,6 +63,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'joonty/vdebug'
 Plug 'scrooloose/nerdtree'
 Plug 'tomlion/vim-solidity'
+Plug 'dermusikman/sonicpi.vim'
 
 call plug#end()
 
