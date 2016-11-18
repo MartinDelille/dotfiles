@@ -78,6 +78,6 @@ set noshowmode
 " Solarized setup
 if isdirectory(expand("~/.vim/plugged/vim-colors-solarized"))
   let g:solarized_termcolors=256
-  set background=light
+  set background=dark
   color solarized
 end
