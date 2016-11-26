@@ -28,3 +28,6 @@ lg = !"git lg1"
 	helper = $GIT_CREDENTIAL
 [push]
 	default = simple
+[gitopen "gitlab"]
+	domain = gitlab.lylo.tv
+	protocol = http
