@@ -10,7 +10,7 @@ if [[ ! -d ~/.dotfiles ]]; then
   echo "### Cloning dotfiles ###"
   git clone https://github.com/MartinDelille/dotfiles ~/.dotfiles
 else
-  git --git-dir ~/.dotfiles/.git pull
+  git -C ~/.dotfiles/.git pull
 fi
 
 echo "### Linking configuration ###"
