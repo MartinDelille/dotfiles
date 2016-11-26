@@ -4,6 +4,7 @@ export DEFAULT_USER=martin
 export PATH=$PATH:$HOME/.dotfiles/bin
 # Add Qt
 #export PATH=$PATH:$HOME/Qt/5.4/clang_64/bin
+export PKG_CONFIG_PATH=/usr/local/opt/qt5/lib/pkgconfig/
 # Homebrew
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # Pyenv
