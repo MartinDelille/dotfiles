@@ -11,8 +11,9 @@ export PATH=~/.pyenv/shims:$PATH
 # Coverity tools
 export PATH=~/tools/cov-analysis-macosx-7.7.0.4/bin:$PATH
 # Go
-export GOPATH=~/.go
-export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
+export GOPATH=~/dev/go
+#export GOROOT=/usr/local/opt/go
+export PATH=$PATH:$GOROOT/libexec/bin:$GOPATH/bin
 # Git
 export GIT_CREDENTIAL="cache --timeout=3600"
 export GIT_MERGETOOL=vimdiff
