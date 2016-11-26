@@ -41,16 +41,11 @@ if [[ "$OSTYPE" = linux* ]]; then
   mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
 fi
 
-if [ -n "$TRAVIS" ]; then
-    echo "Don't install Oh my Zsh on travis build"
-    exit 0
-fi
-
 if [[ ! -d ~/.oh-my-zsh ]]; then
-  echo "### Install Oh my Zsh ###"
-  sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  echo "### Install zgen ###"
+  git clone https://github.com/tarjoilija/zgen.git ~/.zgen
 else
   echo "### Upgrade Oh my Zsh ###"
-  sh ~/.oh-my-zsh/tools/upgrade.sh
+  git -C ~/.zgen pull
 fi
 
