@@ -64,6 +64,7 @@ Plug 'joonty/vdebug'
 Plug 'scrooloose/nerdtree'
 Plug 'tomlion/vim-solidity'
 Plug 'dermusikman/sonicpi.vim'
+Plug 'acoustichero/goldenrod.vim'
 
 call plug#end()
 
@@ -76,8 +77,10 @@ set laststatus=2
 set noshowmode
 
 " Solarized setup
-if isdirectory(expand("~/.vim/plugged/vim-colors-solarized"))
-  let g:solarized_termcolors=256
-  set background=dark
-  color solarized
-end
+"if isdirectory(expand("~/.vim/plugged/vim-colors-solarized"))
+"  let g:solarized_termcolors=256
+"  set background=dark
+"  color solarized
+"end
+set background=dark
+colorscheme goldenrod
