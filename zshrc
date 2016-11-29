@@ -13,6 +13,8 @@ if ! zgen saved; then
   zgen oh-my-zsh themes/agnoster
 
   zgen load zsh-users/zsh-syntax-highlighting
+  zgen load zsh-users/zsh-completions
+
   zgen load martindelille/git-open . http
 
   # generate the init script from plugins above
@@ -27,8 +29,6 @@ fi
 #[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
 #export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-source <(npm completion)
 
 #test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
