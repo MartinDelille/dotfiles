@@ -12,6 +12,7 @@ if ! zgen saved; then
 
   zgen oh-my-zsh themes/agnoster
 
+  zgen load zsh-users/zsh-syntax-highlighting
   zgen load martindelille/git-open . http
 
   # generate the init script from plugins above
