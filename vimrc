@@ -78,11 +78,10 @@ let g:airline_powerline_fonts = 1
 set laststatus=2
 set noshowmode
 
-" Solarized setup
-"if isdirectory(expand("~/.vim/plugged/vim-colors-solarized"))
-"  let g:solarized_termcolors=256
-"  set background=dark
-"  color solarized
-"end
-set background=dark
-colorscheme goldenrod
+" Theme setup
+if isdirectory(expand("~/.vim/plugged/goldenrod.vim"))
+"    let g:solarized_termcolors=256
+    set background=dark
+"    color solarized
+    colorscheme goldenrod
+end
