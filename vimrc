@@ -65,6 +65,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'tomlion/vim-solidity'
 Plug 'dermusikman/sonicpi.vim'
 Plug 'acoustichero/goldenrod.vim'
+Plug 'evanmiller/nginx-vim-syntax'
+Plug 'keith/swift.vim'
 
 call plug#end()
 
