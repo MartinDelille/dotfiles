@@ -1,0 +1,15 @@
+#!/bin/sh
+
+PORT=8000
+
+if [[ $# -gt 0 ]]; then
+    re='^[0-9]+$'
+    if ! [[ $1 =~ $re ]]; then
+        echo "Bad port number: $1" >&2
+        exit 1
+    fi
+    PORT=$1
+fi
+
+echo "Listening on http://localhost:$PORT..."
+python -m SimpleHTTPServer $PORT
