@@ -1,3 +1,4 @@
+fpath=(${HOME}/.dotfiles/functions $fpath)
 source "${HOME}/.zgen/zgen.zsh"
 
 if ! zgen saved; then

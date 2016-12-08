@@ -1,0 +1,6 @@
+#compdef pg
+
+local -a _pg_options
+_pg_options=('192.168.0.1' '192.168.0.')
+
+_describe "values" _pg_options
