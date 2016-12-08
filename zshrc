@@ -6,7 +6,6 @@ if ! zgen saved; then
   zgen oh-my-zsh
   zgen oh-my-zsh plugins/git
   zgen oh-my-zsh plugins/brew
-  zgen oh-my-zsh plugins/zsh-syntax-highlighting
   zgen oh-my-zsh plugins/osx
   zgen oh-my-zsh plugins/sudo
 
@@ -14,6 +13,8 @@ if ! zgen saved; then
 
   zgen load zsh-users/zsh-syntax-highlighting
   zgen load zsh-users/zsh-completions
+
+  zgen load supercrabtree/k
 
   zgen load martindelille/git-open . http
 
