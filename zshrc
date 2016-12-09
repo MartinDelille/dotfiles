@@ -10,12 +10,12 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/osx
   zgen oh-my-zsh plugins/sudo
 
-  zgen oh-my-zsh themes/agnoster
-
   zgen load zsh-users/zsh-syntax-highlighting
   zgen load zsh-users/zsh-completions
 
   zgen load supercrabtree/k
+
+  zgen load agnoster/agnoster-zsh-theme agnoster
 
   zgen load martindelille/git-open . http
 
