@@ -1,2 +1,2 @@
 " Javascript specific settings
-set makeprg=node\ %
+map <Leader>m :!clear;node %<Enter>
