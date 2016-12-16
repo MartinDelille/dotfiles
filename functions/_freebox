@@ -1,0 +1,6 @@
+#compdef freebox
+
+local -a _freebox_options
+_freebox_options=('x: Eject freebox drive')
+
+_describe "values" _freebox_options
