@@ -1,3 +1,4 @@
+export EDITOR=vim
 # Oh my zsh
 export DEFAULT_USER=martin
 #Add my custom script
@@ -43,6 +44,7 @@ alias ip="ifconfig | grep inet"
 alias ccat="pygmentize -g"
 alias pgss="pgs && say kowabunga"
 alias acki="ack -i"
+alias ovh="ssh ovh.phonations.com"
 
 ## Sourcing OS-specific things
 OS=$(uname -s); export OS
