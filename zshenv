@@ -36,7 +36,7 @@ export TERM="xterm-256color"
 
 # Various alias
 alias j="cd ~/dev/Phonations/Joker"
-alias s="cd ~/dev/Phonations/Silcrow"
+alias s="cd ~/dev/Lylo/screenr"
 alias y="cd ~/dev/YouDub"
 alias n="open ~/Dropbox/notes.md"
 alias pbpc="pbpaste | pbcopy"
@@ -45,6 +45,9 @@ alias ccat="pygmentize -g"
 alias pgss="pgs && say kowabunga"
 alias acki="ack -i"
 alias ovh="ssh ovh.phonations.com"
+alias chrome="open -a /Applications/Google\ Chrome.app"
+alias gap="ga -p"
+alias x="exit"
 
 ## Sourcing OS-specific things
 OS=$(uname -s); export OS
