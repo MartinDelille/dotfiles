@@ -12,6 +12,7 @@ set autowrite
 let mapleader = ","
 map <Leader>m :!make<Enter>
 map <Leader>n :NERDTree<Enter>
+set relativenumber
 
 ""
 "" Whitespace
@@ -50,7 +51,6 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'ntpeters/vim-better-whitespace'
-" Plug 'bronson/vim-trailing-whitespace'
 Plug 'bling/vim-airline'
 " Plug 'altercation/vim-colors-solarized'
 Plug 'airblade/vim-gitgutter'
@@ -69,6 +69,8 @@ Plug 'evanmiller/nginx-vim-syntax'
 Plug 'keith/swift.vim'
 Plug 'dag/vim-fish'
 Plug 'fatih/vim-go'
+Plug 'mxw/vim-jsx'
+Plug 'vim-syntastic/syntastic'
 
 call plug#end()
 
