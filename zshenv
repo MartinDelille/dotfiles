@@ -25,7 +25,10 @@ export GISTY_DIR=~/dev/gists
 # Android utility
 export PATH=~/dev/libs/android-sdk-macosx/tools:~/dev/libs/android-sdk-macosx/platform-tools:$PATH
 # FFMpeg
-export PATH=$PATH:$FFMPEG_DEV_PATH/bin
+#export PATH=$PATH:$FFMPEG_DEV_PATH/bin
+
+# Qt
+export PATH=$PATH:/usr/local/opt/qt/bin
 
 # IRC info
 export IRCNICK=capradmar
