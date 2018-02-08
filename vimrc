@@ -71,6 +71,7 @@ Plug 'dag/vim-fish'
 Plug 'fatih/vim-go'
 Plug 'mxw/vim-jsx'
 Plug 'vim-syntastic/syntastic'
+Plug 'posva/vim-vue'
 
 call plug#end()
 
