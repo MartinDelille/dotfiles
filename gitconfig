@@ -32,3 +32,6 @@ lg = !"git lg1"
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[diff "scpt"]
+	textconv = osadecompile
+	binary = true
