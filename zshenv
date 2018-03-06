@@ -51,6 +51,8 @@ alias ovh="ssh ovh.phonations.com"
 alias chrome="open -a /Applications/Google\ Chrome.app"
 alias gap="ga -p"
 alias x="exit"
+alias o="open"
+alias or="open -R"
 
 ## Sourcing OS-specific things
 OS=$(uname -s); export OS
