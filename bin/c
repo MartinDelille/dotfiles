@@ -1,4 +1,4 @@
-#! /usr/bin/env python3
+#! /usr/bin/env python
 # coding: utf-8
 
 # Copy file given in argument in the clipboard
@@ -19,4 +19,4 @@ else:
     text = text[:-1]
 
 print(text)
-os.system("echo '%s' | pbcopy" % text)
+os.system("printf '%s' | pbcopy" % text)
