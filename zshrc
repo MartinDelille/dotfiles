@@ -1,8 +1,9 @@
+#zmodload zsh/zprof
+
 fpath=(${HOME}/.dotfiles/functions $fpath)
 source "${HOME}/.zgen/zgen.zsh"
 
 if ! zgen saved; then
-
   # specify plugins here
   zgen oh-my-zsh
   zgen oh-my-zsh plugins/git
@@ -46,3 +47,5 @@ export LC_ALL="en_US.UTF-8"
 # NPM completion
 source <(npm completion)
 #eval "$(gulp --completion=zsh)"
+
+#zprof
