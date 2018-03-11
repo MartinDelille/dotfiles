@@ -72,6 +72,7 @@ Plug 'fatih/vim-go'
 Plug 'mxw/vim-jsx'
 Plug 'vim-syntastic/syntastic'
 Plug 'posva/vim-vue'
+Plug 'mustache/vim-mustache-handlebars'
 
 call plug#end()
 
