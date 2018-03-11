@@ -1,30 +1,23 @@
 #zmodload zsh/zprof
 
 fpath=(${HOME}/.dotfiles/functions $fpath)
-source "${HOME}/.zgen/zgen.zsh"
+source /usr/local/share/antigen/antigen.zsh
 
-if ! zgen saved; then
-  # specify plugins here
-  zgen oh-my-zsh
-  zgen oh-my-zsh plugins/git
-  zgen oh-my-zsh plugins/brew
-  zgen oh-my-zsh plugins/osx
-  zgen oh-my-zsh plugins/sudo
+antigen use oh-my-zsh
 
-  zgen load zsh-users/zsh-syntax-highlighting
-  zgen load zsh-users/zsh-completions
+antigen bundle git
+antigen bundle osx
+antigen bundle sudo
 
-  zgen load supercrabtree/k
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle supercrabtree/k
+antigen bundle paulirish/git-open
 
-  zgen load agnoster/agnoster-zsh-theme agnoster
+antigen theme agnoster
 
-  zgen load martindelille/git-open . http
-
-  # generate the init script from plugins above
-  zgen save
-fi
-
-# Next commented lines where not migrated since zgen:
+antigen apply
 
 # Uncomment the following line to disable auto-setting terminal title.
 #DISABLE_AUTO_TITLE="true"
