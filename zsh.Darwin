@@ -4,5 +4,6 @@ export GIT_MERGETOOL=opendiff
 alias f="mdfind -onlyin ."
 alias kw="say kowabounga"
 alias wifi="networksetup -setairportpower airport"
+alias qt="open $HOME/Qt/Qt\ Creator.app"
 
 #eval "$(docker-machine env default)"
