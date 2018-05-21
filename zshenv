@@ -58,6 +58,8 @@ alias gap="ga -p"
 alias x="exit"
 alias o="open"
 alias or="open -R"
+alias ls="colorls --dark --sort-dirs --report"
+alias lc="colorls --tree --dark"
 
 ## Sourcing OS-specific things
 OS=$(uname -s); export OS
