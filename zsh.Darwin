@@ -7,3 +7,6 @@ alias wifi="networksetup -setairportpower airport"
 alias qt="open $HOME/Qt/Qt\ Creator.app"
 
 #eval "$(docker-machine env default)"
+
+# Python
+export PATH=~/Library/Python/2.7/bin:$PATH
