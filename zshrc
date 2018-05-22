@@ -15,8 +15,9 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle supercrabtree/k
 antigen bundle paulirish/git-open
 
-antigen theme agnoster
+#antigen theme agnoster
 #antigen theme denysdovhan/spaceship-prompt
+antigen theme bhilburn/powerlevel9k
 
 antigen apply
 
