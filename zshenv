@@ -1,6 +1,6 @@
 export EDITOR=vim
 # Oh my zsh
-export DEFAULT_USER=martin
+export DEFAULT_USER=`whoami`
 #Add my custom script
 export PATH=$PATH:$HOME/.dotfiles/bin
 # Add Qt
