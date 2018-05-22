@@ -33,12 +33,18 @@ vim +PlugInstall +qall
 
 echo "### Install Powerline font"
 if [[ "$OSTYPE" = linux* ]]; then
-  wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
-  wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
-  mv PowerlineSymbols.otf ~/.fonts/
-  fc-cache -vf ~/.fonts/
-  mkdir -p ~/.config/fontconfig/conf.d/
-  mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
+    wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
+    wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
+    mv PowerlineSymbols.otf ~/.fonts/
+    fc-cache -vf ~/.fonts/
+    mkdir -p ~/.config/fontconfig/conf.d/
+    mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
+elif [[ "$OSTYPE" = darwin* ]]; then
+    git clone https://github.com/powerline/fonts.git --depth=1
+    cd fonts
+    ./install.sh
+    cd ..
+    rm -rf fonts
 fi
 
 if [[ ! -d ~/.oh-my-zsh ]]; then
