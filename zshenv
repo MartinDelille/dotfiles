@@ -59,8 +59,8 @@ alias x="exit"
 alias q="exit"
 alias o="open"
 alias or="open -R"
-alias ls="colorls --dark --sort-dirs --report"
-alias lc="colorls --tree --dark"
+#alias ls="colorls --dark --sort-dirs --report"
+#alias lc="colorls --tree --dark"
 
 ## Sourcing OS-specific things
 OS=$(uname -s); export OS
