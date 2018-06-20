@@ -43,7 +43,7 @@ export HOMEBREW_EDITOR=vi
 export TERM="xterm-256color"
 
 # Various alias
-alias j="cd ~/dev/Phonations/Joker"
+alias j="cd ~/dev/YouDub/Joker"
 alias s="cd ~/dev/Lylo/screenr"
 alias y="cd ~/dev/YouDub"
 alias n="open ~/Dropbox/notes.md"
