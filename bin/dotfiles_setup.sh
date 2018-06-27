@@ -6,22 +6,24 @@ if [[ "$OSTYPE" = linux* ]]; then
   sudo apt-get install -y git vim zsh openssh-server curl
 fi
 
-if [[ ! -d ~/.dotfiles ]]; then
-  echo "### Cloning dotfiles ###"
-  git clone https://github.com/MartinDelille/dotfiles ~/.dotfiles
-else
-  git -C ~/.dotfiles/.git pull
+if [[ "$OSTYPE" = darwin* ]]; then
+    brew install antigen node
 fi
 
+PWD=`pwd`
+
+echo "### Updating dotfiles ###"
+git -C $PWD/.git pull
+
 echo "### Linking configuration ###"
-ln -s ~/.dotfiles/zshrc ~/.zshrc
-ln -s ~/.dotfiles/zshenv ~/.zshenv
-ln -s ~/.dotfiles/gitconfig ~/.gitconfig
-ln -s ~/.dotfiles/gitignore ~/.gitignore
-ln -s ~/.dotfiles/vimrc ~/.vimrc
-ln -s ~/.dotfiles/ftplugin ~/.vim/ftplugin
+ln -s $PWD/zshrc ~/.zshrc
+ln -s $PWD/zshenv ~/.zshenv
+ln -s $PWD/gitconfig ~/.gitconfig
+ln -s $PWD/gitignore ~/.gitignore
+ln -s $PWD/vimrc ~/.vimrc
+ln -s $PWD/ftplugin ~/.vim/ftplugin
 if [[ "$OSTYPE" = darwin* ]]; then
-    ln -s ~/.dotfiles/my.env.plist ~/Library/LaunchAgents/my.env.plist
+    ln -s $PWD/my.env.plist ~/Library/LaunchAgents/my.env.plist
 fi
 
 echo "### Install vim-plug ###"
@@ -47,11 +49,11 @@ elif [[ "$OSTYPE" = darwin* ]]; then
     rm -rf fonts
 fi
 
-if [[ ! -d ~/.oh-my-zsh ]]; then
+if [[ ! -d ~/.zgen ]]; then
   echo "### Install zgen ###"
   git clone https://github.com/tarjoilija/zgen.git ~/.zgen
 else
-  echo "### Upgrade Oh my Zsh ###"
+  echo "### Upgrade zgen ###"
   git -C ~/.zgen pull
 fi
 
