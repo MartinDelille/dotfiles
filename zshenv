@@ -79,3 +79,7 @@ blu=$'\e[1;34m'
 mag=$'\e[1;35m'
 cyn=$'\e[1;36m'
 white=$'\e[0m'
+
+
+source $HOME/.dotfiles/bin/iterm.sh
+
