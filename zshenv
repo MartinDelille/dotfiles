@@ -1,6 +1,6 @@
 export EDITOR=vim
 # Oh my zsh
-export DEFAULT_USER=martin
+export DEFAULT_USER=`whoami`
 #Add my custom script
 export PATH=$PATH:$HOME/.dotfiles/bin
 # Add Qt
@@ -43,12 +43,12 @@ export HOMEBREW_EDITOR=vi
 export TERM="xterm-256color"
 
 # Various alias
-alias j="cd ~/dev/Phonations/Joker"
+alias j="cd ~/dev/YouDub/Joker"
 alias s="cd ~/dev/Lylo/screenr"
 alias y="cd ~/dev/YouDub"
 alias n="open ~/Dropbox/notes.md"
 alias pbpc="pbpaste | pbcopy"
-alias ip="ifconfig | grep inet"
+alias ip="ifconfig | grep 'inet '"
 alias ccat="pygmentize -g"
 alias pgss="pgs && say kowabounga"
 alias acki="ack -i"
@@ -59,8 +59,8 @@ alias x="exit"
 alias q="exit"
 alias o="open"
 alias or="open -R"
-alias ls="colorls --dark --sort-dirs --report"
-alias lc="colorls --tree --dark"
+#alias ls="colorls --dark --sort-dirs --report"
+#alias lc="colorls --tree --dark"
 
 ## Sourcing OS-specific things
 OS=$(uname -s); export OS

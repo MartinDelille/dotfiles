@@ -1,0 +1,6 @@
+  --ignore-directory=is:doc/html
+  --ignore-directory=is:_site
+  --ignore-directory=is:vendor
+  --ignore-directory=is:Vendors
+  --ignore-directory=is:Carthage
+  --ignore-directory=is:dist
