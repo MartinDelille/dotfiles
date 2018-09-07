@@ -14,12 +14,12 @@ else
 fi
 
 echo "### Linking configuration ###"
-ln -s ~/.dotfiles/zshrc ~/.zshrc
-ln -s ~/.dotfiles/zshenv ~/.zshenv
-ln -s ~/.dotfiles/gitconfig ~/.gitconfig
-ln -s ~/.dotfiles/gitignore ~/.gitignore
-ln -s ~/.dotfiles/vimrc ~/.vimrc
-ln -s ~/.dotfiles/ftplugin ~/.vim/ftplugin
+ln -sf ~/.dotfiles/zshrc ~/.zshrc
+ln -sf ~/.dotfiles/zshenv ~/.zshenv
+ln -sf ~/.dotfiles/gitconfig ~/.gitconfig
+ln -sf ~/.dotfiles/gitignore ~/.gitignore
+ln -sf ~/.dotfiles/vimrc ~/.vimrc
+ln -sf ~/.dotfiles/ftplugin ~/.vim/ftplugin
 if [[ "$OSTYPE" = darwin* ]]; then
     ln -s ~/.dotfiles/my.env.plist ~/Library/LaunchAgents/my.env.plist
 fi
