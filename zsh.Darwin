@@ -5,6 +5,8 @@ alias f="mdfind -onlyin ."
 alias kw="say kowabounga"
 alias wifi="networksetup -setairportpower airport"
 alias qt="open $HOME/Qt/Qt\ Creator.app"
+alias b="brew"
+alias bo="HOMEBREW_NO_AUTO_UPDATE=1 pgs && brew"
 
 #eval "$(docker-machine env default)"
 
