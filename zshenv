@@ -30,11 +30,6 @@ export PATH=~/dev/libs/android-sdk-macosx/tools:~/dev/libs/android-sdk-macosx/pl
 # Qt
 export PATH=$PATH:/usr/local/opt/qt/bin
 
-# Java
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-export PATH=${JAVA_HOME}/bin:$PATH
-export MAVEN_OPTS="-Xmx512m"
-
 # IRC info
 export IRCNICK=capradmar
 export IRCSERVER=irc.freenode.net

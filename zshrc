@@ -1,7 +1,7 @@
 #zmodload zsh/zprof
 
 fpath=(${HOME}/.dotfiles/functions $fpath)
-source /usr/local/share/antigen/antigen.zsh
+source $HOME/.dotfiles/vendors/antigen/antigen.zsh
 
 antigen use oh-my-zsh
 

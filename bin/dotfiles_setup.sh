@@ -16,12 +16,12 @@ echo "### Updating dotfiles ###"
 git -C $PWD/.git pull
 
 echo "### Linking configuration ###"
-ln -s $PWD/zshrc ~/.zshrc
-ln -s $PWD/zshenv ~/.zshenv
-ln -s $PWD/gitconfig ~/.gitconfig
-ln -s $PWD/gitignore ~/.gitignore
-ln -s $PWD/vimrc ~/.vimrc
-ln -s $PWD/ftplugin ~/.vim/ftplugin
+ln -sf ~/.dotfiles/zshrc ~/.zshrc
+ln -sf ~/.dotfiles/zshenv ~/.zshenv
+ln -sf ~/.dotfiles/gitconfig ~/.gitconfig
+ln -sf ~/.dotfiles/gitignore ~/.gitignore
+ln -sf ~/.dotfiles/vimrc ~/.vimrc
+ln -sf ~/.dotfiles/ftplugin ~/.vim/ftplugin
 if [[ "$OSTYPE" = darwin* ]]; then
     ln -s $PWD/my.env.plist ~/Library/LaunchAgents/my.env.plist
 fi
@@ -47,12 +47,4 @@ elif [[ "$OSTYPE" = darwin* ]]; then
     ./install.sh
     cd ..
     rm -rf fonts
-fi
-
-if [[ ! -d ~/.zgen ]]; then
-  echo "### Install zgen ###"
-  git clone https://github.com/tarjoilija/zgen.git ~/.zgen
-else
-  echo "### Upgrade zgen ###"
-  git -C ~/.zgen pull
 fi
