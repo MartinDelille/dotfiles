@@ -56,4 +56,3 @@ else
   echo "### Upgrade zgen ###"
   git -C ~/.zgen pull
 fi
-

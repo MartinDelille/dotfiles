@@ -82,4 +82,3 @@ white=$'\e[0m'
 
 
 source $HOME/.dotfiles/bin/iterm.sh
-
