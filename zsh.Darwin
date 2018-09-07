@@ -10,3 +10,9 @@ alias qt="open $HOME/Qt/Qt\ Creator.app"
 
 # Python
 export PATH=~/Library/Python/2.7/bin:$PATH
+
+# Java
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+export PATH=${JAVA_HOME}/bin:$PATH
+export MAVEN_OPTS="-Xmx512m"
+
