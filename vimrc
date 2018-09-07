@@ -74,6 +74,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'posva/vim-vue'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'chase/vim-ansible-yaml'
+Plug 'posva/vim-vue'
 
 call plug#end()
 
