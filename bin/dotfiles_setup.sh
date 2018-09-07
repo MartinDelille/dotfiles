@@ -46,12 +46,3 @@ elif [[ "$OSTYPE" = darwin* ]]; then
     cd ..
     rm -rf fonts
 fi
-
-if [[ ! -d ~/.oh-my-zsh ]]; then
-  echo "### Install zgen ###"
-  git clone https://github.com/tarjoilija/zgen.git ~/.zgen
-else
-  echo "### Upgrade Oh my Zsh ###"
-  git -C ~/.zgen pull
-fi
-
