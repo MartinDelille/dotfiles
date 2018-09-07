@@ -24,8 +24,9 @@ antigen apply
 
 # Uncomment the following line to disable auto-setting terminal title.
 #DISABLE_AUTO_TITLE="true"
+
 # added by travis gem
-#[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
+[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 
 #export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
