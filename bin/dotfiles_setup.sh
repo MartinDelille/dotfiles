@@ -1,9 +1,10 @@
 #!/bin/bash
 
 if [[ "$OSTYPE" = linux* ]]; then
-  sudo apt-get update
+  sudo add-apt-repository -y ppa:jonathonf/vim
+  sudo apt update
   echo "### Linux specific: Install Git, Vim and ZSH ###"
-  sudo apt-get install -y git vim zsh openssh-server curl
+  sudo apt install -y git vim zsh openssh-server curl
 fi
 
 if [[ "$OSTYPE" = darwin* ]]; then
