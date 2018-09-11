@@ -10,7 +10,7 @@ syntax enable
 set encoding=utf-8
 set autowrite
 let mapleader = ","
-map <Leader>m :!make<Enter>
+map <Leader>m :!clear;make<Enter>
 map <Leader>n :NERDTree<Enter>
 set relativenumber
 
