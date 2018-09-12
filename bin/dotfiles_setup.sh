@@ -22,7 +22,7 @@ ln -sf ~/.dotfiles/zshenv ~/.zshenv
 ln -sf ~/.dotfiles/gitconfig ~/.gitconfig
 ln -sf ~/.dotfiles/gitignore ~/.gitignore
 ln -sf ~/.dotfiles/vimrc ~/.vimrc
-ln -sf ~/.dotfiles/ftplugin ~/.vim/ftplugin
+
 if [[ "$OSTYPE" = darwin* ]]; then
     ln -s $PWD/my.env.plist ~/Library/LaunchAgents/my.env.plist
 fi
