@@ -26,14 +26,12 @@ ln -sf $DOTFILES_ROOT/zshenv ~/.zshenv
 ln -sf $DOTFILES_ROOT/gitconfig ~/.gitconfig
 ln -sf $DOTFILES_ROOT/gitignore ~/.gitignore
 ln -sf $DOTFILES_ROOT/vimrc ~/.vimrc
+mkdir -p $DOTFILES_ROOT/.vim/autoload
+ln -sf $DOTFILES_ROOT/vendors/vim-plug/plug.vim ~/.vim/autoload/plug.vim
 
 if [[ "$OSTYPE" = darwin* ]]; then
     ln -sf $DOTFILES_ROOT/my.env.plist ~/Library/LaunchAgents/my.env.plist
 fi
-
-echo "### Install vim-plug ###"
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo "### Install Vim plugin ###"
 vim +PlugInstall +qall
