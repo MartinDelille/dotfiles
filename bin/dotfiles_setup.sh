@@ -1,5 +1,11 @@
 #!/bin/bash
 
+INSTALL_SCRIPT_PATH=`pwd`/$0
+INSTALL_SCRIPT_RELATIVE_PATH='/bin/dotfiles_setup.sh'
+DOTFILES_ROOT=${INSTALL_SCRIPT_PATH%$INSTALL_SCRIPT_RELATIVE_PATH};
+
+echo "Dotfiles root: $DOTFILES_ROOT"
+
 if [[ "$OSTYPE" = linux* ]]; then
   sudo add-apt-repository -y ppa:jonathonf/vim
   sudo apt update
@@ -11,20 +17,18 @@ if [[ "$OSTYPE" = darwin* ]]; then
     brew install antigen node
 fi
 
-PWD=`pwd`
-
 echo "### Updating dotfiles ###"
-git -C $PWD/.git pull
+git -C $DOTFILES_ROOT/.git pull
 
 echo "### Linking configuration ###"
-ln -sf ~/.dotfiles/zshrc ~/.zshrc
-ln -sf ~/.dotfiles/zshenv ~/.zshenv
-ln -sf ~/.dotfiles/gitconfig ~/.gitconfig
-ln -sf ~/.dotfiles/gitignore ~/.gitignore
-ln -sf ~/.dotfiles/vimrc ~/.vimrc
+ln -sf $DOTFILES_ROOT/zshrc ~/.zshrc
+ln -sf $DOTFILES_ROOT/zshenv ~/.zshenv
+ln -sf $DOTFILES_ROOT/gitconfig ~/.gitconfig
+ln -sf $DOTFILES_ROOT/gitignore ~/.gitignore
+ln -sf $DOTFILES_ROOT/vimrc ~/.vimrc
 
 if [[ "$OSTYPE" = darwin* ]]; then
-    ln -s $PWD/my.env.plist ~/Library/LaunchAgents/my.env.plist
+    ln -sf $DOTFILES_ROOT/my.env.plist ~/Library/LaunchAgents/my.env.plist
 fi
 
 echo "### Install vim-plug ###"
@@ -35,17 +39,4 @@ echo "### Install Vim plugin ###"
 vim +PlugInstall +qall
 
 echo "### Install Powerline font"
-if [[ "$OSTYPE" = linux* ]]; then
-    wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
-    wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
-    mv PowerlineSymbols.otf ~/.fonts/
-    fc-cache -vf ~/.fonts/
-    mkdir -p ~/.config/fontconfig/conf.d/
-    mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
-elif [[ "$OSTYPE" = darwin* ]]; then
-    git clone https://github.com/powerline/fonts.git --depth=1
-    cd fonts
-    ./install.sh
-    cd ..
-    rm -rf fonts
-fi
+$DOTFILES_ROOT/vendors/fonts/install.sh
