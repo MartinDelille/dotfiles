@@ -77,6 +77,7 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'chase/vim-ansible-yaml'
 Plug 'posva/vim-vue'
 Plug 'martindelille/vim-martin'
+Plug 'peterhoeg/vim-qml'
 
 call plug#end()
 
