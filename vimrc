@@ -13,6 +13,7 @@ let mapleader = ","
 map <Leader>m :!clear;make<Enter>
 map <Leader>n :NERDTree<Enter>
 set relativenumber
+set wildignorecase
 
 ""
 "" Whitespace
