@@ -11,6 +11,7 @@ set encoding=utf-8
 set autowrite
 let mapleader = ","
 map <Leader>m :!clear;make<Enter>
+map <Leader>t :!clear;make test<Enter>
 map <Leader>n :NERDTree<Enter>
 set relativenumber
 set wildignorecase
