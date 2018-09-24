@@ -47,11 +47,13 @@ if [ -f '/usr/local/bin/npm' ]; then source <(npm completion); fi
 
 #zprof
 
+# Google Cloud
+
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/martin/dev/libs/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/martin/dev/libs/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f "${HOME}/dev/google-cloud-sdk/path.zsh.inc" ]; then source "${HOME}/dev/google-cloud-sdk/path.zsh.inc"; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/martin/dev/libs/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/martin/dev/libs/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f "${HOME}/dev/google-cloud-sdk/completion.zsh.inc" ]; then source "${HOME}/dev/google-cloud-sdk/completion.zsh.inc"; fi
 
 # Spaceship prompt theme
 SPACESHIP_PROMPT_ADD_NEWLINE="true"
