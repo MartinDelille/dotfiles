@@ -65,6 +65,13 @@ SPACESHIP_PROMPT_DEFAULT_PREFIX="$USER"
 SPACESHIP_PROMPT_FIRST_PREFIX_SHOW="true"
 SPACESHIP_USER_SHOW="true"
 
+# Powerlevel9K prompt theme
+
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs newline status)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+POWERLEVEL9K_MODE='nerdfont-complete'
+
 # zsh command time setup
 
 # If command execution time above min. time, plugins will not output time.
