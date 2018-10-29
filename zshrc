@@ -104,3 +104,5 @@ zsh_command_time() {
     fi
 }
 
+[ -f $HOME/.secret ] && source $HOME/.secret ]
+
