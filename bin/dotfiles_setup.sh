@@ -15,6 +15,8 @@ fi
 
 if [[ "$OSTYPE" = darwin* ]]; then
     brew install antigen node
+    brew tap caskroom/fonts
+    brew cask install font-hack-nerd-font
 fi
 
 echo "### Updating dotfiles ###"
