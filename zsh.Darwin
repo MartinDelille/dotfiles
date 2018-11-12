@@ -1,7 +1,7 @@
 export GIT_CREDENTIAL=osxkeychain
 export GIT_MERGETOOL=opendiff
 
-alias f="mdfind -onlyin ."
+alias ff="mdfind -onlyin ."
 alias kw="say kowabounga"
 alias wifi="networksetup -setairportpower airport"
 alias qt="open $HOME/Qt/Qt\ Creator.app"
