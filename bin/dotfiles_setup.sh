@@ -14,9 +14,13 @@ if [[ "$OSTYPE" = linux* ]]; then
 fi
 
 if [[ "$OSTYPE" = darwin* ]]; then
-    brew install antigen node
-    brew tap caskroom/fonts
-    brew cask install font-hack-nerd-font
+  which brew
+  if [ $? -eq 1 ]; then
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  fi
+  brew install antigen node
+  brew tap caskroom/fonts
+  brew cask install font-hack-nerd-font
 fi
 
 echo "### Updating dotfiles ###"
