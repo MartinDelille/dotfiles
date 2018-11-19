@@ -3,9 +3,6 @@ export EDITOR=vim
 export DEFAULT_USER=`whoami`
 #Add my custom script
 export PATH=$PATH:$HOME/.dotfiles/bin
-# Add Qt
-export PATH=$PATH:$HOME/Qt/5.11.1/clang_64/bin
-export PKG_CONFIG_PATH=/usr/local/opt/qt5/lib/pkgconfig/
 # Homebrew
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # Pyenv
@@ -28,7 +25,9 @@ export PATH=~/dev/libs/android-sdk-macosx/tools:~/dev/libs/android-sdk-macosx/pl
 #export PATH=$PATH:$FFMPEG_DEV_PATH/bin
 
 # Qt
-export PATH=$PATH:/usr/local/opt/qt/bin
+export QTVERSION=5.6.3
+export QTPATH=$HOME/Qt/$QTVERSION/clang_64
+export PATH=$PATH:$QTPATH/bin
 
 # IRC info
 export IRCNICK=capradmar
