@@ -45,6 +45,7 @@ alias pbpc="pbpaste | pbcopy"
 alias ip="ifconfig | grep 'inet '"
 alias ccat="pygmentize -g"
 alias pgss="pgs && say kowabounga"
+alias p="pgs && say kowabounga"
 alias acki="ack -i"
 alias ovh="ssh ovh.phonations.com"
 alias chrome="open -a /Applications/Google\ Chrome.app"
@@ -56,6 +57,7 @@ alias or="open -R"
 #alias ls="colorls --dark --sort-dirs --report"
 #alias lc="colorls --tree --dark"
 alias f="find . -name"
+alias lmb="lab mr b"
 
 ## Sourcing OS-specific things
 OS=$(uname -s); export OS
