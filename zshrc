@@ -67,7 +67,7 @@ SPACESHIP_USER_SHOW="true"
 
 # Powerlevel9K prompt theme
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_medium dir vcs newline status)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_medium context dir vcs newline status)
 #POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_beer dir vcs newline status)
 #POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_medium custom_freecodecamp dir vcs newline status)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
