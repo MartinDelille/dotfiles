@@ -30,13 +30,14 @@ export QTPATH=$HOME/Qt/$QTVERSION/clang_64
 export PATH=$PATH:$QTPATH/bin
 
 # IRC info
-export IRCNICK=capradmar
+export IRCNICK=martinodelilo
 export IRCSERVER=irc.freenode.net
 # Other
 export HOMEBREW_EDITOR=vi
 export TERM="xterm-256color"
 
 # Various alias
+alias m="make"
 alias j="cd ~/dev/YouDub/Joker"
 alias s="cd ~/dev/Lylo/screenr"
 alias y="cd ~/dev/YouDub"
@@ -44,8 +45,8 @@ alias n="open ~/Dropbox/notes.md"
 alias pbpc="pbpaste | pbcopy"
 alias ip="ifconfig | grep 'inet '"
 alias ccat="pygmentize -g"
-alias pgss="pgs && say kowabounga"
 alias p="pgs && say kowabounga"
+alias po="p && open"
 alias acki="ack -i"
 alias ovh="ssh ovh.phonations.com"
 alias chrome="open -a /Applications/Google\ Chrome.app"
