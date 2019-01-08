@@ -1,0 +1,7 @@
+filezilla
+firefox
+font-hack-nerd-font
+iterm2
+macdown
+qlmarkdown
+qlstephen

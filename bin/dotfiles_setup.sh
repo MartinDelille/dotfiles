@@ -18,9 +18,10 @@ if [[ "$OSTYPE" = darwin* ]]; then
   if [ $? -eq 1 ]; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
-  brew install antigen node
   brew tap caskroom/fonts
-  brew cask install font-hack-nerd-font
+  brew tap martindelille/tap
+  xargs brew install < $DOTFILES_ROOT/brew.txt
+  xargs brew cask install < $DOTFILES_ROOT/cask.txt
 fi
 
 echo "### Updating dotfiles ###"
