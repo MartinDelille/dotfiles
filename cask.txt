@@ -1,4 +1,3 @@
-filezilla
 firefox
 font-hack-nerd-font
 iterm2
