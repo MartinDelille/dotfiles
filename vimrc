@@ -79,7 +79,8 @@ Plug 'chase/vim-ansible-yaml'
 Plug 'posva/vim-vue'
 Plug 'martindelille/vim-martin'
 Plug 'peterhoeg/vim-qml'
-Plug 'suy/vim-qmake'
+Plug 'artoj/qmake-syntax-vim'
+Plug 'djoshea/vim-autoread'
 
 call plug#end()
 
