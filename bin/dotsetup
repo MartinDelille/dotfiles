@@ -10,7 +10,7 @@ if [[ "$OSTYPE" = linux* ]]; then
   sudo add-apt-repository -y ppa:jonathonf/vim
   sudo apt update
   echo "### Linux specific: Install Git, Vim and ZSH ###"
-  sudo apt install -y git vim zsh openssh-server curl
+  sudo apt install -y git vim zsh openssh-server curl fish
 fi
 
 if [[ "$OSTYPE" = darwin* ]]; then
