@@ -9,7 +9,7 @@ end
 
 alias x="exit"
 alias q="exit"
-alias l="ll"
+alias l="ls -lah"
 alias p="pgs && say kowabounga"
 alias m="make"
 alias j="cd ~/dev/YouDub/Joker"
