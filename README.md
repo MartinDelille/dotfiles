@@ -10,7 +10,7 @@ My custom dotfiles.
 
 ```
 $ git clone --recurse-submodules https://github.com/MartinDelille/dotfiles ~/.dotfiles
-$ ~/.dotfiles/bin/setup
+$ ~/.dotfiles/bin/dotsetup
 $ chsh -s $(which fish)
 $ exit
 ```
