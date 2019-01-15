@@ -81,6 +81,7 @@ Plug 'martindelille/vim-martin'
 Plug 'peterhoeg/vim-qml'
 Plug 'tiamat18/vim-qmake'
 Plug 'djoshea/vim-autoread'
+Plug 'dag/vim-fish'
 
 call plug#end()
 

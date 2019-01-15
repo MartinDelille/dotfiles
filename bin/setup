@@ -1,0 +1,49 @@
+#!/bin/bash
+
+script_path=`pwd`/$0
+script_relative_path='/bin/setup'
+root=${script_path%$script_relative_path};
+
+echo "Dotfiles root: $root"
+
+if [[ "$OSTYPE" = linux* ]]; then
+  sudo add-apt-repository -y ppa:jonathonf/vim
+  sudo apt update
+  echo "### Linux specific: Install Git, Vim and ZSH ###"
+  sudo apt install -y git vim zsh openssh-server curl
+fi
+
+if [[ "$OSTYPE" = darwin* ]]; then
+  which brew
+  if [ $? -eq 1 ]; then
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  fi
+  brew tap caskroom/fonts
+  brew tap martindelille/tap
+  xargs brew install < $root/brew.txt
+  xargs brew cask install < $root/cask.txt
+fi
+
+echo "### Updating dotfiles ###"
+git -C $root/.git pull
+
+echo "### Linking configuration ###"
+ln -sf $root/zshrc ~/.zshrc
+ln -sf $root/zshenv ~/.zshenv
+ln -sf $root/fish ~/.config/fish
+ln -sf $root/gitconfig ~/.gitconfig
+ln -sf $root/gitignore ~/.gitignore
+ln -sf $root/vimrc ~/.vimrc
+mkdir -p $root/.vim/autoload
+ln -sf $root/vendors/vim-plug/plug.vim ~/.vim/autoload/plug.vim
+
+if [[ "$OSTYPE" = darwin* ]]; then
+    ln -sf $root/my.env.plist ~/Library/LaunchAgents/my.env.plist
+    curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+fi
+
+echo "### Install Vim plugin ###"
+vim +PlugInstall +qall
+
+echo "### Install Powerline font"
+$root/vendors/fonts/install.sh
