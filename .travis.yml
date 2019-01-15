@@ -3,7 +3,10 @@ os:
   - osx
   - linux
 script:
-  - bin/dotfiles_setup.sh
+  - bin/dotsetup
+  - vi --version
+  - git --version
+  - curl --version
 notifications:
   webhooks:
     urls:
