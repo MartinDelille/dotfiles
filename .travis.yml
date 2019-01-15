@@ -7,7 +7,6 @@ script:
   - vi --version
   - git --version
   - curl --version
-  - brew list
   - fish --version
 notifications:
   webhooks:

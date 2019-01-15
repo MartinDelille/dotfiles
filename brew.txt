@@ -6,6 +6,7 @@ cmake
 create-dmg
 doxygen
 ffmpeg
+fish
 gitlab-runner
 gource
 hub
