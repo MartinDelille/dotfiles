@@ -8,7 +8,6 @@ script:
   - git --version
   - curl --version
   - fish --version
-  - fisher --version
 notifications:
   webhooks:
     urls:
