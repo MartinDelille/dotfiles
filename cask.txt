@@ -1,5 +1,6 @@
 firefox
 font-hack-nerd-font
+franz
 iterm2
 macdown
 qlmarkdown
