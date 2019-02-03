@@ -9,7 +9,7 @@ My custom dotfiles.
 ## Installation
 
 ```
-$ git clone --recurse-submodules https://github.com/MartinDelille/dotfiles ~/.dotfiles
+$ git clone --recurse-submodules git@github.com:MartinDelille/dotfiles.git ~/.dotfiles
 $ ~/.dotfiles/bin/dotsetup
 $ chsh -s $(which fish)
 $ exit
