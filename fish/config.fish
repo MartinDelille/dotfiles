@@ -25,8 +25,5 @@ alias ip="ifconfig | grep 'inet '"
 alias o="open"
 alias r="open -R"
 alias f="find . -name"
+alias acki="ack -i"
 alias lmb="lab mr b"
-
-# Path
-
-set PATH ~/.dotfiles/bin $PATH
