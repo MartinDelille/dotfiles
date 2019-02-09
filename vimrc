@@ -15,6 +15,7 @@ map <Leader>t :!clear;make test<Enter>
 map <Leader>n :NERDTree<Enter>
 set relativenumber
 set wildignorecase
+set clipboard=unnamed
 
 ""
 "" Whitespace
