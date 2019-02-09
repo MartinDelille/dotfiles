@@ -44,7 +44,7 @@ if [[ "$OSTYPE" = darwin* ]]; then
 fi
 
 echo "### Install Vim plugin ###"
-vim +PlugInstall +qall
+vim +PlugClean +PlugInstall +PlugUpdate +qall
 
 echo "### Install Powerline font"
 $root/vendors/fonts/install.sh
