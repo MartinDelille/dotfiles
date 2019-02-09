@@ -31,8 +31,8 @@ echo "### Updating dotfiles ###"
 git -C $root/.git pull
 
 echo "### Linking configuration ###"
-ln -sf $root/zshrc ~/.zshrc
-ln -sf $root/zshenv ~/.zshenv
+ln -sf $root/zsh/zshrc ~/.zshrc
+ln -sf $root/zsh/zshenv ~/.zshenv
 ln -sf $root/fish ~/.config/fish
 ln -sf $root/gitconfig ~/.gitconfig
 ln -sf $root/gitignore ~/.gitignore
