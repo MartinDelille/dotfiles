@@ -15,6 +15,10 @@ set QTPATH /usr/local/Cellar/qt/$QTVERSION
 set PATH $PATH $QTPATH/bin
 set QT_INSTALL_DOCS $QTPATH/doc
 
+# Path
+set PATH ~/.dotfiles/bin $PATH
+set PATH /usr/local/opt/ruby/bin $PATH
+
 # Secret
 if test -e ~/.secret
   source ~/.secret
