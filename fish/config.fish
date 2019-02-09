@@ -8,8 +8,14 @@ end
 # iTerm integration
 source ~/.dotfiles/fish/iterm2_shell_integration.(basename $SHELL)
 
-# Secret
+# Qt
+set QTVERSION 5.12.0
+#set QTPATH $HOME/Qt/$QTVERSION/clang_64
+set QTPATH /usr/local/Cellar/qt/$QTVERSION
+set PATH $PATH $QTPATH/bin
+set QT_INSTALL_DOCS $QTPATH/doc
 
+# Secret
 if test -e ~/.secret
   source ~/.secret
 end
