@@ -20,8 +20,6 @@ lg = !"git lg1"
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore
-[credential]
-	helper = $GIT_CREDENTIAL
 [push]
 	default = simple
 [gitopen "gitlab"]
