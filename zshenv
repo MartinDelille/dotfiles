@@ -5,8 +5,8 @@ export DEFAULT_USER=`whoami`
 export PATH=$PATH:$HOME/.dotfiles/bin
 # Homebrew
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-# Pyenv
-export PATH=~/.pyenv/shims:$PATH
+# Python
+export PATH=/usr/local/opt/python/libexec/bin:$PATH
 # Coverity tools
 export PATH=~/tools/cov-analysis-macosx-7.7.0.4/bin:$PATH
 # Go
