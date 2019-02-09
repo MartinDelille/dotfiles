@@ -6,6 +6,10 @@ root=${script_path%$script_relative_path};
 
 echo "Dotfiles root: $root"
 
+command_exists () {
+  type "$1" &> /dev/null ;
+}
+
 if [[ "$OSTYPE" = linux* ]]; then
   sudo add-apt-repository -y ppa:jonathonf/vim
   sudo apt update
@@ -14,10 +18,8 @@ if [[ "$OSTYPE" = linux* ]]; then
 fi
 
 if [[ "$OSTYPE" = darwin* ]]; then
-  which brew
-  if [ $? -eq 1 ]; then
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  fi
+  command_exists brew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
   brew tap caskroom/fonts
   brew tap martindelille/tap
   xargs brew install < $root/brew.txt
