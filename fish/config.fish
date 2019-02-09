@@ -5,6 +5,11 @@ if not functions -q fisher
     fish -c fisher
 end
 
+# iTerm integration
+source ~/.dotfiles/fish/iterm2_shell_integration.(basename $SHELL)
+
+# Secret
+
 if test -e ~/.secret
   source ~/.secret
 end
