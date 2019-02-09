@@ -7,6 +7,8 @@ export PATH=$PATH:$HOME/.dotfiles/bin
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # Python
 export PATH=/usr/local/opt/python/libexec/bin:$PATH
+# Ruby
+export PATH=/usr/local/opt/ruby/bin:$PATH
 # Coverity tools
 export PATH=~/tools/cov-analysis-macosx-7.7.0.4/bin:$PATH
 # Go
