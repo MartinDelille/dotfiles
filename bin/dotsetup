@@ -37,7 +37,7 @@ ln -sf $root/fish ~/.config/fish
 ln -sf $root/gitconfig ~/.gitconfig
 ln -sf $root/gitignore ~/.gitignore
 ln -sf $root/vimrc ~/.vimrc
-mkdir -p $root/.vim/autoload
+mkdir -p ~/.vim/autoload
 ln -sf $root/vendors/vim-plug/plug.vim ~/.vim/autoload/plug.vim
 
 if [[ "$OSTYPE" = darwin* ]]; then
