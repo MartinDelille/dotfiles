@@ -3,7 +3,7 @@ os:
   - osx
   - linux
 script:
-  - bin/dotsetup
+  - ./dotsetup
   - vi --version
   - git --version
   - curl --version
