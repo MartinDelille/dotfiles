@@ -25,8 +25,6 @@ antigen apply
 # Uncomment the following line to disable auto-setting terminal title.
 #DISABLE_AUTO_TITLE="true"
 
-#export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
 source "${HOME}/.dotfiles/zsh/iterm2_shell_integration.zsh"
 
 export LANG="en_US.UTF-8"
