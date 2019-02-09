@@ -12,7 +12,7 @@ export PATH=~/tools/cov-analysis-macosx-7.7.0.4/bin:$PATH
 # Go
 export GOPATH=~/dev/go
 #export GOROOT=/usr/local/opt/go
-export PATH=$PATH:$GOROOT/libexec/bin:$GOPATH/bin
+export PATH=$GOROOT/libexec/bin:$GOPATH/bin:$PATH
 # Git
 export GIT_CREDENTIAL="cache --timeout=3600"
 export GIT_MERGETOOL=vimdiff
