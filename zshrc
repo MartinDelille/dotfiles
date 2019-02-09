@@ -25,9 +25,6 @@ antigen apply
 # Uncomment the following line to disable auto-setting terminal title.
 #DISABLE_AUTO_TITLE="true"
 
-# added by travis gem
-[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
-
 #export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
