@@ -19,6 +19,10 @@ set QT_INSTALL_DOCS $QTPATH/doc
 set PATH ~/.dotfiles/bin $PATH
 set PATH /usr/local/opt/ruby/bin $PATH
 
+# Other environment variables
+set -gx VISUAL vim
+set -gx EDITOR vim
+
 # Secret
 if test -e ~/.secret
   source ~/.secret
