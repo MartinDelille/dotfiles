@@ -15,9 +15,14 @@ set QTPATH /usr/local/Cellar/qt/$QTVERSION
 set PATH $PATH $QTPATH/bin
 set QT_INSTALL_DOCS $QTPATH/doc
 
+# Go
+set -gx GOPATH ~/dev/go
+
 # Path
 set PATH ~/.dotfiles/bin $PATH
 set PATH /usr/local/opt/ruby/bin $PATH
+set PATH /usr/local/opt/python $PATH
+set PATH $GOPATH/bin $PATH
 
 # Other environment variables
 set -gx VISUAL vim
