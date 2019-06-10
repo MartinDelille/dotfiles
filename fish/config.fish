@@ -52,3 +52,6 @@ alias r="open -R"
 alias f="find . -name"
 alias acki="ack -i"
 alias lmb="lab mr b"
+alias python=python3
+alias pip=pip3
+alias play="ffplay -autoexit"
