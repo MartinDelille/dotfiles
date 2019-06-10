@@ -28,6 +28,7 @@ set PATH $GOPATH/bin $PATH
 # Other environment variables
 set -gx VISUAL vim
 set -gx EDITOR vim
+set -gx GPG_TTY (tty)
 
 # Secret
 if test -e ~/.secret
