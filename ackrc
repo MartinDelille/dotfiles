@@ -4,3 +4,4 @@
   --ignore-directory=is:Vendors
   --ignore-directory=is:Carthage
   --ignore-directory=is:dist
+  --type-add=qt:ext:pro,pri
