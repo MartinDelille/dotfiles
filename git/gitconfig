@@ -4,8 +4,9 @@
 	smudge = git media smudge %f
 [user]
 	name = Martin Delille
-	email = martin@phonations.com
+	email = martin@delille.org
 	username = MartinDelille
+	signingkey = 9E8539581F123D43
 [merge]
 	tool = $GIT_MERGETOOL
 [filter "hawser"]
@@ -33,3 +34,5 @@ lg = !"git lg1"
 [diff "scpt"]
 	textconv = osadecompile
 	binary = true
+[commit]
+	gpgsign = true
