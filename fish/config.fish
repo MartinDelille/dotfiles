@@ -9,11 +9,12 @@ end
 source ~/.dotfiles/fish/iterm2_shell_integration.(basename $SHELL)
 
 # Qt
-set QTVERSION 5.12.0
-#set QTPATH $HOME/Qt/$QTVERSION/clang_64
-set QTPATH /usr/local/Cellar/qt/$QTVERSION
-set PATH $PATH $QTPATH/bin
-set QT_INSTALL_DOCS $QTPATH/doc
+set -gx QT_HOMEBRREW true
+set -gx QT_VERSION 5.12.3
+#set QT_DIR $HOME/Qt/$QT_VERSION/clang_64
+set -gx QT_DIR /usr/local/Cellar/qt/$QT_VERSION
+set PATH $PATH $QT_DIR/bin
+set QT_INSTALL_DOCS $QT_DIR/doc
 
 # Go
 set -gx GOPATH ~/dev/go
