@@ -1,8 +1,6 @@
-firefox
-font-hack-nerd-font
-franz
 iterm2
 macdown
 numi
 qlmarkdown
 qlstephen
+google-chrome
