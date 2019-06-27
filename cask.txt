@@ -1,6 +1,10 @@
+1password6
+daisydisk
+google-chrome
 iterm2
 macdown
+mattermost
 numi
 qlmarkdown
 qlstephen
-google-chrome
+rambox
