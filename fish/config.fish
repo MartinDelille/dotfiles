@@ -57,3 +57,17 @@ alias lmb="lab mr b"
 alias python=python3
 alias pip=pip3
 alias play="ffplay -autoexit"
+
+# Functions
+
+function md
+  switch (count $argv)
+    case 0
+      echo "usage: md <directory>"
+    case 1
+      mkdir $argv[1]
+      cd $argv[1]
+    case '*'
+      echo "Too many args for md command"
+  end
+end
