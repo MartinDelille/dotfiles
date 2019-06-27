@@ -29,6 +29,7 @@ set PATH $GOPATH/bin $PATH
 set -gx VISUAL vim
 set -gx EDITOR vim
 set -gx GPG_TTY (tty)
+set -gx LANG "en_US.UTF-8"
 
 # Secret
 if test -e ~/.secret
@@ -42,7 +43,7 @@ alias q="exit"
 alias l="ls -lah"
 alias p="pgs && say kowabounga"
 alias m="make"
-alias j="cd ~/dev/YouDub/Joker"
+alias j="cd ~/dev/phonations/joker"
 alias s="cd ~/dev/Lylo/screenr"
 alias y="cd ~/dev/YouDub"
 alias n="open ~/Dropbox/notes.md"
