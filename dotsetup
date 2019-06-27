@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 script_path=`pwd`/$0
 script_relative_path='/dotsetup'
 root=${script_path%$script_relative_path};
@@ -27,7 +29,7 @@ if [[ "$OSTYPE" = darwin* ]]; then
 fi
 
 echo "### Updating dotfiles ###"
-git -C $root/.git pull
+git -C $root pull
 
 echo "### Linking configuration ###"
 ln -sf $root/zsh/zshrc ~/.zshrc
