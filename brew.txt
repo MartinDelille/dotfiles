@@ -1,6 +1,4 @@
-martindelille/tap/aaf
 ack
-antigen
 aws-sdk-cpp
 cmake
 create-dmg
@@ -9,14 +7,13 @@ ffmpeg
 fish
 gitlab-runner
 git-open
-gource
 hub
-zaquestion/tap/lab
+imagemagick
 lftp
 libltc
-llvm
-node
+martindelille/tap/aaf
 tldr
 uncrustify
 vim
 youtube-dl
+zaquestion/tap/lab

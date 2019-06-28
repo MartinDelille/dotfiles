@@ -3,11 +3,10 @@ os:
   - osx
   - linux
 script:
-  - ./dotsetup
+  - ./dotsetup nobrew
   - vi --version
   - git --version
   - curl --version
-  - fish --version
 notifications:
   webhooks:
     urls:
