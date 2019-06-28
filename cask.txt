@@ -8,3 +8,4 @@ numi
 qlmarkdown
 qlstephen
 rambox
+vlc
