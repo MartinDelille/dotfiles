@@ -5,10 +5,11 @@ create-dmg
 doxygen
 ffmpeg
 fish
-gitlab-runner
 git-open
+gitlab-runner
 hub
 imagemagick
+jq
 lftp
 libltc
 martindelille/tap/aaf

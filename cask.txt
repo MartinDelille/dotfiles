@@ -1,4 +1,5 @@
 1password6
+clipy
 daisydisk
 google-chrome
 iterm2
@@ -8,4 +9,7 @@ numi
 qlmarkdown
 qlstephen
 rambox
+skype
+spotify
+telegram
 vlc
