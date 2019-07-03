@@ -6,7 +6,7 @@ if not functions -q fisher
 end
 
 # iTerm integration
-source ~/.dotfiles/fish/iterm2_shell_integration.(basename $SHELL)
+source ~/.dotfiles/fish/iterm2_shell_integration.fish
 
 # Qt
 set -gx QT_HOMEBRREW true
