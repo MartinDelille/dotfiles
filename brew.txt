@@ -15,6 +15,7 @@ libltc
 martindelille/tap/aaf
 tldr
 uncrustify
+wget
 vim
 youtube-dl
 zaquestion/tap/lab
