@@ -1,12 +1,14 @@
 ack
 aws-sdk-cpp
 cmake
+coreutiles
 create-dmg
 doxygen
 ffmpeg
 fish
 git-open
 gitlab-runner
+gnu-sed
 hub
 imagemagick
 jq

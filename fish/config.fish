@@ -25,6 +25,11 @@ set PATH /usr/local/opt/ruby/bin $PATH
 set PATH /usr/local/opt/python $PATH
 set PATH $GOPATH/bin $PATH
 
+if test (uname -s) = "Darwin"
+  set -gx PATH /usr/local/opt/coreutils/libexec/gnubin $PATH
+  set -gx PATH /usr/local/opt/gnu-sed/libexec/gnubin $PATH
+end
+
 # Other environment variables
 set -gx VISUAL vim
 set -gx EDITOR vim
