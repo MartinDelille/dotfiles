@@ -7,8 +7,6 @@
 	email = martin@delille.org
 	username = MartinDelille
 	signingkey = 9E8539581F123D43
-[merge]
-	tool = $GIT_MERGETOOL
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
