@@ -12,4 +12,5 @@ rambox
 skype
 spotify
 telegram
+tor-browser
 vlc
