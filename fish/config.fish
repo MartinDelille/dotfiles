@@ -9,12 +9,9 @@ end
 source ~/.dotfiles/fish/iterm2_shell_integration.fish
 
 # Qt
-set -gx QT_HOMEBRREW true
-set -gx QT_VERSION 5.12.3
 #set QT_DIR $HOME/Qt/$QT_VERSION/clang_64
-set -gx QT_DIR /usr/local/Cellar/qt/$QT_VERSION
+set QT_DIR /usr/local/opt/qt
 set PATH $PATH $QT_DIR/bin
-set QT_INSTALL_DOCS $QT_DIR/doc
 
 # Go
 set -gx GOPATH ~/dev/go
