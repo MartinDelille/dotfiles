@@ -55,9 +55,9 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'bling/vim-airline'
-" Plug 'altercation/vim-colors-solarized'
+Plug 'altercation/vim-colors-solarized'
 Plug 'airblade/vim-gitgutter'
-" Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 Plug 'ervandew/supertab'
 " Plug 'scrooloose/nerdcommenter'
 Plug 'kchmck/vim-coffee-script'
