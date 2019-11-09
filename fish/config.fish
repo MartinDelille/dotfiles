@@ -19,10 +19,11 @@ set -gx GOPATH ~/dev/go
 # Path
 set PATH ~/.dotfiles/bin $PATH
 set PATH /usr/local/opt/ruby/bin $PATH
-set PATH /usr/local/opt/python $PATH
 set PATH $GOPATH/bin $PATH
 
+# MacOS specifics
 if test (uname -s) = "Darwin"
+  set PATH ~/.iterm2 $PATH
   set -gx PATH /usr/local/opt/coreutils/libexec/gnubin $PATH
   set -gx PATH /usr/local/opt/gnu-sed/libexec/gnubin $PATH
 end
