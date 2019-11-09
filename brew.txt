@@ -12,9 +12,11 @@ gnu-sed
 hub
 imagemagick
 jq
+lcov
 lftp
 libltc
 martindelille/tap/aaf
+ncdu
 tldr
 uncrustify
 wget
