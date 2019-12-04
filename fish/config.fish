@@ -78,3 +78,11 @@ function md
       echo "Too many args for md command"
   end
 end
+
+function pbc
+  if test $argv
+    cat $argv | pbcopy
+  else
+    echo "Too many args for md command"
+  end
+end
