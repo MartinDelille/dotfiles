@@ -44,6 +44,8 @@ end
 # Alias
 
 alias x="exit"
+alias xx="exit"
+alias xxx="exit"
 alias q="exit"
 alias l="ls -lah"
 alias p="pgs && say kowabounga"
