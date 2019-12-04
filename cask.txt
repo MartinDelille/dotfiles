@@ -5,6 +5,7 @@ google-chrome
 iterm2
 macdown
 mattermost
+musaicfm
 numi
 qlmarkdown
 qlstephen
