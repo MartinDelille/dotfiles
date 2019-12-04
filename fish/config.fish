@@ -86,3 +86,7 @@ function pbc
     echo "Too many args for md command"
   end
 end
+
+# bobthefish theme configuration
+set -g fish_prompt_pwd_dir_length 0
+set -g theme_display_date no
