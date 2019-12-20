@@ -65,8 +65,6 @@ Plug 'digitaltoad/vim-pug'
 Plug 'editorconfig/editorconfig-vim'
 " Plug 'joonty/vdebug'
 Plug 'scrooloose/nerdtree'
-" Plug 'tomlion/vim-solidity'
-" Plug 'dermusikman/sonicpi.vim'
 Plug 'acoustichero/goldenrod.vim'
 Plug 'chr4/nginx.vim'
 Plug 'keith/swift.vim'
@@ -81,9 +79,9 @@ Plug 'posva/vim-vue'
 Plug 'martindelille/vim-martin'
 Plug 'peterhoeg/vim-qml'
 Plug 'martindelille/vim-qmake'
-"Plug '/Users/martin/dev/clone/vim-qmake'
 Plug 'djoshea/vim-autoread'
 Plug 'dag/vim-fish'
+Plug 'cespare/vim-toml'
 
 call plug#end()
 
@@ -102,3 +100,5 @@ if isdirectory(expand("~/.vim/plugged/goldenrod.vim"))
 "    color solarized
     colorscheme goldenrod
 end
+
+au BufReadPost conanfile.txt set syntax=toml
