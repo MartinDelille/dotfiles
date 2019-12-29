@@ -6,6 +6,20 @@ My custom dotfiles.
 
 ![Screenshot](screenshot.png)
 
+## Features
+
+- Fish:
+  - Set custom config, shortcuts and functions
+- Git:
+  - [.gitconfig](git/.gitignore):
+    - Basic config
+    - Applescript file versioning
+  - [.gitignore](git/.gitignore)
+- Vim:
+  - Set custom config and plugin (with <https://github.com/junegunn/vim-plug>)
+- MacOS:
+  - [Global environment variable](my.env.plist)
+
 ## Installation
 
 ```

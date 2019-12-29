@@ -45,7 +45,7 @@ set smartcase
 
 " noremap <leader>w :w<cr>
 
-" vim-plug
+" Pluging management with https://github.com/junegunn/vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
