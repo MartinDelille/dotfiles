@@ -15,6 +15,7 @@ My custom dotfiles.
     - Basic config
     - Applescript file versioning
   - [.gitignore](git/.gitignore)
+  - [Commit signing](git/README.md#signing-commit)
 - Vim:
   - Set custom config and plugin (with <https://github.com/junegunn/vim-plug>)
 - MacOS:

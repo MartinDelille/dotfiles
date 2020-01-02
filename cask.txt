@@ -8,6 +8,7 @@ dropbox
 firefox
 franz
 google-chrome
+gpg-suite
 insomnia
 iterm2
 macdown
