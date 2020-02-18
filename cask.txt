@@ -9,6 +9,7 @@ firefox
 franz
 google-chrome
 gpg-suite
+homebrew/cask-fonts/font-meslo-nerd-font
 insomnia
 iterm2
 macdown
