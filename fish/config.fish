@@ -21,6 +21,7 @@ set PATH ~/.dotfiles/bin $PATH
 set PATH /usr/local/opt/ruby/bin $PATH
 set PATH (gem environment gemdir)/bin $PATH
 set PATH $GOPATH/bin $PATH
+set -gx PATH ~/.cargo/bin $PATH
 
 # MacOS specifics
 if test (uname -s) = "Darwin"
