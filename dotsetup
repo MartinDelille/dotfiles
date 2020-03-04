@@ -49,6 +49,8 @@ mkdir -p ~/.vim/autoload
 ln -sf $root/vendors/vim-plug/plug.vim ~/.vim/autoload/plug.vim
 ln -sf $root/ackrc ~/.ackrc
 ln -sf $root/tigrc ~/.tigrc
+ln -sf $root/QtCreator.ini ~/.config/QtProject/QtCreator.ini
+ln -sf $root/qtcreator ~/.config/QtProject/qtcreator
 
 if [[ "$OSTYPE" == darwin* ]]; then
     ln -sf $root/my.env.plist ~/Library/LaunchAgents/my.env.plist

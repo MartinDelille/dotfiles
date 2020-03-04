@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE QtCreatorSession>
+<!-- Written by QtCreator 4.11.1, 2020-03-17T09:57:19. -->
+<qtcreator>
+ <data>
+  <variable>CascadeSetActive</variable>
+  <value type="bool">false</value>
+ </data>
+ <data>
+  <variable>Color</variable>
+  <value type="QString">#666666</value>
+ </data>
+ <data>
+  <variable>EditorSettings</variable>
+  <value type="QByteArray">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ADYALwBjAGwAYQBuAGcAXwA2ADQALwBsAGkAYgAvAFEAdABOAGUAdAB3AG8AcgBrAC4AZgByAGEAbQBlAHcAbwByAGsALwBIAGUAYQBkAGUAcgBzAC8AcQBuAGUAdAB3AG8AcgBrAHIAZQBwAGwAeQAuAGgAAAAMAAAAABwAAAABAAAAZwAAAAAAAACpAAAAFwAAAAEAAAAAAAAABQAAAGIALwBVAHMAZQByAHMALwBtAGEAcgB0AGkAbgAvAGQAZQB2AC8AdABlAHMAdAAvAGMAbwBuAGEAbgAvAGYAZgBtAHAAZQBnAC0AdABlAHMAdAAvAG0AYQBpAG4ALgBjAHAAcAAAABAAbQBhAGkAbgAuAGMAcABwAAAAE0NwcEVkaXRvci5DKytFZGl0b3IAAAAAgAAvAFUAcwBlAHIAcwAvAG0AYQByAHQAaQBuAC8AZABlAHYALwBwAGgAbwBuAGEAdABpAG8AbgBzAC8ASgBvAGsAZQByAC8AbABpAGIAcwAvAFYAaQBkAGUAbwAvAFAAaABWAGkAZABlAG8ARABlAGMAbwBkAGUAcgAuAGMAcABwAAAAJABQAGgAVgBpAGQAZQBvAEQAZQBjAG8AZABlAHIALgBjAHAAcAAAABNDcHBFZGl0b3IuQysrRWRpdG9yAAAAAHwALwBVAHMAZQByAHMALwBtAGEAcgB0AGkAbgAvAGQAZQB2AC8AcABoAG8AbgBhAHQAaQBvAG4AcwAvAEoAbwBrAGUAcgAvAGwAaQBiAHMALwBWAGkAZABlAG8ALwBQAGgAVgBpAGQAZQBvAEQAZQBjAG8AZABlAHIALgBoAAAAIABQAGgAVgBpAGQAZQBvAEQAZQBjAG8AZABlAHIALgBoAAAAE0NwcEVkaXRvci5DKytFZGl0b3IAAAAAYgAvAFUAcwBlAHIAcwAvAG0AYQByAHQAaQBuAC8AZABlAHYALwB0AGUAcwB0AC8AYwBvAG4AYQBuAC8AZgBmAG0AcABlAGcALQB0AGUAcwB0AC8AdABlAHMAdAAuAHAAcgBvAAAAEAB0AGUAcwB0AC4AcAByAG8AAAARUXQ0LnByb0ZpbGVFZGl0b3IAAAAAbgAvAFUAcwBlAHIAcwAvAG0AYQByAHQAaQBuAC8AZABlAHYALwBwAGgAbwBuAGEAdABpAG8AbgBzAC8ASgBvAGsAZQByAC8AbABpAGIAcwAvAFYAaQBkAGUAbwAvAFYAaQBkAGUAbwAuAHAAcgBpAAAAEgBWAGkAZABlAG8ALgBwAHIAaQAAABFRdDQucHJvRmlsZUVkaXRvcgAAAAC9AAAADWN1cnJlbnRlZGl0b3IAAABiAC8AVQBzAGUAcgBzAC8AbQBhAHIAdABpAG4ALwBkAGUAdgAvAHQAZQBzAHQALwBjAG8AbgBhAG4ALwBmAGYAbQBwAGUAZwAtAHQAZQBzAHQALwBtAGEAaQBuAC4AYwBwAHAAAAAmAEMAcABwAEUAZABpAHQAbwByAC4AQwArACsARQBkAGkAdABvAHIAAAAYAAAAAQAAAAEAAAAAAAAAIgAAABIAAAAAAAAAAA==</value>
+ </data>
+ <data>
+  <variable>ProjectDependencies</variable>
+  <valuemap type="QVariantMap"/>
+ </data>
+ <data>
+  <variable>ProjectList</variable>
+  <valuelist type="QVariantList">
+   <value type="QString">/Users/martin/dev/phonations/Joker/app/Joker/Joker.pro</value>
+   <value type="QString">/Users/martin/dev/test/qt/untitled/untitled.pro</value>
+   <value type="QString">/Users/martin/dev/test/conan/ffmpeg-test/test.pro</value>
+  </valuelist>
+ </data>
+ <data>
+  <variable>StartupProject</variable>
+  <value type="QString">/Users/martin/dev/test/conan/ffmpeg-test/test.pro</value>
+ </data>
+ <data>
+  <variable>value-ActiveMode</variable>
+  <value type="QString">Edit</value>
+ </data>
+ <data>
+  <variable>value-Bookmarks</variable>
+  <valuelist type="QVariantList">
+   <value type="QString">:/Users/martin/dev/phonations/Joker/libs/CommonUI/CommonUI.pri:52	</value>
+  </valuelist>
+ </data>
+ <data>
+  <variable>value-Breakpoints</variable>
+  <valuelist type="QVariantList">
+   <valuemap type="QVariantMap">
+    <value type="QString" key="filename">/Users/martin/dev/md/joker/app/Joker/AssetManager.cpp</value>
+    <value type="int" key="linenumber">102</value>
+   </valuemap>
+   <valuemap type="QVariantMap">
+    <value type="QString" key="filename">/Users/martin/dev/md/joker/app/Joker/AssetManager.cpp</value>
+    <value type="int" key="linenumber">161</value>
+   </valuemap>
+   <valuemap type="QVariantMap">
+    <value type="QString" key="filename">/Users/martin/dev/md/joker/app/Joker/AssetManager.cpp</value>
+    <value type="int" key="linenumber">139</value>
+   </valuemap>
+   <valuemap type="QVariantMap">
+    <value type="QString" key="filename">/Users/martin/dev/md/joker/app/Joker/EpisodeManager.cpp</value>
+    <value type="int" key="linenumber">158</value>
+   </valuemap>
+   <valuemap type="QVariantMap">
+    <value type="QString" key="filename">/Users/martin/dev/md/joker/app/Joker/YoudubManager.cpp</value>
+    <value type="int" key="linenumber">161</value>
+   </valuemap>
+   <valuemap type="QVariantMap">
+    <value type="QString" key="filename">/Users/martin/dev/md/joker/app/Joker/YoudubManager.cpp</value>
+    <value type="int" key="linenumber">120</value>
+   </valuemap>
+   <valuemap type="QVariantMap">
+    <value type="QString" key="filename">/Users/martin/dev/md/joker/app/Joker/EpisodeManager.cpp</value>
+    <value type="int" key="linenumber">190</value>
+   </valuemap>
+  </valuelist>
+ </data>
+ <data>
+  <variable>value-DebuggerSeparateWidgetGeometry</variable>
+  <value type="QRect">400x400+0+0</value>
+ </data>
+ <data>
+  <variable>value-DefaultFormats</variable>
+  <valuemap type="QVariantMap"/>
+ </data>
+ <data>
+  <variable>value-IndividualFormats</variable>
+  <valuemap type="QVariantMap"/>
+ </data>
+ <data>
+  <variable>value-ProjectTree.ExpandData</variable>
+  <valuelist type="QVariantList">
+   <valuelist type="QVariantList">
+    <value type="QString">/Users/martin/dev/phonations/Joker/libs/Recording</value>
+    <value type="QString">Headers</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/Users/martin/dev/phonations/Joker/generated/client/client.pri</value>
+    <value type="QString">client</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/Users/martin/dev/phonations/Joker/libs/CommonUI</value>
+    <value type="QString">Sources</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/Users/martin/dev/phonations/Joker/app/Joker</value>
+    <value type="QString">Joker [465-common-youdub-connector-for-joker-and-recordr]</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/Users/martin/dev/phonations/Joker/libs/CommonUI</value>
+    <value type="QString">Headers</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/Users/martin/dev/phonations/Joker/libs/Connector/Connector.pri</value>
+    <value type="QString">Connector</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/Users/martin/dev/test/conan/ffmpeg-test</value>
+    <value type="QString">Sources</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/Users/martin/dev/phonations/Joker/app/Joker</value>
+    <value type="QString">Headers</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/Users/martin/dev/phonations/Joker/libs/Video/Video.pri</value>
+    <value type="QString">Video</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/Users/martin/dev/phonations/Joker/libs/Connector</value>
+    <value type="QString">Sources</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/Users/martin/dev/test/qt/untitled1</value>
+    <value type="QString">Forms</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/Users/martin/dev/test/qt/untitled1</value>
+    <value type="QString">Sources</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/Users/martin/dev/test/qt/untitled1</value>
+    <value type="QString">Headers</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/Users/martin/dev/phonations/Joker/libs/Video</value>
+    <value type="QString">Headers</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/Users/martin/dev/phonations/Joker/generated/client</value>
+    <value type="QString">Sources</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/Users/martin/dev/test/conan/ffmpeg-test/build/conanbuildinfo.pri</value>
+    <value type="QString">conanbuildinfo</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/Users/martin/dev/md/joker/generated/client</value>
+    <value type="QString">Headers</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/Users/martin/dev/md/joker/app/Joker</value>
+    <value type="QString">Sources</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/Users/martin/dev/md/joker/generated/client/client.pri</value>
+    <value type="QString">client</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/Users/martin/dev/phonations/Joker/app/RecordR</value>
+    <value type="QString">RecordR [master]</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/Users/martin/dev/phonations/Joker/libs/Video</value>
+    <value type="QString">Sources</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/Users/martin/dev/phonations/Joker/libs/CommonUI/CommonUI.pri</value>
+    <value type="QString">CommonUI</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/Users/martin/dev/phonations/Joker/libs/Connector</value>
+    <value type="QString">Headers</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/Users/martin/dev/test/qt/untitled1</value>
+    <value type="QString">untitled1 [master]</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/Users/martin/dev/md/joker/app/Joker</value>
+    <value type="QString">Joker [449-stop-downloading-several-files-at-once-2]</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/Users/martin/dev/md/joker/app/Joker</value>
+    <value type="QString">Headers</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/Users/martin/dev/phonations/Joker/generated/client</value>
+    <value type="QString">Headers</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/Users/martin/dev/md/joker/generated/client</value>
+    <value type="QString">Sources</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/Users/martin/dev/test/conan/ffmpeg-test</value>
+    <value type="QString">test [master]</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/Users/martin/dev/phonations/Joker/app/Joker</value>
+    <value type="QString">Joker [master]</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/Users/martin/dev/phonations/Joker/libs/Recording/Recording.pri</value>
+    <value type="QString">Recording</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/Users/martin/dev/phonations/Joker/libs/Api/Api.pri</value>
+    <value type="QString">Api</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/Users/martin/dev/phonations/Joker/app/Joker</value>
+    <value type="QString">Sources</value>
+   </valuelist>
+  </valuelist>
+ </data>
+ <data>
+  <variable>value-TaskWindow.Categories</variable>
+  <valuelist type="QVariantList">
+   <value type="QString">Task.Category.QmlAnalysis</value>
+  </valuelist>
+ </data>
+ <data>
+  <variable>value-TaskWindow.IncludeWarnings</variable>
+  <value type="bool">false</value>
+ </data>
+ <data>
+  <variable>value-Watchers</variable>
+  <valuelist type="QVariantList"/>
+ </data>
+ <data>
+  <variable>valueKeys</variable>
+  <valuelist type="QVariantList">
+   <value type="QString">ActiveMode</value>
+   <value type="QString">Bookmarks</value>
+   <value type="QString">Breakpoints</value>
+   <value type="QString">DebuggerSeparateWidgetGeometry</value>
+   <value type="QString">DefaultFormats</value>
+   <value type="QString">IndividualFormats</value>
+   <value type="QString">ProjectTree.ExpandData</value>
+   <value type="QString">TaskWindow.Categories</value>
+   <value type="QString">TaskWindow.IncludeWarnings</value>
+   <value type="QString">Watchers</value>
+  </valuelist>
+ </data>
+</qtcreator>

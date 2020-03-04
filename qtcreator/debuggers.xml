@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE QtCreatorDebuggers>
+<!-- Written by QtCreator 4.11.1, 2020-03-17T09:57:19. -->
+<qtcreator>
+ <data>
+  <variable>DebuggerItem.0</variable>
+  <valuemap type="QVariantMap">
+   <valuelist type="QVariantList" key="Abis">
+    <value type="QString">x86-unknown-unknown-unknown-unknown</value>
+   </valuelist>
+   <value type="bool" key="AutoDetected">true</value>
+   <value type="QString" key="Binary">/Library/Developer/CommandLineTools/usr/bin/lldb</value>
+   <value type="QString" key="DisplayName">System LLDB at /Library/Developer/CommandLineTools/usr/bin/lldb</value>
+   <value type="int" key="EngineType">256</value>
+   <value type="QString" key="Id">{ac94a691-531a-49a5-97f4-afb7ae632114}</value>
+   <value type="QDateTime" key="LastModified">2019-04-06T02:34:51.000</value>
+   <value type="QString" key="Version">1001.0.13.3
+  Swift-5.0</value>
+   <value type="QString" key="WorkingDirectory"></value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>DebuggerItem.1</variable>
+  <valuemap type="QVariantMap">
+   <valuelist type="QVariantList" key="Abis">
+    <value type="QString">x86-darwin-generic-mach_o-64bit</value>
+   </valuelist>
+   <value type="bool" key="AutoDetected">true</value>
+   <value type="QString" key="Binary">/usr/bin/lldb</value>
+   <value type="QString" key="DisplayName">System LLDB at /usr/bin/lldb</value>
+   <value type="int" key="EngineType">256</value>
+   <value type="QString" key="Id">{7c4f0919-fe08-428f-9661-a13d4f2f7e45}</value>
+   <value type="QDateTime" key="LastModified">2019-07-17T04:55:09.000</value>
+   <value type="QString" key="Version">1100.0.30.12
+Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)</value>
+   <value type="QString" key="WorkingDirectory"></value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>DebuggerItem.2</variable>
+  <valuemap type="QVariantMap">
+   <valuelist type="QVariantList" key="Abis">
+    <value type="QString">x86-darwin-generic-mach_o-64bit</value>
+   </valuelist>
+   <value type="bool" key="AutoDetected">true</value>
+   <value type="QString" key="Binary">/Applications/Xcode.app/Contents/Developer/usr/bin/lldb</value>
+   <value type="QString" key="DisplayName">System LLDB at /Applications/Xcode.app/Contents/Developer/usr/bin/lldb</value>
+   <value type="int" key="EngineType">256</value>
+   <value type="QString" key="Id">{06b44658-09f3-48d6-ac59-0bd0b75e4369}</value>
+   <value type="QDateTime" key="LastModified">2019-12-18T07:51:28.000</value>
+   <value type="QString" key="Version">1100.0.30.12
+Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)</value>
+   <value type="QString" key="WorkingDirectory"></value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>DebuggerItem.Count</variable>
+  <value type="int">3</value>
+ </data>
+ <data>
+  <variable>Version</variable>
+  <value type="int">1</value>
+ </data>
+</qtcreator>
