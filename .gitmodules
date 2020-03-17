@@ -7,3 +7,6 @@
 [submodule "vendors/vim-plug"]
 	path = vendors/vim-plug
 	url = https://github.com/junegunn/vim-plug/
+[submodule "vendors/tig"]
+	path = vendors/tig
+	url = https://github.com/jonas/tig

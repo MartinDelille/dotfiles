@@ -48,6 +48,7 @@ ln -sf $root/vimrc ~/.vimrc
 mkdir -p ~/.vim/autoload
 ln -sf $root/vendors/vim-plug/plug.vim ~/.vim/autoload/plug.vim
 ln -sf $root/ackrc ~/.ackrc
+ln -sf $root/tigrc ~/.tigrc
 
 if [[ "$OSTYPE" == darwin* ]]; then
     ln -sf $root/my.env.plist ~/Library/LaunchAgents/my.env.plist
