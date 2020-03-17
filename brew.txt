@@ -15,6 +15,7 @@ jq
 lcov
 lftp
 libltc
+macvim
 martindelille/tap/aaf
 ncdu
 tldr
