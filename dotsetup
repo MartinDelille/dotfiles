@@ -27,7 +27,7 @@ if [[ "$OSTYPE" == darwin* ]]; then
     echo "### Brew ###"
     command_exists brew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-    brew tap caskroom/versions
+    brew tap homebrew/cask-versions
     brew tap martindelille/tap
     xargs brew install < $root/brew.txt
     xargs brew cask install < $root/cask.txt
