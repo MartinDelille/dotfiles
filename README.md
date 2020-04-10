@@ -24,8 +24,15 @@ My custom dotfiles.
 ## Installation
 
 ```
-$ git clone --recurse-submodules git@github.com:MartinDelille/dotfiles.git ~/.dotfiles
+$ git clone --recurse-submodules https://github.com/martindelille/dotfiles ~/.dotfiles
 $ ~/.dotfiles/dotsetup
+```
+
+## Fish
+
+If you want to use fish you need to add `/usr/local/bin/fish` to `/etc/shells` and run:
+
+```
 $ chsh -s $(which fish)
 $ exit
 ```
