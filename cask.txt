@@ -1,6 +1,5 @@
 1password6
 adoptopenjdk
-angular-console
 appcleaner
 clipy
 daisydisk
@@ -19,8 +18,6 @@ nordvpn
 numi
 qlmarkdown
 qlstephen
-rambox
-skype
 slack
 spotify
 teamviewer8
@@ -29,4 +26,3 @@ tor-browser
 transmission
 visual-studio-code
 vlc
-whatsapp

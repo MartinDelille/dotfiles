@@ -1,5 +1,6 @@
 ack
 aws-sdk-cpp
+boost
 cmake
 coreutils
 create-dmg
@@ -21,6 +22,5 @@ ncdu
 tldr
 uncrustify
 wget
-vim
 youtube-dl
 zaquestion/tap/lab
