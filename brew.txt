@@ -19,6 +19,9 @@ libltc
 macvim
 martindelille/tap/aaf
 ncdu
+pandoc
+qmlfmt
+rtmidi
 tldr
 uncrustify
 wget
