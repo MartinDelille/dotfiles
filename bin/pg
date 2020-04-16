@@ -6,7 +6,7 @@ ip2regex='^[0-9]+[.][0-9]+$'
 ip1regex='^[0-9]+$'
 host=$@
 if [[ $# == 0 ]]; then
-  host="8.8.8.8"
+  host="1.1.1.1"
 elif [[ $@ =~ $ip4regex ]]; then
   host="$@"
 elif [[ $@ =~ $ip3regex ]]; then
