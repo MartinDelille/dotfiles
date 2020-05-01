@@ -17,6 +17,7 @@ set PATH $PATH $QT_DIR/bin
 set -gx GOPATH ~/dev/go
 
 # Path
+set PATH /usr/local/bin $PATH
 set PATH ~/.dotfiles/bin $PATH
 set PATH /usr/local/opt/ruby/bin $PATH
 set PATH (gem environment gemdir)/bin $PATH
