@@ -20,17 +20,17 @@ if [[ "$OSTYPE" == linux* ]]; then
 fi
 
 if [[ "$OSTYPE" == darwin* ]]; then
-  if [[ "$1" == "nobrew" ]];
-  then
-    echo "### Skipping brew packages installation ###"
-  else
+  if [[ "$1" == "brew" ]];
     echo "### Brew ###"
     command_exists brew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-    brew tap homebrew/cask-versions
     brew tap martindelille/tap
     xargs brew install < $root/brew.txt
-    xargs brew cask install < $root/cask.txt
+    if [[ "$1" == "cask" ]];
+      echo "### Cask ###"
+      brew tap homebrew/cask-versions
+      xargs brew cask install < $root/cask.txt
+    fi
   fi
 fi
 
