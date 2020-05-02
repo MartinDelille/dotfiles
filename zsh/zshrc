@@ -16,9 +16,7 @@ antigen bundle supercrabtree/k
 antigen bundle paulirish/git-open
 antigen bundle popstas/zsh-command-time
 
-#antigen theme agnoster
-#antigen theme denysdovhan/spaceship-prompt
-antigen theme Powerlevel9k/powerlevel9k
+antigen theme romkatv/powerlevel10k
 
 antigen apply
 
@@ -62,58 +60,29 @@ SPACESHIP_USER_SHOW="true"
 
 # Powerlevel9K prompt theme
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_medium context dir vcs newline status)
+#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_medium context dir vcs newline status)
 #POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_beer dir vcs newline status)
 #POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_medium custom_freecodecamp dir vcs newline status)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
-POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-POWERLEVEL9K_MODE='nerdfont-complete'
+#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+#POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+#POWERLEVEL9K_MODE='nerdfont-complete'
 
 # Add the custom beer icon prompt segment
-POWERLEVEL9K_CUSTOM_BEER="echo -n '\u1F37A'"
+#POWERLEVEL9K_CUSTOM_BEER="echo -n '\u1F37A'"
 #POWERLEVEL9K_CUSTOM_BEER="black"
 #POWERLEVEL9K_CUSTOM_BEER="white"
 
 # Add the custom Medium M icon prompt segment
-POWERLEVEL9K_CUSTOM_MEDIUM="echo -n '\uF859'"
-POWERLEVEL9K_CUSTOM_MEDIUM_FOREGROUND="black"
-POWERLEVEL9K_CUSTOM_MEDIUM_BACKGROUND="white"
+#POWERLEVEL9K_CUSTOM_MEDIUM="echo -n '\uF859'"
+#POWERLEVEL9K_CUSTOM_MEDIUM_FOREGROUND="black"
+#POWERLEVEL9K_CUSTOM_MEDIUM_BACKGROUND="white"
 
 # Add the custom freeCodeCamp prompt segment
-POWERLEVEL9K_CUSTOM_FREECODECAMP="echo -n '\uE242' freeCodeCamp"
-POWERLEVEL9K_CUSTOM_FREECODECAMP_FOREGROUND="white"
-POWERLEVEL9K_CUSTOM_FREECODECAMP_BACKGROUND="cyan"
-
-# zsh command time setup
-
-# If command execution time above min. time, plugins will not output time.
-ZSH_COMMAND_TIME_MIN_SECONDS=3
-
-# Message to display (set to "" for disable).
-ZSH_COMMAND_TIME_MSG="Execution time: %s sec"
-
-# Message color.
-ZSH_COMMAND_TIME_COLOR="cyan"
-
-zsh_command_time() {
-    if [ -n "$ZSH_COMMAND_TIME" ]; then
-        hours=$(($ZSH_COMMAND_TIME/3600))
-        min=$(($ZSH_COMMAND_TIME/60))
-        sec=$(($ZSH_COMMAND_TIME%60))
-        if [ "$ZSH_COMMAND_TIME" -le 60 ]; then
-            timer_show="$fg[green]$ZSH_COMMAND_TIME s."
-        elif [ "$ZSH_COMMAND_TIME" -gt 60 ] && [ "$ZSH_COMMAND_TIME" -le 180 ]; then
-            timer_show="$fg[yellow]$min min. $sec s."
-        else
-            if [ "$hours" -gt 0 ]; then
-                min=$(($min%60))
-                timer_show="$fg[red]$hours h. $min min. $sec s."
-            else
-                timer_show="$fg[red]$min min. $sec s."
-            fi
-        fi
-        printf "${ZSH_COMMAND_TIME_MSG}\n" "$timer_show"
-    fi
-}
+#POWERLEVEL9K_CUSTOM_FREECODECAMP="echo -n '\uE242' freeCodeCamp"
+#POWERLEVEL9K_CUSTOM_FREECODECAMP_FOREGROUND="white"
+#POWERLEVEL9K_CUSTOM_FREECODECAMP_BACKGROUND="cyan"
 
 [ -f $HOME/.secret ] && source $HOME/.secret ]
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
