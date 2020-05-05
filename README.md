@@ -8,6 +8,10 @@ My custom dotfiles.
 
 ## Features
 
+- Bash script:
+  - `p` allows pinging until the network is up
+  - `freebox` mount the freebox hard drive on `~/freebox`
+  - `franceculture` starts the radio with `ffplay`
 - Fish:
   - Set custom config, shortcuts and functions
 - Git:
