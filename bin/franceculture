@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ffplay "https://stream.radiofrance.fr/franceculture/franceculture_lofi.m3u8"
