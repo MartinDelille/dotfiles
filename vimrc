@@ -82,6 +82,7 @@ Plug 'martindelille/vim-qmake'
 Plug 'djoshea/vim-autoread'
 Plug 'dag/vim-fish'
 Plug 'cespare/vim-toml'
+Plug 'nelsyeung/twig.vim'
 
 call plug#end()
 

@@ -29,3 +29,5 @@
 	binary = true
 [commit]
 	gpgsign = true
+[pull]
+	ff = only

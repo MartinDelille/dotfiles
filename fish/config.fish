@@ -71,6 +71,14 @@ alias lmb="lab mr b"
 alias python=python3
 alias pip=pip3
 alias play="ffplay -autoexit"
+alias sha256sum="openssl dgst -sha256"
+alias §="~/dev/phonations/Joker/build/jkr/Desktop_Qt_5_9_9_clang_64bit/Debug/jkr"
+abbr -a drr defaults read com.phonations.RecordR
+abbr -a dwr defaults write com.phonations.RecordR
+abbr -a drj defaults read com.phonations.Joker
+abbr -a dwj defaults write com.phonations.Joker
+abbr -a qtlog vi ~/Library/Preferences/QtProject/qtlogging.ini
+abbr -a gpvw gh pr view --web
 
 # Functions
 
