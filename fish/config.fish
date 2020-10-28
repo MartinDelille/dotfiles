@@ -64,15 +64,15 @@ alias q="open ~/dev/Qt/Qt\ Creator.app"
 alias n="open ~/Dropbox/notes.md"
 alias pbpc="pbpaste | pbcopy"
 alias ip="ifconfig | grep 'inet '"
-alias o="open"
-alias r="open -R"
-alias f="find . -name"
-alias acki="ack -i"
-alias lmb="lab mr b"
-alias python=python3
-alias pip=pip3
-alias play="ffplay -autoexit"
-alias sha256sum="openssl dgst -sha256"
+abbr -a o open
+abbr -a r open -R
+abbr -a f find . -name
+abbr -a acki ack -i
+abbr -a lmb lab mr browse
+abbr -a python python3
+abbr -a pip pip3
+abbr -a play ffplay -autoexit
+abbr -a sha256sum openssl dgst -sha256
 alias §="~/dev/phonations/Joker/build/jkr/Desktop_Qt_5_9_9_clang_64bit/Debug/jkr"
 abbr -a drr defaults read com.phonations.RecordR
 abbr -a dwr defaults write com.phonations.RecordR
