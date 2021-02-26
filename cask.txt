@@ -1,4 +1,3 @@
-1password6
 adoptopenjdk
 appcleaner
 clipy
@@ -20,7 +19,6 @@ qlmarkdown
 qlstephen
 slack
 spotify
-teamviewer8
 telegram
 tor-browser
 transmission
