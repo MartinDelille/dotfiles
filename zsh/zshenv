@@ -26,8 +26,8 @@ export PATH=~/dev/libs/android-sdk-macosx/tools:~/dev/libs/android-sdk-macosx/pl
 #export PATH=$PATH:$FFMPEG_DEV_PATH/bin
 
 # Qt
-export QTVERSION=5.6.3
-export QTPATH=$HOME/Qt/$QTVERSION/clang_64
+export QTVERSION=5.12.9
+export QTPATH=$HOME/dev/Qt/$QTVERSION/clang_64
 export PATH=$PATH:$QTPATH/bin
 
 # IRC info
@@ -41,7 +41,9 @@ export TERM="xterm-256color"
 
 # Various alias
 alias m="make"
-alias j="cd ~/dev/YouDub/Joker"
+alias python="python3"
+alias j="cd ~/dev/phonations/Joker"
+alias l="ls -lah"
 alias s="cd ~/dev/Lylo/screenr"
 alias y="cd ~/dev/YouDub"
 alias n="open ~/Dropbox/notes.md"
