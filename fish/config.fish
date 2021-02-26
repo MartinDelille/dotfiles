@@ -55,7 +55,7 @@ alias xxx="exit"
 alias l="ls -lah"
 alias p="pgs && say kowabounga"
 alias m="make"
-alias j="cd ~/dev/phonations/joker"
+alias j="cd ~/dev/phonations/core"
 alias lftpj="lftp -u $JOKER_FTP_USER,$JOKER_FTP_PASSWORD $JOKER_FTP_SERVER -e \"set ftp:ssl-allow no;ls\""
 alias d="cd ~/.dotfiles"
 alias s="cd ~/dev/Lylo/screenr"
@@ -74,13 +74,13 @@ abbr -a python python3
 abbr -a pip pip3
 abbr -a play ffplay -autoexit
 abbr -a sha256sum openssl dgst -sha256
-alias §="~/dev/phonations/Joker/build/jkr/Desktop_Qt_5_9_9_clang_64bit/Debug/jkr"
+abbr -a § "~/dev/phonations/build/jkr/Desktop_Qt_5_12_9_clang_64bit/Debug/jkr"
 abbr -a drr defaults read com.phonations.RecordR
 abbr -a dwr defaults write com.phonations.RecordR
 abbr -a drj defaults read com.phonations.Joker
 abbr -a dwj defaults write com.phonations.Joker
 abbr -a qtlog vi ~/Library/Preferences/QtProject/qtlogging.ini
-abbr -a gpvw gh pr view --web
+abbr -a ghprb gh pr view --web
 
 # Functions
 
