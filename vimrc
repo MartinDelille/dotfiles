@@ -65,7 +65,6 @@ Plug 'digitaltoad/vim-pug'
 Plug 'editorconfig/editorconfig-vim'
 " Plug 'joonty/vdebug'
 Plug 'scrooloose/nerdtree'
-Plug 'acoustichero/goldenrod.vim'
 Plug 'chr4/nginx.vim'
 Plug 'keith/swift.vim'
 Plug 'dag/vim-fish'
@@ -83,6 +82,7 @@ Plug 'djoshea/vim-autoread'
 Plug 'dag/vim-fish'
 Plug 'cespare/vim-toml'
 Plug 'nelsyeung/twig.vim'
+Plug 'lilyinstarlight/vim-sonic-pi'
 
 call plug#end()
 
