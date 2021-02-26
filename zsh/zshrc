@@ -8,24 +8,20 @@ fi
 #zmodload zsh/zprof
 
 fpath=(${HOME}/.dotfiles/functions $fpath)
-source $HOME/.dotfiles/vendors/antigen/antigen.zsh
 
-antigen use oh-my-zsh
+export ZPLUG_HOME=${HOME}/.dotfiles/vendors/zplug
+source $ZPLUG_HOME/init.zsh
 
-antigen bundle git
-antigen bundle osx
-antigen bundle sudo
+zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/osx", from:oh-my-zsh
 
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle supercrabtree/k
-antigen bundle paulirish/git-open
-antigen bundle popstas/zsh-command-time
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-autosuggestions"
 
-antigen theme romkatv/powerlevel10k
+zplug "romkatv/powerlevel10k", as:theme
 
-antigen apply
+zplug load
 
 # Uncomment the following line to disable auto-setting terminal title.
 #DISABLE_AUTO_TITLE="true"
