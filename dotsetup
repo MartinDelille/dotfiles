@@ -34,6 +34,7 @@ fi
 
 echo "### Updating dotfiles ###"
 git -C $root pull
+git -C $root submodule update --init
 
 echo "### Linking configuration ###"
 ln -sf $root/zsh/zshrc ~/.zshrc
