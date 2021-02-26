@@ -67,11 +67,11 @@ alias lmb="lab mr b"
 
 ## Sourcing OS-specific things
 OS=$(uname -s); export OS
-if [[ -f ~/.dotfiles/zsh/zsh.${OS} ]]; then
+if [[ -f ~/.dotfiles/zsh/${OS}.zsh ]]; then
     if [[ ! -z $ZSHDEBUG ]]; then
-        echo +++ ~/.dotfiles/zsh/zsh.${OS}
+        echo +++ ~/.dotfiles/zsh/${OS}.zsh
     fi
-    source ~/.dotfiles/zsh/zsh.${OS}
+    source ~/.dotfiles/zsh/${OS}.zsh
 fi
 
 # Color
