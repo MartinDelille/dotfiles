@@ -15,6 +15,8 @@ export PATH=~/tools/cov-analysis-macosx-7.7.0.4/bin:$PATH
 export GOPATH=~/dev/go
 #export GOROOT=/usr/local/opt/go
 export PATH=$GOROOT/libexec/bin:$GOPATH/bin:$PATH
+# Node
+export PATH=/usr/local/opt/node@14/bin:$PATH
 # Git
 export GIT_CREDENTIAL="cache --timeout=3600"
 # Gisty
@@ -44,8 +46,7 @@ alias m="make"
 alias python="python3"
 alias j="cd ~/dev/phonations/Joker"
 alias l="ls -lah"
-alias s="cd ~/dev/Lylo/screenr"
-alias y="cd ~/dev/YouDub"
+alias d="cd ~/.dotfiles"
 alias n="open ~/Dropbox/notes.md"
 alias pbpc="pbpaste | pbcopy"
 alias ip="ifconfig | grep 'inet '"
@@ -57,13 +58,18 @@ alias ovh="ssh ovh.phonations.com"
 alias chrome="open -a /Applications/Google\ Chrome.app"
 alias gap="ga -p"
 alias x="exit"
-alias q="exit"
 alias o="open"
 alias or="open -R"
 #alias ls="colorls --dark --sort-dirs --report"
 #alias lc="colorls --tree --dark"
 alias f="find . -name"
 alias lmb="lab mr b"
+alias play="ffplay -autoexit"
+alias drr="defaults read com.phonations.RecordR"
+alias dwr="defaults write com.phonations.RecordR"
+alias drj="defaults read com.phonations.Joker"
+alias dwj="defaults write com.phonations.Joker"
+alias ghprb="gh pr view --web"
 
 ## Sourcing OS-specific things
 OS=$(uname -s); export OS
@@ -83,3 +89,11 @@ mag=$'\e[1;35m'
 cyn=$'\e[1;36m'
 white=$'\e[0m'
 
+function md {
+  mkdir $1 && cd $1
+}
+
+function pdf {
+  vared -p 'Output file name ? ' -c output
+  gs -q -sPAPERSIZE=letter -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=$output.pdf $@
+}

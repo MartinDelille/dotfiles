@@ -14,10 +14,9 @@ source $ZPLUG_HOME/init.zsh
 
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/osx", from:oh-my-zsh
+zplug "lib/completion", from:oh-my-zsh
 
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-autosuggestions"
 
 zplug "romkatv/powerlevel10k", as:theme
 
@@ -37,13 +36,19 @@ export LC_NUMERIC="en_US.UTF-8"
 export LC_TIME="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
-# NPM completion
-if [ -f '/usr/local/bin/npm' ]; then source <(npm completion); fi
-#eval "$(gulp --completion=zsh)"
-
 #zprof
 
 [ -f $HOME/.secret ] && source $HOME/.secret ]
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# To customize prompt, run `p10k configure` or edit p10k.zsh.
+source ~/.dotfiles/zsh/p10k.zsh
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Make Ctrl+e accept autosuggestion
+bindkey '^e' autosuggest-accept
+
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+setopt autocd
