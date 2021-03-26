@@ -7,6 +7,10 @@
 	email = martin@delille.org
 	username = MartinDelille
 	signingkey = 9E8539581F123D43
+[includeIf "gitdir:~/dev/phonations/**/.git"]
+	path = ~/.dotfiles/git/lylo
+[includeIf "gitdir:~/dev/youdub/**/.git"]
+	path = ~/.dotfiles/git/lylo
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
