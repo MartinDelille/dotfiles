@@ -21,7 +21,6 @@ export PATH=/usr/local/opt/node@14/bin:$PATH
 export GIT_CREDENTIAL="cache --timeout=3600"
 # Gisty
 export GISTY_DIR=~/dev/gists
-#export GISTY_ACCESS_TOKEN= I don't want to publish that
 # Android utility
 export PATH=~/dev/libs/android-sdk-macosx/tools:~/dev/libs/android-sdk-macosx/platform-tools:$PATH
 # FFMpeg
@@ -96,4 +95,12 @@ function md {
 function pdf {
   vared -p 'Output file name ? ' -c output
   gs -q -sPAPERSIZE=letter -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=$output.pdf $@
+}
+
+function dfs {
+  vared -p 'Application ? ' -ch app
+  vared -p 'Setting ? ' -ch setting
+  vared -p 'Value ? ' -ch value
+  defaults write com.phonations.$app $setting $value
+  defaults read com.phonations.$app
 }
