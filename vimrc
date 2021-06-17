@@ -104,3 +104,4 @@ if isdirectory(expand("~/.vim/plugged/goldenrod.vim"))
 end
 
 au BufReadPost conanfile.txt set syntax=toml
+autocmd BufNewFile,BufRead *.recordr set syntax=yaml

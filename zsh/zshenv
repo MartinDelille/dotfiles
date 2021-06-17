@@ -5,8 +5,6 @@ export DEFAULT_USER=`whoami`
 export PATH=$PATH:$HOME/.dotfiles/bin
 # Homebrew
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-# Python
-export PATH=/usr/local/opt/python/libexec/bin:$PATH
 # Ruby
 export PATH=/usr/local/opt/ruby/bin:$PATH
 # Coverity tools
@@ -27,7 +25,7 @@ export PATH=~/dev/libs/android-sdk-macosx/tools:~/dev/libs/android-sdk-macosx/pl
 #export PATH=$PATH:$FFMPEG_DEV_PATH/bin
 
 # Qt
-export QTVERSION=5.12.9
+export QTVERSION=5.15.2
 export QTPATH=$HOME/dev/Qt/$QTVERSION/clang_64
 export PATH=$PATH:$QTPATH/bin
 
@@ -57,6 +55,9 @@ alias ovh="ssh ovh.phonations.com"
 alias chrome="open -a /Applications/Google\ Chrome.app"
 alias gap="ga -p"
 alias x="exit"
+alias xx="exit"
+alias xxx="exit"
+alias xxxx="exit"
 alias o="open"
 alias or="open -R"
 #alias ls="colorls --dark --sort-dirs --report"

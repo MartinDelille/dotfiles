@@ -7,6 +7,7 @@ alias q="open $HOME/dev/Qt/Qt\ Creator.app"
 alias b="brew"
 alias bo="HOMEBREW_NO_AUTO_UPDATE=1 pgs && brew"
 alias qtlog="vi ~/Library/Preferences/QtProject/qtlogging.ini"
+alias grvc="git rev-parse --short head | tr -d '\n' | pbcopy"
 
 #eval "$(docker-machine env default)"
 

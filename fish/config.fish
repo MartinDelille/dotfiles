@@ -34,7 +34,7 @@ if test (uname -s) = "Darwin"
   set -gx PATH /usr/local/opt/gnu-sed/libexec/gnubin $PATH
   set -gx PATH ~/Library/Python/3.8/bin $PATH
   abbr -a gmt git mergetool --no-prompt --tool=opendiff
-  abbr -a grvpc "git rev-parse --short head | tr -d '\n' | pbcopy"
+  abbr -a grvc "git rev-parse --short head | tr -d '\n' | pbcopy"
 end
 
 # Other environment variables
