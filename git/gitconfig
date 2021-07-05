@@ -6,7 +6,7 @@
 	name = Martin Delille
 	email = martin@delille.org
 	username = MartinDelille
-	signingkey = 9E8539581F123D43
+	signingkey = C073D887B6E32DE5
 [includeIf "gitdir:~/dev/phonations/**/.git"]
 	path = ~/.dotfiles/git/lylo
 [includeIf "gitdir:~/dev/youdub/**/.git"]
