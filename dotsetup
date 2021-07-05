@@ -39,7 +39,6 @@ git -C $root submodule update --init
 echo "### Linking configuration ###"
 ln -sf $root/zsh/zshrc ~/.zshrc
 ln -sf $root/zsh/zshenv ~/.zshenv
-ln -sf $root/zsh/p10k.zsh ~/.p10k.zsh
 mkdir -p ~/.config/fish
 ln -sf $root/fish/config.fish ~/.config/fish/config.fish
 ln -sf $root/git/gitconfig ~/.gitconfig
