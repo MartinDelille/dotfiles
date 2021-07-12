@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Written on Thu Feb 13 12:22:35 2020 by Qt Creator 4.11.0-->
+<externaltool id="Doxygen">
+    <description>Check code is well documented</description>
+    <displayname>Doxygen</displayname>
+    <category></category>
+    <executable output="showinpane" error="showinpane" modifiesdocument="no">
+        <path>/Users/martin/dev/md/joker/scripts/doxygen.sh</path>
+        <workingdirectory>/Users/martin/dev/md/joker</workingdirectory>
+    </executable>
+</externaltool>
