@@ -101,3 +101,4 @@ au BufReadPost conanfile.txt set syntax=toml
 autocmd BufNewFile,BufRead *.recordr set syntax=yaml
 autocmd BufNewFile,BufRead *.ttal set syntax=json
 autocmd BufNewFile,BufRead *.vcv set syntax=json
+autocmd BufNewFile,BufRead *.qss set syntax=css
