@@ -37,6 +37,7 @@ export GPG_TTY=$(tty)
 # Other
 export HOMEBREW_EDITOR=vi
 export TERM="xterm-256color"
+export CONAN_HOOK_ERROR_LEVEL=40
 
 # Various alias
 alias m="make"
