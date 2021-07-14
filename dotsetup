@@ -41,8 +41,8 @@ ln -sf $root/zsh/zshrc ~/.zshrc
 ln -sf $root/zsh/zshenv ~/.zshenv
 mkdir -p ~/.config/fish
 ln -sf $root/fish/config.fish ~/.config/fish/config.fish
-ln -sf $root/git/gitconfig ~/.gitconfig
-ln -sf $root/git/gitignore ~/.gitignore
+ln -sf $root/git/config ~/.gitconfig
+ln -sf $root/git/ignore ~/.gitignore
 ln -sf $root/vimrc ~/.vimrc
 mkdir -p ~/.vim/autoload
 ln -sf $root/vendors/vim-plug/plug.vim ~/.vim/autoload/plug.vim
