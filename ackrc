@@ -5,4 +5,5 @@
   --ignore-directory=is:Carthage
   --ignore-directory=is:dist
   --type-add=qt:ext:pro,pri
-  --type-add=user:ext:user
+  --ignore-file=ext:user
+  --ignore-file=ext:orig
