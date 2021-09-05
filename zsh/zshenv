@@ -41,10 +41,10 @@ export CONAN_HOOK_ERROR_LEVEL=40
 
 # Various alias
 alias m="make"
-alias python="python3"
 alias j="cd ~/dev/phonations/Joker"
 alias l="ls -lah"
 alias d="cd ~/.dotfiles"
+alias cci="cd ~/dev/conan/cci/recipes"
 alias pbpc="pbpaste | pbcopy"
 alias ip="ifconfig | grep 'inet '"
 alias ccat="pygmentize -g"
