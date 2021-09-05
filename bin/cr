@@ -15,7 +15,7 @@ if (len(sys.argv) == 1):
 else:
     for arg in sys.argv:
         if first == 0:
-            text += os.path.abspath(arg) + "\n"
+            text += os.path.relpath(arg) + "\n"
         first = 0
     text = text[:-1]
 
