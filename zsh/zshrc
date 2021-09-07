@@ -72,6 +72,11 @@ setopt hist_ignore_space
 setopt autocd
 export PATH=/usr/local/opt/ruby/bin:$PATH
 
+# Python / pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+
 eval "$(pyenv init -)"
 
 # Make sure to restart your entire logon session
