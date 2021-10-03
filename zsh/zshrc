@@ -12,8 +12,10 @@ fpath=(${HOME}/.dotfiles/functions $fpath)
 export ZPLUG_HOME=${HOME}/.dotfiles/vendors/zplug
 source $ZPLUG_HOME/init.zsh
 
-zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/osx", from:oh-my-zsh
+#zplug "plugins/git", from:oh-my-zsh
+#zplug "~/dev/clone/ohmyzsh/plugins/git", from:local
+zplug "martindelille/ohmyzsh", use:plugins/git, at:add-glom-and-gcfx
 
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-completions"
@@ -23,10 +25,7 @@ zplug "romkatv/powerlevel10k", as:theme
 zplug "kutsan/zsh-system-clipboard"
 
 if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
+  zplug install
 fi
 
 zplug load
