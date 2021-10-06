@@ -1,4 +1,4 @@
-Invoke-BatchFile 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsx86_amd64.bat'
+#Invoke-BatchFile 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsx86_amd64.bat'
 
 Set-PSReadLineOption -EditMode Vi
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
@@ -30,16 +30,23 @@ Set-Alias l ls
 Set-Alias m jom
 Set-Alias o ii
 
-Function d {
-  Set-Location -Path ~/dev/md/dotfiles
-}
+Function d { Set-Location -Path ~/dev/md/dotfiles }
+Function j { Set-Location -Path ~/dev/phonations/core }
+Function cci { Set-Location -Path ~/dev/clone/conan-center-index/recipes }
+Function lmb { lab mr b }
+Function glom { git log --oneline --decorate --color master.. $args }
+Function grbmi { git rebase master --interactive }
+Function grbmia { git rebase master --interactive --autosquash }
+Function gcfx($sha) { git commit --fixup $sha }
+Function gsuri { git submodule update --recursive --init }
+Function ghprb { gh pr view --web }
+Function mcd ($path) { md $path;cd $path }
+Function qtlog { vi ~/AppData/Local/QtProject/qtlogging.ini }
 
-Function cci {
-  Set-Location -Path ~/dev/clone/conan-center-index/recipes
-}
+~/.secret.ps1
 
-Function mcd ($path) {
-  md $path;cd $path
+Function pong ($message = "pong") {
+  python $Env:MATTERMOST_SCRIPT $Env:MATTERMOST_BOT_USER $Env:MATTERMOST_BOT_PASSWORD $Env:MATTERMOST_CHANNEL $message
 }
 
 Import-Module posh-git
