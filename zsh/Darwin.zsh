@@ -14,6 +14,8 @@ alias bo="HOMEBREW_NO_AUTO_UPDATE=1 pgs && brew"
 alias qtlog="vi ~/Library/Preferences/QtProject/qtlogging.ini"
 alias grvc="git rev-parse --short head | tr -d '\n' | pbcopy"
 alias s="cd ~/Library/Application\ Support"
+alias defr="defaults read"
+alias defw="defaults write"
 
 #eval "$(docker-machine env default)"
 
@@ -24,4 +26,9 @@ export MAVEN_OPTS="-Xmx512m"
 
 function pbc {
   cat $1 | pbcopy
+}
+
+function pbsha {
+  git log --oneline --decorate -n 1 $1
+  git log --format=format:%H -n 1 $1 | pbcopy
 }
