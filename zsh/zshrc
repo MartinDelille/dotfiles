@@ -41,8 +41,6 @@ znap eval iterm2 'curl -fsSL https://iterm2.com/shell_integration/zsh'
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
 
-source "${HOME}/.dotfiles/zsh/iterm2_shell_integration.zsh"
-
 #zprof
 
 [ -f $HOME/.secret ] && source $HOME/.secret ]
