@@ -48,7 +48,6 @@ alias ip="ifconfig | grep 'inet '"
 alias ccat="pygmentize -g"
 alias p="pgs && say kowabounga"
 alias acki="ack -i"
-alias ovh="ssh ovh.phonations.com"
 alias gap="ga -p"
 alias x="exit"
 alias xx="exit"
@@ -59,10 +58,10 @@ alias xxxx="exit"
 alias f="find . -name"
 alias lmb="lab mr b"
 alias play="ffplay -autoexit"
-alias drr="defaults read com.phonations.RecordR"
-alias dwr="defaults write com.phonations.RecordR"
-alias drj="defaults read com.phonations.Joker"
-alias dwj="defaults write com.phonations.Joker"
+alias drr="defaults read tv.lylo.RecordR"
+alias dwr="defaults write tv.lylo.RecordR"
+alias drj="defaults read tv.lylo.Joker"
+alias dwj="defaults write tv.lylo.Joker"
 alias ghprb="gh pr view --web"
 
 ## Sourcing OS-specific things
@@ -96,6 +95,6 @@ function dfs {
   vared -p 'Application ? ' -ch app
   vared -p 'Setting ? ' -ch setting
   vared -p 'Value ? ' -ch value
-  defaults write com.phonations.$app $setting $value
-  defaults read com.phonations.$app
+  defaults write tv.lylo.$app $setting $value
+  defaults read tv.lylo.$app
 }
