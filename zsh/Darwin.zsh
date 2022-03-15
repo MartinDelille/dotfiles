@@ -16,6 +16,12 @@ alias grvc="git rev-parse --short head | tr -d '\n' | pbcopy"
 alias s="cd ~/Library/Application\ Support"
 alias defr="defaults read"
 alias defw="defaults write"
+alias drr="defaults read tv.lylo.RecordR"
+alias dwr="defaults write tv.lylo.RecordR"
+alias drj="defaults read tv.lylo.JokeR"
+alias dwj="defaults write tv.lylo.JokeR"
+alias dr§="defaults read tv.lylo.SilcroW"
+alias dw§="defaults write tv.lylo.SilcroW"
 
 #eval "$(docker-machine env default)"
 

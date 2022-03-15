@@ -58,10 +58,6 @@ alias xxxx="exit"
 alias f="find . -name"
 alias lmb="lab mr b"
 alias play="ffplay -autoexit"
-alias drr="defaults read tv.lylo.RecordR"
-alias dwr="defaults write tv.lylo.RecordR"
-alias drj="defaults read tv.lylo.Joker"
-alias dwj="defaults write tv.lylo.Joker"
 alias ghprb="gh pr view --web"
 
 ## Sourcing OS-specific things
