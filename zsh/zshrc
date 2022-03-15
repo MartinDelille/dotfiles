@@ -67,21 +67,3 @@ znap eval rbenv 'rbenv init - zsh'
 # export PATH="$PYENV_ROOT/bin:$PATH"
 # znap eval pyenvpath 'pyenv init --path'
 # znap eval pyenv 'pyenv init -'
-
-# Make sure to restart your entire logon session
-# for changes to profile files to take effect.
-
-# fshow - git commit browser
-# source: https://junegunn.kr/2015/03/browsing-git-commits-with-fzf
-fshow() {
-  local out sha q
-  while out=$(
-      git log --graph --color=always \
-          --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
-      fzf --ansi --multi --no-sort --reverse --query="$q" --print-query); do
-    q=$(head -1 <<< "$out")
-    while read sha; do
-      git show --color=always $sha | less -R
-    done < <(sed '1d;s/^[^a-z0-9]*//;/^$/d' <<< "$out" | awk '{print $1}')
-  done
-}
