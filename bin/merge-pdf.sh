@@ -7,6 +7,6 @@ if [ "$#" -ge 8 ]; then
   exit 1
 else
   #ffmpeg -i $1 -c:v mjpeg -q:v 5 -metadata timecode=$4 -r $3 $2
-  gs -q -sPAPERSIZE=letter -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=$1 $2 $3 $4 $5 $6 $7 $8
+  /usr/local/opt/ghostscript/bin/gs -q -sPAPERSIZE=letter -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=$1 $2 $3 $4 $5 $6 $7 $8
 fi
 
