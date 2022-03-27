@@ -5,6 +5,7 @@
   --ignore-directory=is:Vendors
   --ignore-directory=is:Carthage
   --ignore-directory=is:dist
+  --ignore-directory=is:.jekyll-cache
   --type-add=qt:ext:pro,pri
   --ignore-file=ext:user
   --ignore-file=ext:orig

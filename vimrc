@@ -78,6 +78,7 @@ Plug 'cespare/vim-toml'
 Plug 'nelsyeung/twig.vim'
 Plug 'lilyinstarlight/vim-sonic-pi'
 Plug 'vhdirk/vim-cmake'
+Plug 'tpope/vim-liquid'
 
 call plug#end()
 
