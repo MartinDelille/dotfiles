@@ -22,8 +22,6 @@ My custom dotfiles.
   - [Commit signing](git/README.md#signing-commit)
 - Vim:
   - Set custom config and plugin (with <https://github.com/junegunn/vim-plug>)
-- MacOS:
-  - [Global environment variable](my.env.plist)
 
 ## Installation
 
