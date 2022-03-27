@@ -13,8 +13,8 @@ fpath=(${HOME}/.dotfiles/functions $fpath)
 
 # Download Znap, if it's not there yet.
 [[ -f ~/dev/clone/zsh-snap/znap.zsh ]] ||
-    git clone --depth 1 -- \
-        https://github.com/marlonrichert/zsh-snap.git ~/dev/clone/zsh-snap
+  git clone --depth 1 -- \
+  https://github.com/marlonrichert/zsh-snap.git ~/dev/clone/zsh-snap
 
 source ~/dev/clone/zsh-snap/znap.zsh  # Start Znap
 
