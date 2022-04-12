@@ -9,10 +9,6 @@
 	email = martin@delille.org
 	username = MartinDelille
 	signingkey = C073D887B6E32DE5
-[includeIf "gitdir:~/dev/phonations/**/.git"]
-	path = ~/.dotfiles/git/lylo
-[includeIf "gitdir:~/dev/youdub/**/.git"]
-	path = ~/.dotfiles/git/lylo
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
@@ -20,7 +16,6 @@
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore
-	pager = diff-so-fancy | less --tabs=4 -RFX
 [push]
 	default = simple
 [gitopen "gitlab"]
@@ -31,9 +26,6 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[diff "scpt"]
-	textconv = osadecompile
-	binary = true
 [commit]
 	gpgsign = true
 [pull]
@@ -42,3 +34,7 @@
 	diffFilter = diff-so-fancy --patch
 [init]
 	defaultBranch = main
+[includeIf "gitdir:C:/**/.git"]
+  path = "~/dev/md/dotfiles/git/windows"
+[includeIf "gitdir:/Users/**/.git"]
+  path = ~/.dotfiles/git/macos
