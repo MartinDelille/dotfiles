@@ -2,6 +2,8 @@
 
 Set-PSReadLineOption -EditMode Vi
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
+Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
+Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
 
 # Dracula readline configuration. Requires version 2.0, if you have 1.2 convert to `Set-PSReadlineOption -TokenType`
 Set-PSReadlineOption -Color @{
@@ -28,11 +30,15 @@ Set-PSReadlineOption -Color @{
 Set-Alias which get-command
 Set-Alias l ls
 Set-Alias m jom
+Set-Alias make jom
 Set-Alias o ii
+Set-Alias clear cls
 
+Function c ($path) { Set-Clipboard ((Get-Item $path).FullName) }
 Function d { Set-Location -Path ~/dev/md/dotfiles }
 Function j { Set-Location -Path ~/dev/phonations/core }
-Function cci { Set-Location -Path ~/dev/clone/conan-center-index/recipes }
+Function cci { Set-Location -Path ~/dev/clone/cci/recipes }
+Function hex($file) { hexdump -C $file | more }
 Function lmb { lab mr b }
 Function glom { git log --oneline --decorate --color master.. $args }
 Function grbmi { git rebase master --interactive }
@@ -51,7 +57,7 @@ Function pong ($message = "pong") {
 
 Import-Module posh-git
 
-$Env:CONAN_TRACE_FILE = "C:\Users\marti\dev\clone\conan-center-index\recipes\log.txt"
+$Env:CONAN_TRACE_FILE = "C:\Users\marti\dev\clone\cci\recipes\log.txt"
 $Env:CONAN_PRINT_RUN_COMMANDS  = 1
 
-cd ~
+cd ~/dev/phonations
