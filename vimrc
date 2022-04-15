@@ -13,6 +13,10 @@ let mapleader = ","
 map <Leader>m :!clear;make<Enter>
 map <Leader>t :!clear;make test<Enter>
 map <Leader>n :NERDTree<Enter>
+if has('windows')
+  map <Leader>m :!jom<Enter>
+  map <Leader>t :!jom test<Enter>
+endif
 set relativenumber
 set wildignorecase
 set clipboard=unnamed
