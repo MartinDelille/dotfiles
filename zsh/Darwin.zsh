@@ -22,8 +22,7 @@ alias drj="defaults read tv.lylo.JokeR"
 alias dwj="defaults write tv.lylo.JokeR"
 alias dr§="defaults read tv.lylo.SilcroW"
 alias dw§="defaults write tv.lylo.SilcroW"
-
-#eval "$(docker-machine env default)"
+alias lci="lab ci trace;say $(basename $(pwd))"
 
 # Java
 export JAVA_HOME=`/usr/libexec/java_home`
