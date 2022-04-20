@@ -6,12 +6,9 @@
 	path = ~/dev/md/dotfiles/git/lylo
 [core]
 	editor = nvim
-	pager = perl C:/Users/marti/dev/md/dotfiles/vendors/diff-so-fancy/diff-so-fancy | less --tabs=4 -RFX
 	autocrlf = input
 	compression = 0
 	symlinks = true
-[interactive]
-	diffFilter = perl C:/Users/marti/dev/md/dotfiles/vendors/diff-so-fancy/diff-so-fancy --patch
 [gpg]
 	program = C:\\Program Files (x86)\\GnuPG\\bin\\gpg.exe
 [credential "helperselector"]
