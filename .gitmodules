@@ -7,6 +7,3 @@
 [submodule "vendors/zplug"]
 	path = vendors/zplug
 	url = https://github.com/zplug/zplug/
-[submodule "vendors/diff-so-fancy"]
-	path = vendors/diff-so-fancy
-	url = https://github.com/so-fancy/diff-so-fancy
