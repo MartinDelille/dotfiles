@@ -34,7 +34,3 @@
 	diffFilter = diff-so-fancy --patch
 [init]
 	defaultBranch = main
-[includeIf "gitdir:C:/**/.git"]
-  path = "~/dev/md/dotfiles/git/windows"
-[includeIf "gitdir:/Users/**/.git"]
-  path = ~/.dotfiles/git/macos

@@ -57,7 +57,6 @@ Function pong ($message = "pong") {
 
 Import-Module posh-git
 
-$Env:CONAN_TRACE_FILE = "C:\Users\marti\dev\clone\cci\recipes\log.txt"
+$Env:CONAN_TRACE_FILE = "~/dev/clone/cci/recipes/log.txt"
 $Env:CONAN_PRINT_RUN_COMMANDS  = 1
-
 cd ~/dev/phonations

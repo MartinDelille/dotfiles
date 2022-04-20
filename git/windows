@@ -1,9 +1,9 @@
 # vim: set filetype=dosini:
 
-[includeIf "gitdir:~/dev/phonations/**/.git"]
-	path = C:/Users/marti/dev/md/dotfiles/git/lylo
-[includeIf "gitdir:~/dev/youdub/**/.git"]
-	path = C:/Users/marti/dev/md/dotfiles/git/lylo
+[includeIf "gitdir:~/dev/phonations/**/"]
+	path = ~/dev/md/dotfiles/git/lylo
+[includeIf "gitdir:~/dev/youdub/**/"]
+	path = ~/dev/md/dotfiles/git/lylo
 [core]
 	editor = nvim
 	pager = perl C:/Users/marti/dev/md/dotfiles/vendors/diff-so-fancy/diff-so-fancy | less --tabs=4 -RFX
