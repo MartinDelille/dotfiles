@@ -7,4 +7,4 @@ New-Item -Force -ItemType SymbolicLink -Path $Env:XDG_CONFIG_HOME/git -Value $ro
 
 scoop install diff-so-fancy
 
-vim +PlugClean +PlugInstall +PlugUpdate +qall
+vim +PlugInstall +PlugUpdate +qall
