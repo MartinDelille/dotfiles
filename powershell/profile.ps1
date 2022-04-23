@@ -40,11 +40,6 @@ Function j { Set-Location -Path ~/dev/phonations/core }
 Function cci { Set-Location -Path ~/dev/clone/cci/recipes }
 Function hex($file) { hexdump -C $file | more }
 Function lmb { lab mr b }
-Function glom { git log --oneline --decorate --color master.. $args }
-Function grbmi { git rebase master --interactive }
-Function grbmia { git rebase master --interactive --autosquash }
-Function gcfx($sha) { git commit --fixup $sha }
-Function gsuri { git submodule update --recursive --init }
 Function ghprb { gh pr view --web }
 Function mcd ($path) { md $path;cd $path }
 Function qtlog { vi ~/AppData/Local/QtProject/qtlogging.ini }
@@ -57,6 +52,21 @@ Function pong ($message = "pong") {
 
 Import-Module git-aliases -DisableNameChecking
 Import-Module posh-git
+
+Function glom {
+  $MainBranch = Get-Git-MainBranch
+  git log --oneline --decorate --color "${MainBranch}.." $args
+}
+Function grbmi {
+  $MainBranch = Get-Git-MainBranch
+  git rebase $MainBranch --interactive
+}
+Function grbmia {
+  $MainBranch = Get-Git-MainBranch
+  git rebase $MainBranch --interactive --autosquash
+}
+Function gcfx($sha) { git commit --fixup $sha }
+Function gsuri { git submodule update --recursive --init }
 
 $Env:CONAN_TRACE_FILE = "~/dev/clone/cci/recipes/log.txt"
 $Env:CONAN_PRINT_RUN_COMMANDS  = 1
