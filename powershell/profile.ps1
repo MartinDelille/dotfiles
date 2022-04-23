@@ -55,6 +55,7 @@ Function pong ($message = "pong") {
   python $Env:MATTERMOST_SCRIPT $Env:MATTERMOST_BOT_USER $Env:MATTERMOST_BOT_PASSWORD $Env:MATTERMOST_CHANNEL $message
 }
 
+Import-Module git-aliases -DisableNameChecking
 Import-Module posh-git
 
 $Env:CONAN_TRACE_FILE = "~/dev/clone/cci/recipes/log.txt"
