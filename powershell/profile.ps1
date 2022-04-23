@@ -32,7 +32,6 @@ Set-Alias l ls
 Set-Alias m jom
 Set-Alias make jom
 Set-Alias o ii
-Set-Alias clear cls
 
 Function c ($path) { Set-Clipboard ((Get-Item $path).FullName) }
 Function d { Set-Location -Path ~/dev/md/dotfiles }
