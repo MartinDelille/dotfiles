@@ -33,6 +33,7 @@ Set-Alias m jom
 Set-Alias make jom
 Set-Alias o ii
 
+Function x { exit 0 }
 Function c ($path) { Set-Clipboard ((Get-Item $path).FullName) }
 Function d { Set-Location -Path ~/dev/md/dotfiles }
 Function j { Set-Location -Path ~/dev/phonations/core }
