@@ -1,0 +1,24 @@
+#!/bin/bash
+
+set -e
+
+checkVar() {
+  if [ -z "$2" ];
+  then
+    echo Please provide the $1 environment variable
+    return 1
+  fi
+}
+
+checkVar "MATTERMOST_SCRIPT" $MATTERMOST_SCRIPT
+checkVar "MATTERMOST_BOT_USER" $MATTERMOST_BOT_USER
+checkVar "MATTERMOST_BOT_PASSWORD" $MATTERMOST_BOT_PASSWORD
+checkVar "MATTERMOST_CHANNEL" $MATTERMOST_CHANNEL
+
+message=$1
+if [ -z "$message" ];
+then
+  message="pong"
+fi
+
+python3 $MATTERMOST_SCRIPT $MATTERMOST_BOT_USER $MATTERMOST_BOT_PASSWORD $MATTERMOST_CHANNEL "$message"
