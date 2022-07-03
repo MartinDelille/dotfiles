@@ -17,7 +17,6 @@ lcov
 lftp
 libltc
 macvim
-martindelille/tap/aaf
 ncdu
 pandoc
 qmlfmt
