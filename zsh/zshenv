@@ -59,7 +59,6 @@ alias f="find . -name"
 alias lmb="lab mr b"
 alias play="ffplay -autoexit"
 alias ghprb="gh pr view --web"
-alias python="python3"
 
 ## Sourcing OS-specific things
 OS=$(uname -s); export OS
