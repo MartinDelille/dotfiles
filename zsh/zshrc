@@ -12,11 +12,11 @@ export LC_ALL="en_US.UTF-8"
 fpath=(${HOME}/.dotfiles/functions $fpath)
 
 # Download Znap, if it's not there yet.
-[[ -f ~/dev/clone/zsh-snap/znap.zsh ]] ||
+[[ -f ~/dev/zsh/zsh-snap/znap.zsh ]] ||
   git clone --depth 1 -- \
-  https://github.com/marlonrichert/zsh-snap.git ~/dev/clone/zsh-snap
+  https://github.com/marlonrichert/zsh-snap.git ~/dev/zsh/zsh-snap
 
-source ~/dev/clone/zsh-snap/znap.zsh  # Start Znap
+source ~/dev/zsh/zsh-snap/znap.zsh  # Start Znap
 
 znap source martindelille/ohmyzsh \
   lib/git.zsh \
@@ -26,8 +26,8 @@ znap source martindelille/ohmyzsh \
 znap prompt martindelille/ohmyzsh crunch
 
 znap source martindelille/ohmyzsh \
-  plugins/osx \
-  plugins/git
+  plugins/git \
+  plugins/macos
 
 znap source zsh-users/zsh-syntax-highlighting
 znap source zsh-users/zsh-completions
