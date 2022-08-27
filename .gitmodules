@@ -4,6 +4,3 @@
 [submodule "vendors/vim-plug"]
 	path = vendors/vim-plug
 	url = https://github.com/junegunn/vim-plug/
-[submodule "vendors/zplug"]
-	path = vendors/zplug
-	url = https://github.com/zplug/zplug/
