@@ -24,7 +24,6 @@ set PATH /usr/local/opt/ruby/bin $PATH
 set PATH (gem environment gemdir)/bin $PATH
 set PATH $GOPATH/bin $PATH
 set PATH /usr/local/opt/python/libexec/bin $PATH
-set PATH /usr/local/opt/node@14/bin $PATH
 set -gx PATH ~/.cargo/bin $PATH
 
 # MacOS specifics

@@ -11,8 +11,6 @@ export PATH=~/tools/cov-analysis-macosx-7.7.0.4/bin:$PATH
 export GOPATH=~/dev/go
 #export GOROOT=/usr/local/opt/go
 export PATH=$GOROOT/libexec/bin:$GOPATH/bin:$PATH
-# Node
-export PATH=/usr/local/opt/node@14/bin:$PATH
 # Git
 export GIT_CREDENTIAL="cache --timeout=3600"
 # Gisty
