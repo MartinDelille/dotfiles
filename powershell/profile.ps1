@@ -43,6 +43,14 @@ Function lmb { lab mr b }
 Function ghprb { gh pr view --web }
 Function mcd ($path) { md $path;cd $path }
 Function qtlog { vi ~/AppData/Local/QtProject/qtlogging.ini }
+Function say ($content) { (New-Object System.Speech.Synthesis.SpeechSynthesizer).Speak($content)}
+Function kw { 
+  if($?) {
+    say 'kowabunga'
+  } else {
+    say 'bad'
+  }
+}
 
 ~/.secret.ps1
 
