@@ -38,6 +38,7 @@ Function c ($path) { Set-Clipboard ((Get-Item $path).FullName) }
 Function d { Set-Location -Path ~/dev/md/dotfiles }
 Function j { Set-Location -Path ~/dev/phonations/core }
 Function cci { Set-Location -Path ~/dev/clone/cci/recipes }
+Function adm { Set-Location -Path ~/dev/atelier/atelierdesmedias.github.io }
 Function hex($file) { hexdump -C $file | more }
 Function lmb { lab mr b }
 Function ghprb { gh pr view --web }
