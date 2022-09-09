@@ -40,18 +40,20 @@ Function j { Set-Location -Path ~/dev/phonations/core }
 Function cci { Set-Location -Path ~/dev/clone/cci/recipes }
 Function adm { Set-Location -Path ~/dev/atelier/atelierdesmedias.github.io }
 Function hex($file) { hexdump -C $file | more }
-Function lmb { lab mr b }
 Function ghprb { gh pr view --web }
 Function mcd ($path) { md $path;cd $path }
 Function qtlog { vi ~/AppData/Local/QtProject/qtlogging.ini }
 Function say ($content) { (New-Object System.Speech.Synthesis.SpeechSynthesizer).Speak($content)}
-Function kw { 
+Function kw {
   if($?) {
     say 'kowabunga'
   } else {
     say 'bad'
   }
 }
+Function lmb { lab mr b }
+Function lcv { lab ci view }
+Function lci { sleep 1; lab ci trace; say (git describe --all) }
 
 ~/.secret.ps1
 
