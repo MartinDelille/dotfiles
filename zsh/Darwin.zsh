@@ -24,7 +24,8 @@ alias drs§="defaults read tv.lylo.SilcroW"
 alias dws§="defaults write tv.lylo.SilcroW"
 alias dr§="defaults read ~/Library/Preferences/tv.lylo.SilcroW"
 alias dw§="defaults write ~/Library/Preferences/tv.lylo.SilcroW"
-alias lci="lab ci trace;say $(basename $(pwd))"
+alias lci="sleep 1;lab ci trace;say $(git describe --all)"
+alias lcv="sleep 1;lab ci view"
 
 # Java
 export JAVA_HOME=`/usr/libexec/java_home`
