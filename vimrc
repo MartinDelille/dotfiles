@@ -75,6 +75,7 @@ Plug 'nelsyeung/twig.vim'
 Plug 'lilyinstarlight/vim-sonic-pi'
 Plug 'cdelledonne/vim-cmake'
 Plug 'tpope/vim-liquid'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
 call plug#end()
 
@@ -87,12 +88,8 @@ set laststatus=2
 set noshowmode
 
 " Theme setup
-if isdirectory(expand("~/.vim/plugged/goldenrod.vim"))
-"    let g:solarized_termcolors=256
-    set background=dark
-"    color solarized
-    colorscheme goldenrod
-end
+colorscheme onehalflight
+let g:airline_theme='onehalfdark'
 
 autocmd BufNewFile,BufRead conanfile.txt set syntax=toml
 autocmd BufNewFile,BufRead *.recordr set syntax=yaml
