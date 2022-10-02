@@ -20,11 +20,6 @@ export PATH=~/dev/libs/android-sdk-macosx/tools:~/dev/libs/android-sdk-macosx/pl
 # FFMpeg
 #export PATH=$PATH:$FFMPEG_DEV_PATH/bin
 
-# Qt
-export QTVERSION=5.15.2
-export QTPATH=$HOME/dev/Qt/$QTVERSION/clang_64
-export PATH=$PATH:$QTPATH/bin
-
 # IRC info
 export IRCNICK=martinodelilo
 export IRCSERVER=irc.freenode.net
