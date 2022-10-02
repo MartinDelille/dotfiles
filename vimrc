@@ -5,7 +5,7 @@
 set nocompatible	" Use vim, no vi defaults
 set number
 set ruler
-set t_Co=256
+set termguicolors
 syntax enable
 set encoding=utf-8
 set autowrite
