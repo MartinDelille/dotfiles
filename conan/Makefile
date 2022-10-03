@@ -50,13 +50,21 @@ vi:
 
 push: default
 	git push
+	say push
 	lcv
 
 c:
 	c ${folder}
+
+cr:
+	cr ${folder}
 
 lint:
 	PYTHONPATH=.. pylint \
 			   --rcfile=../linter/pylintrc_recipe \
 			   --output-format=colorized \
 			   ${folder}/conanfile.py
+	PYTHONPATH=.. pylint \
+			   --rcfile=../linter/pylintrc_testpackage \
+			   --output-format=colorized \
+			   ${folder}/test_package/conanfile.py
