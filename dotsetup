@@ -45,8 +45,10 @@ ln -sf $root/git/unix ~/.gitconfig
 ln -sf $root/git $XDG_CONFIG_HOME/git
 ln -sf $root/git/ignore ~/.gitignore
 ln -sf $root/vimrc ~/.vimrc
+ln -sf $root/vimrc $XDG_CONFIG_HOME/nvim/init.vim
 mkdir -p ~/.vim/autoload
 ln -sf $root/vendors/vim-plug/plug.vim ~/.vim/autoload/plug.vim
+ln -sf $root/vendors/vim-plug/plug.vim $XDG_DATA_HOME/nvim/site/autoload/plug.vim
 ln -sf $root/ackrc ~/.ackrc
 ln -sf $root/tigrc ~/.tigrc
 

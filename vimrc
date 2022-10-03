@@ -52,7 +52,7 @@ set smartcase
 ""
 
 " Pluging management with https://github.com/junegunn/vim-plug
-call plug#begin('~/.vim/plugged')
+call plug#begin()
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'bling/vim-airline'
 Plug 'altercation/vim-colors-solarized'
