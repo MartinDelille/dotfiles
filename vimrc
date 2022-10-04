@@ -9,7 +9,8 @@ set termguicolors
 syntax enable
 set encoding=utf-8
 set autowrite
-let mapleader = ","
+let mapleader = " "
+" noremap <leader>w :w<cr>
 map <Leader>m :!clear;make<Enter>
 map <Leader>t :!clear;make test<Enter>
 map <Leader>n :NERDTree<Enter>
@@ -18,6 +19,9 @@ if has('win32')
   map <Leader>t :!jom test<Enter>
 endif
 set relativenumber
+set nohlsearch
+set scrolloff=8
+set colorcolumn=80
 set wildignorecase
 set clipboard=unnamed
 
@@ -47,8 +51,6 @@ set smartcase
 "" Others settings
 ""
 
-" noremap <leader>w :w<cr>
-
 " Pluging management with https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
 Plug 'ntpeters/vim-better-whitespace'
@@ -75,6 +77,7 @@ Plug 'lilyinstarlight/vim-sonic-pi'
 Plug 'cdelledonne/vim-cmake'
 Plug 'tpope/vim-liquid'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'ThePrimeagen/vim-be-good'
 
 call plug#end()
 
