@@ -32,6 +32,10 @@ Set-Alias l ls
 Set-Alias m jom
 Set-Alias make jom
 Set-Alias o ii
+if(Get-Command nvim) {
+  Set-Alias v nvim
+  Set-Alias vi nvim
+}
 
 Function x { exit 0 }
 Function c ($path) { Set-Clipboard ((Get-Item $path).FullName) }
@@ -79,6 +83,5 @@ Function grbmia {
 Function gcfx($sha) { git commit --fixup $sha }
 Function gsuri { git submodule update --recursive --init }
 
-$Env:CONAN_TRACE_FILE = "~/dev/clone/cci/recipes/log.txt"
 $Env:CONAN_PRINT_RUN_COMMANDS  = 1
 cd ~/dev/phonations
