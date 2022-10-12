@@ -51,6 +51,10 @@ ln -sf $root/vendors/vim-plug/plug.vim ~/.vim/autoload/plug.vim
 ln -sf $root/vendors/vim-plug/plug.vim $XDG_DATA_HOME/nvim/site/autoload/plug.vim
 ln -sf $root/ackrc ~/.ackrc
 ln -sf $root/tigrc ~/.tigrc
+ln -sf $root/conan/Makefile ~/dev/conan/cci/recipes
+ln -sf $root/conan/Darwin.txt ~/dev/conan/cci/recipes/Darwin.txt
+ln -sf $root/conan/ios.txt ~/dev/conan/cci/recipes/ios.txt
+cp $root/conan/gitignore ~/dev/conan/cci/recipes/.gitignore
 
 echo "### Install Vim plugin ###"
 vim +PlugClean +PlugInstall +PlugUpdate +qall
