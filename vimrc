@@ -77,7 +77,7 @@ Plug 'lilyinstarlight/vim-sonic-pi'
 Plug 'cdelledonne/vim-cmake'
 Plug 'tpope/vim-liquid'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
-Plug 'ThePrimeagen/vim-be-good'
+Plug 'ap/vim-css-color'
 
 call plug#end()
 
