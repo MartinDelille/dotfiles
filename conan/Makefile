@@ -7,7 +7,7 @@ os = $(shell uname -s)
 build_profile = ${os}.txt
 host_profile = ${os}.txt
 
-default: test
+default: lint
 	say ${lib}
 
 install:

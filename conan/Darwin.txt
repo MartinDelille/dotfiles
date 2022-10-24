@@ -7,7 +7,7 @@ compiler=apple-clang
 compiler.libcxx=libc++
 compiler.version=14
 os=Macos
-os.version=10.14
+os.version=10.13
 
 [options]
 qt:shared=True
