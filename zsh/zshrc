@@ -44,7 +44,7 @@ bindkey "^[[B" history-substring-search-down
 
 #zprof
 
-[ -f $HOME/.secret ] && source $HOME/.secret ]
+[ -f $HOME/.secret ] && source $HOME/.secret
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -62,3 +62,5 @@ setopt autocd
 # Ruby / rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 znap eval rbenv 'rbenv init - zsh'
+
+[ -f /usr/local/bin/thefuck ] && eval $(thefuck --alias)
