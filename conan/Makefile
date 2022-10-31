@@ -2,10 +2,11 @@
 lib = $(shell git diff master... --name-only | head -1 | sed 's/recipes\///' | sed 's/\/.*//')
 version = $(shell yq eval "(.versions | keys)[0]" ${lib}/config.yml)
 folder = ${lib}/$(shell yq eval "(.versions[\"${version}\"]) | .folder" ${lib}/config.yml)
-#extra = --build missing
 os = $(shell uname -s)
 build_profile = ${os}.txt
 host_profile = ${os}.txt
+build = --build ${lib}
+#build = --build missing
 
 default: lint
 	say ${lib}
@@ -17,7 +18,7 @@ install:
 		--install-folder build \
 		-pr:b ${build_profile} \
 		-pr:h ${host_profile} \
-		${extra}
+		${build}
 
 export:
 	rm -rf \
@@ -30,13 +31,13 @@ export:
 
 test: export
 	conan test ${folder}/test_package ${lib}/${version} \
-		--build ${lib} \
+		${build} \
 		-pr:b ${build_profile} \
 		-pr:h ${host_profile}
 
 testv1: export
 	conan test ${folder}/test_v1_package ${lib}/${version} \
-		--build ${lib} \
+		${build} \
 		-pr:b ${build_profile} \
 		-pr:h ${host_profile}
 
