@@ -29,8 +29,7 @@ Set-PSReadlineOption -Color @{
 
 Set-Alias which get-command
 Set-Alias l ls
-Set-Alias m jom
-Set-Alias make jom
+Set-Alias m make
 Set-Alias o ii
 if(Get-Command nvim) {
   Set-Alias v nvim

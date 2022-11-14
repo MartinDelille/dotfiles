@@ -15,8 +15,8 @@ map <Leader>m :!clear;make<Enter>
 map <Leader>t :!clear;make test<Enter>
 map <Leader>n :NERDTree<Enter>
 if has('win32')
-  map <Leader>m :!jom<Enter>
-  map <Leader>t :!jom test<Enter>
+  map <Leader>m :!make<Enter>
+  map <Leader>t :!make test<Enter>
 endif
 set relativenumber
 set nohlsearch
