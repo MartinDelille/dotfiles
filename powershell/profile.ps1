@@ -1,5 +1,3 @@
-#Invoke-BatchFile 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsx86_amd64.bat'
-
 Set-PSReadLineOption -EditMode Vi
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
@@ -16,16 +14,6 @@ Set-PSReadlineOption -Color @{
     "Type" = [ConsoleColor]::Cyan
     "Comment" = [ConsoleColor]::DarkCyan
 }
-## Dracula Prompt Configuration
-#$GitPromptSettings.DefaultPromptPrefix.Text = "$([char]0x2192) " # arrow unicode symbol
-#$GitPromptSettings.DefaultPromptPrefix.ForegroundColor = [ConsoleColor]::Green
-#$GitPromptSettings.DefaultPromptPath.ForegroundColor =[ConsoleColor]::Cyan
-#$GitPromptSettings.DefaultPromptSuffix.Text = "$([char]0x203A) " # chevron unicode symbol
-#$GitPromptSettings.DefaultPromptSuffix.ForegroundColor = [ConsoleColor]::Magenta
-# Dracula Git Status Configuration
-#$GitPromptSettings.BeforeStatus.ForegroundColor = [ConsoleColor]::Blue
-#$GitPromptSettings.BranchColor.ForegroundColor = [ConsoleColor]::Blue
-#$GitPromptSettings.AfterStatus.ForegroundColor = [ConsoleColor]::Blue
 
 Set-Alias which get-command
 Set-Alias l ls
