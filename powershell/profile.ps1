@@ -70,5 +70,7 @@ Function grbmia {
 Function gcfx($sha) { git commit --fixup $sha }
 Function gsuri { git submodule update --recursive --init }
 
+Function hd($file) { hexdump -C $file | more }
+
 $Env:CONAN_PRINT_RUN_COMMANDS  = 1
 cd ~/dev/phonations
