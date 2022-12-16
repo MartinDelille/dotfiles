@@ -33,7 +33,7 @@ Function adm { Set-Location -Path ~/dev/atelier/atelierdesmedias.github.io }
 Function hex($file) { hexdump -C $file | more }
 Function ghprb { gh pr view --web }
 Function mcd ($path) { md $path;cd $path }
-Function qtlog { vi ~/AppData/Local/QtProject/qtlogging.ini }
+Function qtlog { vi $Env:QT_LOGGING_FILE }
 Function say ($content) { (New-Object System.Speech.Synthesis.SpeechSynthesizer).Speak($content)}
 Function kw {
   if($?) {
