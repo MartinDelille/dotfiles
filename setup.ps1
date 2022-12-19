@@ -7,6 +7,6 @@ New-Item -Force -ItemType SymbolicLink -Path ~/.gitconfig -Value $PSScriptRoot/g
 New-Item -Force -ItemType SymbolicLink -Path $Env:XDG_CONFIG_HOME/git -Value $PSScriptRoot/git
 
 scoop bucket add extras
-scoop install git-aliases posh-git diff-so-fancy make nvim
+scoop install git-aliases posh-git diff-so-fancy make neovim
 
 vi +PlugInstall +PlugUpdate +qall
