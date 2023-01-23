@@ -4,7 +4,7 @@ export DEFAULT_USER=`whoami`
 #Add my custom script
 export PATH=$PATH:$HOME/.dotfiles/bin
 # Homebrew
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=/opt/homebrew/bin/opt/homebrew/opt/openjdk/bin:/usr/local/sbin:$PATH
 # Coverity tools
 export PATH=~/tools/cov-analysis-macosx-7.7.0.4/bin:$PATH
 # Go
