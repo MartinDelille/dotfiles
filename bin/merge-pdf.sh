@@ -13,4 +13,4 @@ if [ "$#" -ge 8 ]; then
   exit 1
 fi
 
-/usr/local/opt/ghostscript/bin/gs -q -sPAPERSIZE=letter -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=$1 $2 $3 $4 $5 $6 $7 $8
+/opt/homebrew/opt/ghostscript/bin/gs -q -sPAPERSIZE=letter -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=$1 $2 $3 $4 $5 $6 $7 $8
