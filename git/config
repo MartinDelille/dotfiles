@@ -14,7 +14,7 @@
 	smudge = git hawser smudge %f
 	required = true
 [core]
-	editor = vim
+	editor = nvim
 	excludesfile = ~/.gitignore
 	pager = diff-so-fancy | less --tabs=4 -RFX
 [push]
