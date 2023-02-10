@@ -24,6 +24,7 @@ set scrolloff=8
 set colorcolumn=80
 set wildignorecase
 set clipboard=unnamed
+set shortmess=Ot
 
 ""
 "" Whitespace
