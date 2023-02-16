@@ -51,7 +51,7 @@ info:
 	conan info ${lib}/${version}@ --graph kw.html
 
 vi:
-	vi ${folder}/conanfile.py
+	nvim ${folder}/conanfile.py
 
 push: default
 	git push
