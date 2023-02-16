@@ -56,7 +56,6 @@ set smartcase
 call plug#begin()
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'bling/vim-airline'
-Plug 'altercation/vim-colors-solarized'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'editorconfig/editorconfig-vim'
@@ -74,7 +73,7 @@ Plug 'nelsyeung/twig.vim'
 Plug 'lilyinstarlight/vim-sonic-pi'
 Plug 'cdelledonne/vim-cmake'
 Plug 'tpope/vim-liquid'
-Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'sainnhe/edge'
 Plug 'ap/vim-css-color'
 Plug 'github/copilot.vim'
 
@@ -89,8 +88,9 @@ set laststatus=2
 set noshowmode
 
 " Theme setup
-colorscheme onehalflight
-let g:airline_theme='onehalfdark'
+let g:edge_style = 'aura'
+let g:edge_better_performance = 1
+colorscheme edge
 
 autocmd BufNewFile,BufRead conanfile.txt set syntax=toml
 autocmd BufNewFile,BufRead *.recordr set syntax=yaml
