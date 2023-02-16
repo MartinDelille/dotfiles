@@ -59,10 +59,7 @@ Plug 'bling/vim-airline'
 Plug 'altercation/vim-colors-solarized'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-Plug 'ervandew/supertab'
-" Plug 'scrooloose/nerdcommenter'
 Plug 'editorconfig/editorconfig-vim'
-" Plug 'joonty/vdebug'
 Plug 'scrooloose/nerdtree'
 Plug 'chr4/nginx.vim'
 Plug 'fatih/vim-go'
@@ -79,6 +76,7 @@ Plug 'cdelledonne/vim-cmake'
 Plug 'tpope/vim-liquid'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'ap/vim-css-color'
+Plug 'github/copilot.vim'
 
 call plug#end()
 
@@ -99,3 +97,11 @@ autocmd BufNewFile,BufRead *.recordr set syntax=yaml
 autocmd BufNewFile,BufRead *.ttal set syntax=json
 autocmd BufNewFile,BufRead *.vcv set syntax=json
 autocmd BufNewFile,BufRead *.qss set syntax=css
+
+" Copilot
+
+let g:copilot_filetypes = {
+    \ 'gitcommit': v:true,
+    \ 'markdown': v:true,
+    \ 'yaml': v:true
+    \ }
