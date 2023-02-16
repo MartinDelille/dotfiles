@@ -1,11 +1,10 @@
 include(default)
 
 [settings]
-arch=x86_64
 build_type=Debug
 compiler=apple-clang
 compiler.libcxx=libc++
-compiler.version=14
+compiler.version=14.0
 os=Macos
 os.version=10.13
 
