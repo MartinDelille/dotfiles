@@ -26,6 +26,7 @@ alias dr§="defaults read ~/Library/Preferences/tv.lylo.SilcroW"
 alias dw§="defaults write ~/Library/Preferences/tv.lylo.SilcroW"
 alias lci="sleep 1;lab ci trace;say $(basename $(pwd))"
 alias lcv="sleep 1;lab ci view"
+alias ghprw="gh pr checks --watch; kw"
 
 # Java
 export JAVA_HOME=`/usr/libexec/java_home`
