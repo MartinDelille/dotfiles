@@ -53,6 +53,7 @@ alias f="find . -name"
 alias lmb="lab mr b"
 alias play="ffplay -autoexit"
 alias ghprb="gh pr view --web"
+alias gcfxhh="git commit --fixup HEAD~1"
 [ -f /opt/homebrew/bin/nvim ] && alias vi=nvim
 [ -f /opt/homebrew/bin/nvim ] && alias v=nvim
 
