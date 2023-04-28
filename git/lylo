@@ -2,4 +2,3 @@
 	name = Martin Delille
 	email = martin@lylo.tv
 	username = martin
-	signingkey = ~/.ssh/id_rsa
