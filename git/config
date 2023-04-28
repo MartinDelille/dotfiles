@@ -39,3 +39,5 @@
 	defaultBranch = main
 [include]
   path = ~/.dotfiles/git/maintenance
+[merge]
+	tool = nvimdiff3
