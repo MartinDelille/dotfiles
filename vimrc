@@ -76,6 +76,8 @@ Plug 'tpope/vim-liquid'
 Plug 'sainnhe/edge'
 Plug 'ap/vim-css-color'
 Plug 'github/copilot.vim'
+Plug 'rhysd/conflict-marker.vim'
+Plug 'matze/vim-move'
 
 call plug#end()
 
