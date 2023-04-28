@@ -50,10 +50,12 @@ alias xxxx="exit"
 #alias ls="colorls --dark --sort-dirs --report"
 #alias lc="colorls --tree --dark"
 alias f="find . -name"
-alias lmb="lab mr b"
+alias lmb="glab mr view --web"
 alias play="ffplay -autoexit"
 alias ghprb="gh pr view --web"
 alias gcfxhh="git commit --fixup HEAD~1"
+alias gafx="git autofixup"
+alias gafxm="git autofixup master"
 [ -f /opt/homebrew/bin/nvim ] && alias vi=nvim
 [ -f /opt/homebrew/bin/nvim ] && alias v=nvim
 
