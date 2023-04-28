@@ -8,8 +8,8 @@ host_profile = ${os}.txt
 build = --build ${lib}
 #build = --build missing
 
-default: lint
-	say ${lib}
+default: test
+	echo ${lib}
 
 install:
 	echo ${lib}/${version}
