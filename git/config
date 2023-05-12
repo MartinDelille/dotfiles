@@ -8,7 +8,7 @@
 	name = Martin Delille
 	email = martin@delille.org
 	username = MartinDelille
-	signingkey = ~/.ssh/id_rsa_gh
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBjUW7ZT2m9K3xYgehJ7fl/OKGMxcH4YJUBAi6ChZ+qI
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
