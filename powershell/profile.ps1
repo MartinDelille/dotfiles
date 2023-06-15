@@ -26,6 +26,7 @@ if(Get-Command nvim) {
 
 Function x { exit 0 }
 Function c ($path) { Set-Clipboard ((Get-Item $path).FullName) }
+Function cr ($path) { Set-Clipboard (Get-Item $path | Resolve-Path -Relative) }
 Function d { Set-Location -Path ~/dev/md/dotfiles }
 Function j { Set-Location -Path ~/dev/phonations/core }
 Function cci { Set-Location -Path ~/dev/clone/cci/recipes }
