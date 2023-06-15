@@ -46,6 +46,7 @@ Function kw {
 Function lmb { lab mr b }
 Function lcv { lab ci view }
 Function lci { sleep 1; lab ci trace; say (git describe --all) }
+Function q { Invoke-Item "C:\Qt\Tools\Qt Creator 11.0.0-beta1\bin\qtcreator.exe" }
 
 ~/.secret.ps1
 
