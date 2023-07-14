@@ -57,3 +57,4 @@ mkdir -p ~/.config/fontconfig/conf.d/
 mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
 ```
 
+baba
