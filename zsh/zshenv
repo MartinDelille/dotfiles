@@ -58,6 +58,8 @@ alias gafx="git autofixup"
 alias gafxm="git autofixup master"
 [ -f /opt/homebrew/bin/nvim ] && alias vi=nvim
 [ -f /opt/homebrew/bin/nvim ] && alias v=nvim
+[ -f /usr/local/bin/nvim ] && alias vi=nvim
+[ -f /usr/local/bin/nvim ] && alias v=nvim
 
 ## Sourcing OS-specific things
 OS=$(uname -s); export OS
