@@ -14,6 +14,7 @@ imagemagick
 jq
 lab
 neovim
+openjdk
 pandoc
 pyenv-virtualenv
 rbenv
