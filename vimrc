@@ -9,11 +9,12 @@ set termguicolors
 syntax enable
 set encoding=utf-8
 set autowrite
-let mapleader = " "
+let mapleader = ","
 " noremap <leader>w :w<cr>
 map <Leader>m :!clear;make<Enter>
 map <Leader>t :!clear;make test<Enter>
 map <Leader>n :NERDTree<Enter>
+map <Leader>a :AI<CR>
 if has('win32')
   map <Leader>m :!make<Enter>
   map <Leader>t :!make test<Enter>
@@ -78,6 +79,7 @@ Plug 'ap/vim-css-color'
 Plug 'github/copilot.vim'
 Plug 'rhysd/conflict-marker.vim'
 Plug 'matze/vim-move'
+Plug 'madox2/vim-ai'
 
 call plug#end()
 
