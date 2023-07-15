@@ -7,5 +7,6 @@
   --ignore-directory=is:dist
   --ignore-directory=is:.jekyll-cache
   --type-add=qt:ext:pro,pri
+  --type-add=qml:ext:qml
   --ignore-file=ext:user
   --ignore-file=ext:orig
