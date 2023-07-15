@@ -103,6 +103,10 @@ autocmd BufNewFile,BufRead *.vcv set syntax=json
 autocmd BufNewFile,BufRead *.qss set syntax=css
 autocmd BufRead,BufNewFile   *.txt setlocal wrap linebreak
 
+" Git setup
+command Gc Git commit -v
+command Gapa Git add -p
+
 " Copilot
 
 let g:copilot_filetypes = {
