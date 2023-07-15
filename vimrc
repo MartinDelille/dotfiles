@@ -101,6 +101,7 @@ autocmd BufNewFile,BufRead *.recordr set syntax=yaml
 autocmd BufNewFile,BufRead *.ttal set syntax=json
 autocmd BufNewFile,BufRead *.vcv set syntax=json
 autocmd BufNewFile,BufRead *.qss set syntax=css
+autocmd BufRead,BufNewFile   *.txt setlocal wrap linebreak
 
 " Copilot
 
