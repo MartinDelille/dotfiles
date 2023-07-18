@@ -24,8 +24,8 @@ alias drs§="defaults read tv.lylo.SilcroW"
 alias dws§="defaults write tv.lylo.SilcroW"
 alias dr§="defaults read ~/Library/Preferences/tv.lylo.SilcroW"
 alias dw§="defaults write ~/Library/Preferences/tv.lylo.SilcroW"
-alias lci="sleep 1;lab ci trace;say $(basename $(pwd))"
-alias lcv="sleep 1;lab ci view"
+alias lci="sleep 2;lab ci trace;say $(basename $(pwd))"
+alias lcv="sleep 2;lab ci view"
 alias ghprw="sleep 1;gh pr checks --watch; kw"
 
 # Java
