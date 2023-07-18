@@ -32,6 +32,7 @@ export CONAN_HOOK_ERROR_LEVEL=40
 
 # Various alias
 alias m="make"
+alias mm="make"
 alias j="cd ~/dev/phonations/silcrow"
 alias l="ls -lah"
 alias d="cd ~/.dotfiles"
@@ -54,8 +55,11 @@ alias lmb="glab mr view --web"
 alias play="ffplay -autoexit"
 alias ghprb="gh pr view --web"
 alias gcfxhh="git commit --fixup HEAD~1"
+alias gcfxhhh="git commit --fixup HEAD~2"
+alias gcfxhhhh="git commit --fixup HEAD~3"
 alias gafx="git autofixup"
 alias gafxm="git autofixup master"
+alias gafm="git autofixup main"
 [ -f /opt/homebrew/bin/nvim ] && alias vi=nvim
 [ -f /opt/homebrew/bin/nvim ] && alias v=nvim
 [ -f /usr/local/bin/nvim ] && alias vi=nvim
