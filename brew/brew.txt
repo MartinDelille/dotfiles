@@ -13,6 +13,7 @@ glab
 imagemagick
 jq
 lab
+m1ddc
 neovim
 openjdk
 pandoc
@@ -24,3 +25,4 @@ wakeonlan
 wget
 youtube-dl
 yq
+yt-dlp
