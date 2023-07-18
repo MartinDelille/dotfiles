@@ -14,7 +14,6 @@ let mapleader = ","
 map <Leader>m :!clear;make<Enter>
 map <Leader>t :!clear;make test<Enter>
 map <Leader>n :NERDTree<Enter>
-map <Leader>a :AI<CR>
 if has('win32')
   map <Leader>m :!make<Enter>
   map <Leader>t :!make test<Enter>
@@ -108,9 +107,45 @@ command Gc Git commit -v
 command Gapa Git add -p
 
 " Copilot
-
 let g:copilot_filetypes = {
     \ 'gitcommit': v:true,
     \ 'markdown': v:true,
     \ 'yaml': v:true
     \ }
+
+" vim-ai
+map <Leader>a :AI<CR>
+map <Leader>c :AIChat<CR>
+
+" custom command suggesting git commit message, takes no arguments
+function! GitCommitMessageFn()
+  let l:diff = system('git --no-pager diff --staged')
+  let l:prompt = "generate a short commit message from the diff below:\n" . l:diff
+  let l:range = 0
+  let l:config = {
+  \  "engine": "chat",
+  \  "options": {
+  \    "model": "gpt-3.5-turbo",
+  \    "initial_prompt": ">>> system\nyou are a code assistant",
+  \    "temperature": 1,
+  \  },
+  \}
+  call vim_ai#AIRun(l:range, l:config, l:prompt)
+"  echo "Hello, world ooo!"
+endfunction
+command! Gcai call GitCommitMessageFn()
+map <Leader>g :Gcai<CR>
+
+" custom command adding filetype to the instruction
+function! AISyntaxFn(range, ...) range
+  let l:instruction = "programming language is " . &filetype
+  if a:0
+    let l:instruction = l:instruction . " - " . a:1
+  endif
+  if a:range
+    '<,'>call vim_ai#AIRun(a:range, {}, l:instruction)
+  else
+    call vim_ai#AIRun(a:range, {}, l:instruction)
+  endif
+endfunction
+command! -range -nargs=? AISyntax <line1>,<line2>call AISyntaxFn(<range>, <f-args>)
