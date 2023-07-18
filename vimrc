@@ -18,6 +18,7 @@ if has('win32')
   map <Leader>m :!make<Enter>
   map <Leader>t :!make test<Enter>
 endif
+map <Leader>s :w<Enter>:so $MYVIMRC<Enter>
 set relativenumber
 set nohlsearch
 set scrolloff=8
