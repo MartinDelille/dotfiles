@@ -1,0 +1,13 @@
+#!/bin/bash
+
+input=$(/opt/homebrew/bin/m1ddc display 1 get input)
+
+echo "Input: $input"
+
+if [ "$input" == "16" ]; then
+    echo "Switching to Requin"
+    /opt/homebrew/bin/m1ddc display 1 set input 15
+else
+    echo "Switching to Martesmain"
+    /opt/homebrew/bin/m1ddc display 1 set input 16
+fi
