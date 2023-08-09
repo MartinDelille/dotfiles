@@ -65,6 +65,8 @@ cr:
 	cr ${folder}
 
 lint:
+	yamllint --config-file ../linter/yamllint_rules.yml -f standard ${lib}/config.yml
+	yamllint --config-file ../linter/yamllint_rules.yml -f standard ${folder}/conandata.yml
 	PYTHONPATH=.. pylint \
 			   --rcfile=../linter/pylintrc_recipe \
 			   --output-format=colorized \
