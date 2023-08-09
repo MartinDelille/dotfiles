@@ -80,6 +80,7 @@ Plug 'github/copilot.vim'
 Plug 'rhysd/conflict-marker.vim'
 Plug 'matze/vim-move'
 Plug 'madox2/vim-ai'
+Plug 'darfink/vim-plist'
 
 call plug#end()
 
