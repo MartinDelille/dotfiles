@@ -119,6 +119,13 @@ let g:copilot_filetypes = {
 map <Leader>a :AI<CR>
 map <Leader>c :AIChat<CR>
 
+" wrap lines in chat window
+let g:vim_ai_chat = {
+\  "ui": {
+\    "open_chat_command": "setlocal wrap | call vim_ai#MakeScratchWindow()",
+\  },
+\}
+
 " custom command suggesting git commit message, takes no arguments
 function! GitCommitMessageFn()
   let l:diff = system('git --no-pager diff --staged')
