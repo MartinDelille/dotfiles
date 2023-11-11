@@ -13,6 +13,7 @@ alias b="brew"
 alias bo="HOMEBREW_NO_AUTO_UPDATE=1 pgs && brew"
 alias qtlog="vi ~/Library/Preferences/QtProject/qtlogging.ini"
 alias grvc="git rev-parse --short head | tr -d '\n' | pbcopy"
+alias dl="cd ~/Downloads"
 alias s="cd ~/Library/Application\ Support"
 alias defr="defaults read"
 alias defw="defaults write"
@@ -24,9 +25,10 @@ alias drs§="defaults read tv.lylo.SilcroW"
 alias dws§="defaults write tv.lylo.SilcroW"
 alias dr§="defaults read ~/Library/Preferences/tv.lylo.SilcroW"
 alias dw§="defaults write ~/Library/Preferences/tv.lylo.SilcroW"
-alias lci="sleep 2;lab ci trace;say $(basename $(pwd))"
-alias lcv="sleep 2;lab ci view"
 alias ghprw="sleep 1;gh pr checks --watch; kw"
+
+setopt extendedglob
+alias umountall="umount /Volumes/^Macintosh*/;l /Volumes"
 
 # Java
 export JAVA_HOME=`/usr/libexec/java_home`
@@ -36,6 +38,12 @@ export MAVEN_OPTS="-Xmx512m"
 function pbc {
   cat $1 | pbcopy
 }
+function lci {
+  sleep 2
+  lab ci trace $1
+  say $(basename $(pwd))
+}
+alias lcv="sleep 2;lab ci view"
 
 function pbsha {
   git log --oneline --decorate -n 1 $1

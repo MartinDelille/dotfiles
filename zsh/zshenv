@@ -34,8 +34,10 @@ export CONAN_HOOK_ERROR_LEVEL=40
 alias m="make"
 alias mm="make"
 alias j="cd ~/dev/phonations/silcrow"
+alias t="cd ~/dev/tests"
 alias l="ls -lah"
 alias d="cd ~/.dotfiles"
+alias dv="cd ~/dev/md"
 alias cci="cd ~/dev/conan/cci/recipes"
 alias adm="cd ~/dev/adm/atelier-medias.org"
 alias pbpc="pbpaste | pbcopy"
@@ -57,13 +59,17 @@ alias ghprb="gh pr view --web"
 alias gcfxhh="git commit --fixup HEAD~1"
 alias gcfxhhh="git commit --fixup HEAD~2"
 alias gcfxhhhh="git commit --fixup HEAD~3"
-alias gafx="git autofixup"
-alias gafxm="git autofixup master"
-alias gafm="git autofixup main"
+alias gshh="git show HEAD~1"
+alias gshhh="git show HEAD~2"
+alias gshhhh="git show HEAD~3"
+alias gafx="git autofixup -v"
+alias gafxm="git autofixup master -v"
+alias gafm="git autofixup main -v"
 [ -f /opt/homebrew/bin/nvim ] && alias vi=nvim
 [ -f /opt/homebrew/bin/nvim ] && alias v=nvim
 [ -f /usr/local/bin/nvim ] && alias vi=nvim
 [ -f /usr/local/bin/nvim ] && alias v=nvim
+alias pgssh="pgs spiron.local && ssh spiron.local -p 2222"
 
 ## Sourcing OS-specific things
 OS=$(uname -s); export OS
@@ -98,4 +104,8 @@ function dfs {
   vared -p 'Value ? ' -ch value
   defaults write tv.lylo.$app $setting $value
   defaults read tv.lylo.$app
+}
+
+function gcfxf {
+  git log -n 1 --pretty=format:%h $1 | xargs git commit --fixup
 }

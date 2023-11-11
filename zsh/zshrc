@@ -59,6 +59,8 @@ setopt share_history
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
 setopt autocd
+setopt inc_append_history_time
+
 # Ruby / rbenv
 export PATH="$HOME/.rbenv/shims:$PATH"
 znap eval rbenv 'rbenv init - zsh'
