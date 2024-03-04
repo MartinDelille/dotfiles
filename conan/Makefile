@@ -3,43 +3,20 @@ lib = $(shell git diff master... --name-only | head -1 | sed 's/recipes\///' | s
 version = $(shell yq eval "(.versions | keys)[0]" ${lib}/config.yml)
 folder = ${lib}/$(shell yq eval "(.versions[\"${version}\"]) | .folder" ${lib}/config.yml)
 os = $(shell uname -s)
-build_profile = ${os}.txt
-host_profile = ${os}.txt
-build = --build ${lib}
-#build = --build missing
+build_profile = Darwin.txt
+host_profile = ${build_profile}
+build = --build ${lib}/${version}@cci_testing/testing
 
-default: test
+default: create
 	echo ${lib}
 
-install:
-	echo ${lib}/${version}
-	rm -rf build
-	conan install ${folder} ${lib}/${version} \
-		--install-folder build \
+create:
+	conan create "${folder}" --version ${version} \
+		--user=cci_testing \
+		--channel=testing \
 		-pr:b ${build_profile} \
 		-pr:h ${host_profile} \
 		${build}
-
-export:
-	rm -rf \
-		${folder}/test_*/build \
-		${folder}/test_*/conan.lock \
-		${folder}/test_*/conanbuildinfo.txt \
-		${folder}/test_*/conaninfo.txt \
-		${folder}/test_*/graph_info.json
-	conan export ${folder} ${lib}/${version}@
-
-test: export
-	conan test ${folder}/test_package ${lib}/${version} \
-		${build} \
-		-pr:b ${build_profile} \
-		-pr:h ${host_profile}
-
-testv1: export
-	conan test ${folder}/test_v1_package ${lib}/${version} \
-		${build} \
-		-pr:b ${build_profile} \
-		-pr:h ${host_profile}
 
 show:
 	@echo ${lib}/${version}
