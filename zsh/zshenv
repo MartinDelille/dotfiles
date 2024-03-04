@@ -77,8 +77,9 @@ alias gafm="git autofixup main -v"
 [ -f /usr/local/bin/nvim ] && alias v=nvim
 alias pgssh="pgs spiron.local && ssh spiron.local -p 2222"
 
+## Send a notification to the terminal (iTerm2)
 function n {
-  echo -en '\e]9;$1\e\\'
+  echo -en "\e]9;$1\e\\"
 }
 alias glci="glab ci trace; echo -en '\e]9;glab ci trace\e\\'"
 
