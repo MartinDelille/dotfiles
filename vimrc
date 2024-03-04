@@ -81,6 +81,12 @@ Plug 'rhysd/conflict-marker.vim'
 Plug 'matze/vim-move'
 Plug 'madox2/vim-ai'
 Plug 'darfink/vim-plist'
+Plug 'mattn/emmet-vim'
+Plug 'AndrewRadev/tagalong.vim'
+Plug 'dense-analysis/ale'
+Plug 'prettier/vim-prettier'
+
+let b:ale_fixers = ['prettier']
 
 call plug#end()
 
