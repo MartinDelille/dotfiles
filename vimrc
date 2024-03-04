@@ -125,12 +125,44 @@ let g:copilot_filetypes = {
 map <Leader>a :AI<CR>
 map <Leader>c :AIChat<CR>
 
+let initial_prompt =<< trim END
+>>> system
+
+You are going to play a role of a coding assistant:
+Task: Provide compact code/text completion, generation, transformation or explanation
+Topic: general programming and text editing
+Style: Plain result without any commentary, unless commentary is necessary
+Audience: Users of text editor and programmers that need to transform/generate text
+END
+
 " wrap lines in chat window
 let g:vim_ai_chat = {
-\  "ui": {
-\    "open_chat_command": "setlocal wrap | call vim_ai#MakeScratchWindow()",
-\  },
+      \ "options": {
+      \   "model": "gpt-4",
+      \   "endpoint_url": "https://api.openai.com/v1/chat/completions",
+      \   "enable_auth": 1,
+      \    "initial_prompt": initial_prompt,
+      \ },
+      \ "ui": {
+      \   "open_chat_command": "setlocal wrap | call vim_ai#MakeScratchWindow()",
+      \ },
 \}
+
+function! AIUseGPT3Fn()
+  let g:vim_ai_chat['options']['model'] = 'gpt-3.5-turbo'
+  let g:vim_ai_chat['options']['endpoint_url'] = 'https://api.openai.com/v1/chat/completions'
+  let g:vim_ai_chat['options']['enable_auth'] = 1
+  let g:vim_ai_chat['options']['initial_prompt'] = initial_prompt
+endfunction
+command! AIUseGPT3 call AIUseGPT3Fn()
+
+function! AIUseGPT4Fn()
+  let g:vim_ai_chat['options']['model'] = 'gpt-4'
+  let g:vim_ai_chat['options']['endpoint_url'] = 'https://api.openai.com/v1/chat/completions'
+  let g:vim_ai_chat['options']['enable_auth'] = 1
+  let g:vim_ai_chat['options']['initial_prompt'] = initial_prompt
+endfunction
+command! AIUseGPT4 call AIUseGPT4Fn()
 
 " custom command suggesting git commit message, takes no arguments
 function! GitCommitMessageFn()
