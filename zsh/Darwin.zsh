@@ -3,7 +3,6 @@ export GIT_CREDENTIAL=osxkeychain
 alias ff="mdfind -onlyin ."
 alias kw="say kowabounga"
 alias wifi="networksetup -setairportpower airport"
-alias n="open ~/Dropbox/notes.md"
 alias po="p && open"
 alias chrome="open -a /Applications/Google\ Chrome.app"
 alias o="open"
@@ -26,9 +25,10 @@ alias dws§="defaults write tv.lylo.SilcroW"
 alias dr§="defaults read ~/Library/Preferences/tv.lylo.SilcroW"
 alias dw§="defaults write ~/Library/Preferences/tv.lylo.SilcroW"
 alias ghprw="sleep 1;gh pr checks --watch; kw"
+alias ic='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
 
 setopt extendedglob
-alias umountall="umount /Volumes/^Macintosh*/;l /Volumes"
+alias uma="umount /Volumes/^Macintosh*/;sleep 1;l /Volumes"
 
 # Java
 export JAVA_HOME=`/usr/libexec/java_home`

@@ -33,13 +33,18 @@ export CONAN_HOOK_ERROR_LEVEL=40
 # Various alias
 alias m="make"
 alias mm="make"
-alias j="cd ~/dev/phonations/silcrow"
+alias i="invoke"
+alias j="cd ~/dev/phonations/silcrow/core"
 alias t="cd ~/dev/tests"
 alias l="ls -lah"
+alias lo="ls -ltrh"
+alias lodl="ls -ltrh ~/Downloads"
 alias d="cd ~/.dotfiles"
 alias dv="cd ~/dev/md"
 alias cci="cd ~/dev/conan/cci/recipes"
 alias adm="cd ~/dev/adm/atelier-medias.org"
+alias dev="cd ~/dev"
+alias dalle="cd ~/dev/phonations/python-scripts/dalle"
 alias pbpc="pbpaste | pbcopy"
 alias ip="ifconfig | grep 'inet '"
 alias ccat="pygmentize -g"
@@ -53,9 +58,10 @@ alias xxxx="exit"
 #alias ls="colorls --dark --sort-dirs --report"
 #alias lc="colorls --tree --dark"
 alias f="find . -name"
-alias lmb="glab mr view --web"
+alias lmb="lab mr browse"
 alias play="ffplay -autoexit"
 alias ghprb="gh pr view --web"
+alias gcfxh="git commit --fixup HEAD"
 alias gcfxhh="git commit --fixup HEAD~1"
 alias gcfxhhh="git commit --fixup HEAD~2"
 alias gcfxhhhh="git commit --fixup HEAD~3"
@@ -70,6 +76,11 @@ alias gafm="git autofixup main -v"
 [ -f /usr/local/bin/nvim ] && alias vi=nvim
 [ -f /usr/local/bin/nvim ] && alias v=nvim
 alias pgssh="pgs spiron.local && ssh spiron.local -p 2222"
+
+function n {
+  echo -en '\e]9;$1\e\\'
+}
+alias glci="glab ci trace; echo -en '\e]9;glab ci trace\e\\'"
 
 ## Sourcing OS-specific things
 OS=$(uname -s); export OS

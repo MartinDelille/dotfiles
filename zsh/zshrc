@@ -19,11 +19,9 @@ fpath=(${HOME}/.dotfiles/functions $fpath)
 source ~/dev/zsh/zsh-snap/znap.zsh  # Start Znap
 
 znap source martindelille/ohmyzsh \
-  lib/git.zsh \
-  lib/prompt_info_functions.zsh \
-  lib/theme-and-appearance.zsh
+  lib/git.zsh
 
-znap prompt martindelille/ohmyzsh crunch
+znap prompt sindresorhus/pure
 
 znap source martindelille/ohmyzsh \
   plugins/git \
