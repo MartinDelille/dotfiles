@@ -196,3 +196,8 @@ function! AISyntaxFn(range, ...) range
   endif
 endfunction
 command! -range -nargs=? AISyntax <line1>,<line2>call AISyntaxFn(<range>, <f-args>)
+
+function! CopyRange() range
+    call setreg('*', a:firstline .. ',' .. a:lastline)
+endfunction
+command! -range CopyRange call CopyRange()
