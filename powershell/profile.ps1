@@ -54,6 +54,10 @@ Function pong ($message = "pong") {
   python $Env:MATTERMOST_SCRIPT $Env:MATTERMOST_BOT_USER $Env:MATTERMOST_BOT_PASSWORD $Env:MATTERMOST_CHANNEL $message
 }
 
+Function pongf ($file) {
+  python $Env:MATTERMOST_SCRIPT $Env:MATTERMOST_BOT_USER $Env:MATTERMOST_BOT_PASSWORD $Env:MATTERMOST_CHANNEL $file $file
+}
+
 Import-Module git-aliases -DisableNameChecking
 Import-Module posh-git
 
@@ -75,4 +79,4 @@ Function gsuri { git submodule update --recursive --init }
 Function hd($file) { hexdump -C $file | more }
 
 $Env:CONAN_PRINT_RUN_COMMANDS  = 1
-cd ~/dev/phonations
+cd ~/dev/phonations/core
