@@ -7,3 +7,6 @@
 [submodule "vendors/starter"]
 	path = vendors/starter
 	url = https://github.com/NvChad/starter
+[submodule "vendors/mastering-zsh"]
+	path = vendors/mastering-zsh
+	url = https://github.com/rothgar/mastering-zsh
