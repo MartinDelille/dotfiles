@@ -26,6 +26,8 @@ alias dr§="defaults read ~/Library/Preferences/tv.lylo.SilcroW"
 alias dw§="defaults write ~/Library/Preferences/tv.lylo.SilcroW"
 alias ghprw="sleep 1;gh pr checks --watch; kw"
 alias ic='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
+alias thd='theme "Solarized Dark"'
+alias thl='theme OneHalfLight'
 
 setopt extendedglob
 alias uma="umount /Volumes/^Macintosh*/;sleep 1;l /Volumes"

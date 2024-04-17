@@ -1,0 +1,17 @@
+#! /usr/bin/env python3
+
+import asyncio
+import iterm2
+import sys
+
+async def main(connection):
+    async with iterm2.VariableMonitor(connection, iterm2.VariableScopes.APP, "effectiveTheme", None) as mon:
+        preset = await iterm2.ColorPreset.async_get(connection, sys.argv[1])
+
+        profiles=await iterm2.PartialProfile.async_query(connection)
+        for partial in profiles:
+            profile = await partial.async_get_full_profile()
+            await profile.async_set_color_preset(preset)
+        exit()
+
+iterm2.run_forever(main)
