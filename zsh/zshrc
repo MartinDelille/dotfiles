@@ -65,5 +65,5 @@ znap eval rbenv 'rbenv init - zsh'
 
 [ -f /usr/local/bin/thefuck ] && eval $(thefuck --alias)
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+source "${HOME}/.dotfiles/zsh/iterm2.zsh"
 
