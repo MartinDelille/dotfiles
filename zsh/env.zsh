@@ -34,7 +34,7 @@ export CONAN_HOOK_ERROR_LEVEL=40
 alias m="make"
 alias mm="make"
 alias i="invoke"
-alias j="cd ~/dev/phonations/silcrow/core"
+alias j="cd ~/dev/phonations/core"
 alias t="cd ~/dev/tests"
 alias l="ls -lah"
 alias lo="ls -ltrh"
@@ -84,6 +84,7 @@ alias gcwrm="git commit -m wip_remove"
 alias glof="git log --oneline --decorate --graph --follow"
 [ -f /opt/homebrew/bin/nvim ] && alias vi=nvim
 [ -f /opt/homebrew/bin/nvim ] && alias v=nvim
+[ -f /opt/homebrew/bin/nvim ] && alias e=nvim
 [ -f /usr/local/bin/nvim ] && alias vi=nvim
 [ -f /usr/local/bin/nvim ] && alias v=nvim
 alias pgssh="pgs spiron.local && ssh spiron.local -p 2222"
@@ -132,3 +133,4 @@ function dfs {
 function gcfxf {
   git log -n 1 --pretty=format:%h $1 | xargs git commit --fixup
 }
+. "$HOME/.cargo/env"
