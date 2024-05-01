@@ -52,3 +52,19 @@ lint:
 			   --rcfile=../linter/pylintrc_testpackage \
 			   --output-format=colorized \
 			   ${folder}/test_package/conanfile.py
+
+linux_shell:
+	docker run -it \
+		-v ~/dev/conan/cci/recipes:/cci \
+		conanio/gcc11-ubuntu16.04 \
+		bash
+
+linux:
+	docker run -e CONAN_SYSREQUIRES_MODE=enabled \
+		-v ~/dev/conan/cci/recipes:/cci \
+		conanio/gcc11-ubuntu16.04 \
+		conan create /cci/${folder} \
+		--version ${version} \
+		--profile /cci/Linux.txt \
+		-b missing
+
