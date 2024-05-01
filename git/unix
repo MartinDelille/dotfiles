@@ -16,3 +16,5 @@
 	required = true
 [rerere]
 	enabled = true
+[rebase]
+	updateRefs = true

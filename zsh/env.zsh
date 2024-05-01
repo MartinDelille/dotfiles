@@ -61,6 +61,15 @@ alias f="find . -name"
 alias lmb="lab mr browse"
 alias play="ffplay -autoexit"
 alias ghprb="gh pr view --web"
+alias ghrvw="gh repo view --web"
+
+# Alias waiting to be merged here: <https://github.com/ohmyzsh/ohmyzsh/pull/9676>
+alias gcfx='git commit --fixup'
+alias glom='git log --oneline --decorate --color $(git_main_branch)..'
+alias grbmi='git rebase $(git_main_branch) --interactive'
+alias grbmia='git rebase $(git_main_branch) --interactive --autosquash'
+alias gsuri='git submodule update --recursive --init'
+
 alias gcfxh="git commit --fixup HEAD"
 alias gcfxhh="git commit --fixup HEAD~1"
 alias gcfxhhh="git commit --fixup HEAD~2"
@@ -71,6 +80,8 @@ alias gshhhh="git show HEAD~3"
 alias gafx="git autofixup -v"
 alias gafxm="git autofixup master -v"
 alias gafm="git autofixup main -v"
+alias gcwrm="git commit -m wip_remove"
+alias glof="git log --oneline --decorate --graph --follow"
 [ -f /opt/homebrew/bin/nvim ] && alias vi=nvim
 [ -f /opt/homebrew/bin/nvim ] && alias v=nvim
 [ -f /usr/local/bin/nvim ] && alias vi=nvim
