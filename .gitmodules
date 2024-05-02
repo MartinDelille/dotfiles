@@ -1,12 +1,6 @@
 [submodule "vendors/fonts"]
 	path = vendors/fonts
 	url = https://github.com/powerline/fonts
-[submodule "vendors/vim-plug"]
-	path = vendors/vim-plug
-	url = https://github.com/junegunn/vim-plug/
-[submodule "vendors/starter"]
-	path = vendors/starter
-	url = https://github.com/NvChad/starter
 [submodule "vendors/mastering-zsh"]
 	path = vendors/mastering-zsh
 	url = https://github.com/rothgar/mastering-zsh
