@@ -1,0 +1,5 @@
+# Ignore all directories
+*/
+
+# Except for mydir/
+!tpm/

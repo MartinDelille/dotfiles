@@ -40,6 +40,8 @@ ln -sf $root/zsh/rc.zsh ~/.zshrc
 ln -sf $root/zsh/env.zsh ~/.zshenv
 ln -sf $root/zsh/zimrc.zsh ~/.zimrc
 ln -sf $root/zsh/p10k.zsh ~/.p10k.zsh
+ln -sf $root/tmux/tmux.conf ~/.tmux.conf
+ln -sf $root/tmux/ ~/.tmux
 mkdir -p ~/.config/fish
 ln -sf $root/fish/config.fish ~/.config/fish/config.fish
 ln -sf $root/git/unix ~/.gitconfig

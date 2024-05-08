@@ -7,3 +7,6 @@
 [submodule "vendors/zimfw"]
 	path = vendors/zimfw
 	url = https://github.com/zimfw/zimfw
+[submodule "tmux/plugins/tpm"]
+	path = tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
