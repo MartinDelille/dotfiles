@@ -1,5 +1,4 @@
 ack
-asciiquarium
 cmake
 curl
 diff-so-fancy
@@ -15,15 +14,12 @@ jq
 lab
 m1ddc
 neovim
-openjdk
 pandoc
 pyenv-virtualenv
 rbenv
-speedtest-cli
 trash-cli
 tree
 wakeonlan
 wget
-youtube-dl
 yq
 yt-dlp

@@ -1,0 +1,17 @@
+appcleaner
+clipy
+daisydisk
+dropbox
+firefox
+google-chrome
+font-meslo-lg-nerd-font
+macdown
+messenger
+nordvpn
+numi
+slack
+spotify
+telegram
+temurin
+transmission
+vlc
