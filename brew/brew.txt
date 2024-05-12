@@ -20,6 +20,7 @@ pandoc
 pyenv-virtualenv
 rbenv
 speedtest-cli
+trash-cli
 tree
 wakeonlan
 wget
