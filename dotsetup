@@ -38,6 +38,7 @@ git -C $root submodule update --init
 echo "### Linking configuration ###"
 ln -sf $root/zsh/rc.zsh ~/.zshrc
 ln -sf $root/zsh/env.zsh ~/.zshenv
+ln -sf $root/wezterm.lua ~/.wezterm.lua
 ln -sf $root/zsh/zimrc.zsh ~/.zimrc
 ln -sf $root/zsh/p10k.zsh ~/.p10k.zsh
 ln -sf $root/tmux/tmux.conf ~/.tmux.conf
