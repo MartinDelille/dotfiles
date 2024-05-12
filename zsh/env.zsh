@@ -1,10 +1,12 @@
-export EDITOR=vim
+export EDITOR=nvim
 # Oh my zsh
 export DEFAULT_USER=`whoami`
 #Add my custom script
 export PATH=$PATH:$HOME/.dotfiles/bin
 # Homebrew
-export PATH=/opt/homebrew/bin/opt/homebrew/opt/openjdk/bin:/usr/local/sbin:$PATH
+
+[ -f /opt/homebrew/bin ] && eval "$(/opt/homebrew/bin/brew shellenv)"
+export PATH=/opt/homebrew/bin:/usr/local/sbin:$PATH
 # Coverity tools
 export PATH=~/tools/cov-analysis-macosx-7.7.0.4/bin:$PATH
 # Go
@@ -13,13 +15,6 @@ export GOPATH=~/dev/go
 export PATH=$GOROOT/libexec/bin:$GOPATH/bin:$PATH
 # Git
 export GIT_CREDENTIAL="cache --timeout=3600"
-# Gisty
-export GISTY_DIR=~/dev/gists
-# Android utility
-export PATH=~/dev/libs/android-sdk-macosx/tools:~/dev/libs/android-sdk-macosx/platform-tools:$PATH
-# FFMpeg
-#export PATH=$PATH:$FFMPEG_DEV_PATH/bin
-
 # IRC info
 export IRCNICK=martinodelilo
 export IRCSERVER=irc.freenode.net
@@ -134,4 +129,4 @@ function dfs {
 function gcfxf {
   git log -n 1 --pretty=format:%h $1 | xargs git commit --fixup
 }
-. "$HOME/.cargo/env"
+[ -f $HOME/.cargo ] && . "$HOME/.cargo/env"

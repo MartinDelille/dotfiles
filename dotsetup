@@ -43,7 +43,7 @@ ln -sf $root/zsh/p10k.zsh ~/.p10k.zsh
 mkdir -p ~/.config/fish
 ln -sf $root/fish/config.fish ~/.config/fish/config.fish
 ln -sf $root/git/unix ~/.gitconfig
-ln -sf $root/git $XDG_CONFIG_HOME/git
+ln -sf $root/git ~/.config/git
 ln -sf $root/git/ignore ~/.gitignore
 ln -sf $root/vimrc ~/.vimrc
 mkdir -p $XDG_CONFIG_HOME/nvim
@@ -59,8 +59,4 @@ ln -sf $root/conan/Darwin.txt ~/dev/conan/cci/recipes/Darwin.txt
 ln -sf $root/conan/ios.txt ~/dev/conan/cci/recipes/ios.txt
 cp $root/conan/gitignore ~/dev/conan/cci/recipes/.gitignore
 
-echo "### Install Vim plugin ###"
-vim +PlugClean +PlugInstall +PlugUpdate +qall
 
-echo "### Install Powerline font"
-$root/vendors/fonts/install.sh
