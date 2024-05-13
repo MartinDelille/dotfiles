@@ -6,16 +6,18 @@
 
 import os
 import sys
+
 import pyperclip
 
 first = 1
 text = ""
-if (len(sys.argv) == 1):
+if len(sys.argv) == 1:
     text = os.getcwd()
 else:
     for arg in sys.argv:
         if first == 0:
-            text += os.path.abspath(arg) + "\n"
+            file_path = os.path.abspath(arg)
+            text += file_path + "\n"
         first = 0
     text = text[:-1]
 
