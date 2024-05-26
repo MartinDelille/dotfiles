@@ -6,7 +6,6 @@ firefox
 google-chrome
 font-meslo-lg-nerd-font
 macdown
-messenger
 nordvpn
 numi
 slack
