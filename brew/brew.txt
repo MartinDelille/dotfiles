@@ -2,6 +2,7 @@ ack
 cmake
 curl
 diff-so-fancy
+eza
 ffmpeg
 getsentry/tools/sentry-cli
 gh
