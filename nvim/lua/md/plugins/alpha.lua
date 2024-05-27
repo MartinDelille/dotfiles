@@ -63,7 +63,7 @@ return {
 		--
 		-- Set header
 
-		dashboard.section.header.val = mortal
+		dashboard.section.header.val = pacman_ghost
 
 		-- Set menu
 		dashboard.section.buttons.val = {
