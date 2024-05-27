@@ -131,3 +131,11 @@ function gcfxf {
   git log -n 1 --pretty=format:%h $1 | xargs git commit --fixup
 }
 [ -f $HOME/.cargo ] && . "$HOME/.cargo/env"
+
+function pipreq() {
+  if [ "$1" ]; then
+    pip freeze | grep "^$1==" >> requirements.txt
+  else
+    echo "Error: Please specify an argument."
+  fi
+}
