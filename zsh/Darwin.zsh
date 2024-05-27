@@ -46,7 +46,7 @@ function lci {
   lab ci trace $1
   say $(basename $(pwd))
 }
-alias lcv="sleep 2;lab ci view"
+alias lcv="sleep 2;glab ci view"
 
 function pbsha {
   git log --oneline --decorate -n 1 $1

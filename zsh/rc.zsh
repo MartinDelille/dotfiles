@@ -61,7 +61,7 @@ eval "$(rbenv init - zsh)"
 [ -f /opt/homebrew/bin/thefuck ] && eval $(thefuck --alias)
 
 source "${DOTFILES_ZSH}/iterm2.zsh"
-source "$HOME/.config/op/plugins.sh"
+[ -f "$HOME/.config/op/plugins.sh" ] && source "$HOME/.config/op/plugins.sh"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 source "${DOTFILES_ZSH}/p10k.zsh"
 
