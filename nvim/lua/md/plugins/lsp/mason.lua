@@ -38,6 +38,10 @@ return {
 
 		mason_tool_installer.setup({
 			ensure_installed = {
+				"clang-format",
+				"codelldb",
+				"cpplint",
+				"cmakelint",
 				"prettier", -- prettier formatter
 				"stylua", -- lua formatter
 				"isort", -- python formatter
