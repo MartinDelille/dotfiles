@@ -38,6 +38,8 @@ bindkey "^[[B" history-substring-search-down
 
 #zprof
 
+setopt autocd
+
 [ -f $HOME/.secret ] && source $HOME/.secret
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

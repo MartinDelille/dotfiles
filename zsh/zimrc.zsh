@@ -7,6 +7,7 @@ zmodule ohmyzsh/ohmyzsh --root plugins/web-search
 zmodule zsh-users/zsh-syntax-highlighting
 zmodule zsh-users/zsh-completions
 zmodule zsh-users/zsh-history-substring-search
+zmodule zsh-users/zsh-autosuggestions
 
 zmodule kutsan/zsh-system-clipboard
 zmodule lukechilds/zsh-nvm
