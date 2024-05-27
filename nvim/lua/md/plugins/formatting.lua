@@ -11,6 +11,7 @@ return {
 				html = { "prettier" },
 				json = { "prettier" },
 				yaml = { "prettier" },
+				cpp = { "uncrustify" },
 				markdown = { "prettier" },
 				liquid = { "prettier" },
 				lua = { "stylua" },
