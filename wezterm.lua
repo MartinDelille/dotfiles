@@ -8,9 +8,10 @@ local config = wezterm.config_builder()
 
 config.color_scheme = "DanQing Light (base16)"
 config.color_scheme = "Batman"
-config.color_scheme = "Darcula (base16)"
 config.color_scheme = "DanQing (base16)"
+config.color_scheme = "Darcula (base16)"
 config.color_scheme = "OneHalfLight"
+config.color_scheme = "OneHalfDark"
 config.automatically_reload_config = true
 
 config.font = wezterm.font("MesloLGS Nerd Font Mono")
