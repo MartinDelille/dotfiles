@@ -2,6 +2,6 @@
 build_type=Release
 compiler=apple-clang
 compiler.libcxx=libc++
-arch=x86_64
+arch=armv8
 compiler.version=13.0
 os=Macos

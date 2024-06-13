@@ -5,7 +5,8 @@ folder = ${lib}/$(shell yq eval "(.versions[\"${version}\"]) | .folder" ${lib}/c
 os = $(shell uname -s)
 build_profile = Darwin.txt
 host_profile = ${build_profile}
-build = --build ${lib}/${version}@cci_testing/testing
+build = ${lib}/${version}@cci_testing/testing
+#build = missing
 
 default: create
 	echo ${lib}
@@ -16,7 +17,7 @@ create:
 		--channel=testing \
 		-pr:b ${build_profile} \
 		-pr:h ${host_profile} \
-		${build}
+		--build ${build}
 
 show:
 	@echo ${lib}/${version}
