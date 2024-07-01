@@ -40,6 +40,7 @@ return {
 			ensure_installed = {
 				"clang-format",
 				"codelldb",
+				"debugpy",
 				"prettier", -- prettier formatter
 				"stylua", -- lua formatter
 				"isort", -- python formatter

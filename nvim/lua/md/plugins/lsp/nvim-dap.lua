@@ -13,6 +13,12 @@ return {
 			mode = "n",
 			desc = "Start or continue the debugger",
 		},
+		{
+			"<leader>dt",
+			"<cmd>DapTerminate<CR>",
+			mode = "n",
+			desc = "Terminate the debugging session",
+		},
 	},
 	config = function()
 		local dap = require("dap")
