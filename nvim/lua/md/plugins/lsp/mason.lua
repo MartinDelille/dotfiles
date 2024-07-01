@@ -42,6 +42,7 @@ return {
 				"codelldb",
 				"cpplint",
 				"cmakelint",
+				"debugpy",
 				"prettier", -- prettier formatter
 				"stylua", -- lua formatter
 				"isort", -- python formatter
