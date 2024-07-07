@@ -29,6 +29,7 @@ alias ghprw="sleep 1;gh pr checks --watch; kw"
 alias ic='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
 alias thd='theme "Solarized Dark"'
 alias thl='theme OneHalfLight'
+alias svenv='source venv/bin/activate'
 
 setopt extendedglob
 alias uma="umount /Volumes/^Macintosh*/;sleep 1;l /Volumes"
