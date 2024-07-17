@@ -5,6 +5,14 @@ return {
 		"mfussenegger/nvim-dap",
 		"nvim-neotest/nvim-nio",
 	},
+	keys = {
+		{
+			"<leader>du",
+			"<cmd>lua require('dapui').toggle()<cr>",
+			desc = "Toggle DAP UI",
+			mode = { "n", "x" },
+		},
+	},
 	config = function()
 		local dap = require("dap")
 		local dapui = require("dapui")

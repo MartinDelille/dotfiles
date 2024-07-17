@@ -14,6 +14,18 @@ return {
 			desc = "Start or continue the debugger",
 		},
 		{
+			"<leader>di",
+			"<cmd>DapStepInto<CR>",
+			mode = "n",
+			desc = "Step Into",
+		},
+		{
+			"<leader>do",
+			"<cmd>DapStepOver<CR>",
+			mode = "n",
+			desc = "Step Over",
+		},
+		{
 			"<leader>dt",
 			"<cmd>DapTerminate<CR>",
 			mode = "n",
