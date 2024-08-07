@@ -34,3 +34,6 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 -- buffer management
 keymap.set("n", "<tab>", "<cmd>bn<CR>", { desc = "Go to next buffer" })
 keymap.set("n", "<S-tab>", "<cmd>bp<CR>", { desc = "Go to previous buffer" })
+
+-- Run make
+keymap.set("n", "<leader>mm", "<cmd>term make<CR>", { desc = "Run make" })
