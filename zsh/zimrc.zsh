@@ -1,4 +1,3 @@
-zmodule romkatv/powerlevel10k --use degit
 zmodule ohmyzsh/ohmyzsh --root plugins/1password
 zmodule ohmyzsh/ohmyzsh --root plugins/macos
 zmodule ohmyzsh/ohmyzsh --root plugins/git

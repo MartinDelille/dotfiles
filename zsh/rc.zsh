@@ -1,13 +1,6 @@
 autoload -Uz compinit
 compinit
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 #zmodload zsh/zprof
 
 export LANG="en_US.UTF-8"
@@ -62,10 +55,7 @@ eval "$(rbenv init - zsh)"
 
 [ -f /opt/homebrew/bin/thefuck ] && eval $(thefuck --alias)
 
-source "${DOTFILES_ZSH}/iterm2.zsh"
 [ -f "$HOME/.config/op/plugins.sh" ] && source "$HOME/.config/op/plugins.sh"
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-source "${DOTFILES_ZSH}/p10k.zsh"
 
 PERL_ROOT="$HOME/perl5"
 PATH="$PERL_ROOT/bin${PATH:+:${PATH}}"; export PATH;
@@ -74,3 +64,7 @@ PERL_LOCAL_LIB_ROOT="$PERL_ROOT${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}";
 PERL_MB_OPT="--install_base \"$PERL_ROOT\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=$PERL_ROOT"; export PERL_MM_OPT;
 
+
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+  eval "$(oh-my-posh init zsh)"
+fi
