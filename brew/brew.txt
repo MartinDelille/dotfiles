@@ -24,3 +24,15 @@ wakeonlan
 wget
 yq
 yt-dlp
+exercism
+glslviewer
+jakehilborn/jakehilborn/displayplacer
+jandedobbeleer/oh-my-posh/oh-my-posh
+jesseduffield/lazygit/lazygit
+ollama
+rclone
+ripgrep
+speedtest-cli
+tmux
+thefuck
+zoxide
