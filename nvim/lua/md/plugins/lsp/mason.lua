@@ -33,6 +33,7 @@ return {
 				"lua_ls",
 				"emmet_ls",
 				"pyright",
+				"ts_ls",
 			},
 		})
 
