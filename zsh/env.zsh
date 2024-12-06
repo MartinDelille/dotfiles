@@ -80,6 +80,7 @@ alias gafxm="git autofixup master -v"
 alias gafm="git autofixup main -v"
 alias gcwrm="git commit -m wip_remove"
 alias glof="git log --oneline --decorate --graph --follow"
+alias rmorig="find . -name '*.orig' -exec trash {} \;"
 [ -f /opt/homebrew/bin/nvim ] && alias vi=nvim
 [ -f /opt/homebrew/bin/nvim ] && alias v=nvim
 [ -f /opt/homebrew/bin/nvim ] && alias e=nvim
