@@ -12,7 +12,8 @@ default: create
 	echo ${lib}
 
 create:
-	conan create "${folder}" --version ${version} \
+	source venv/bin/activate && \
+		conan create "${folder}" --version ${version} \
 		--user=cci_testing \
 		--channel=testing \
 		-pr:b ${build_profile} \
@@ -26,7 +27,8 @@ copy:
 	@echo ${lib}/${version} | pbcopy
 
 info:
-	conan info ${lib}/${version}@ --graph kw.html
+	source venv/bin/activate && \
+		conan info ${lib}/${version}@ --graph kw.html
 
 vi:
 	nvim ${folder}/conanfile.py
