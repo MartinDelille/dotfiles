@@ -103,6 +103,10 @@ if [[ -f ~/.dotfiles/zsh/${OS}.zsh ]]; then
     source ~/.dotfiles/zsh/${OS}.zsh
 fi
 
+if [[ -f ~/.cargo/env ]]; then
+    source ~/.cargo/env
+fi
+
 # Color
 
 red=$'\e[1;31m'
