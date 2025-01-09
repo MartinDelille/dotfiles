@@ -58,8 +58,8 @@ alias xxxx="exit"
 alias f="find . -name"
 alias lmb="glab mr view --web"
 alias play="ffplay -autoexit"
-alias ghprb="gh pr view --web"
-alias ghrvw="gh repo view --web"
+alias ghprb="sleep 1 && gh pr view --web"
+alias ghrvw="sleep 1 && gh repo view --web"
 
 # Alias waiting to be merged here: <https://github.com/ohmyzsh/ohmyzsh/pull/9676>
 alias gcfx='git commit --fixup'
@@ -68,6 +68,9 @@ alias grbmi='git rebase $(git_main_branch) --interactive'
 alias grbmia='git rebase $(git_main_branch) --interactive --autosquash'
 alias gsuri='git submodule update --recursive --init'
 
+alias greseth="git reset HEAD~1"
+alias gresethh="git reset HEAD~2"
+alias gresethhh="git reset HEAD~3"
 alias gcfxh="git commit --fixup HEAD"
 alias gcfxhh="git commit --fixup HEAD~1"
 alias gcfxhhh="git commit --fixup HEAD~2"

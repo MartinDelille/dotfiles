@@ -34,11 +34,6 @@ alias svenv='source venv/bin/activate'
 setopt extendedglob
 alias uma="umount /Volumes/^Macintosh*/;sleep 1;l /Volumes"
 
-# Java
-export JAVA_HOME=`/usr/libexec/java_home`
-export PATH=${JAVA_HOME}/bin:$PATH
-export MAVEN_OPTS="-Xmx512m"
-
 function pbc {
   cat $1 | pbcopy
 }
