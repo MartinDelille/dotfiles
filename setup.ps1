@@ -1,12 +1,10 @@
-New-Item -Force -ItemType SymbolicLink -Path ~/vimfiles/autoload/plug.vim -Value $PSScriptRoot/vendors/vim-plug/plug.vim
-New-Item -Force -ItemType SymbolicLink -Path ~/.vimrc -Value $PSScriptRoot/vimrc
-New-Item -Force -ItemType SymbolicLink -Path "$Env:XDG_CONFIG_HOME/nvim/init.vim" -Value $PSScriptRoot/vimrc
-iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
-    ni "$Env:XDG_CONFIG_HOME/nvim/autoload/plug.vim" -Force
+New-Item -Force -ItemType SymbolicLink -Path ~/.wezterm.lua -Value $PSScriptRoot/wezterm.lua
+New-Item -Force -ItemType SymbolicLink -Path $PROFILE -Value $PSScriptRoot/powershell/profile.ps1
+New-Item -Force -ItemType SymbolicLink -Path ~/AppData/Local/nvim -Value $PSScriptRoot/nvim
 New-Item -Force -ItemType SymbolicLink -Path ~/.gitconfig -Value $PSScriptRoot/git/windows
-New-Item -Force -ItemType SymbolicLink -Path $Env:XDG_CONFIG_HOME/git -Value $PSScriptRoot/git
 
 scoop bucket add extras
-scoop install git-aliases posh-git diff-so-fancy make neovim
+scoop bucket add nerd-fonts
+scoop install git-aliases posh-git diff-so-fancy make neovim Meslo-NF-Mono
+scoop update neovim
 
-vi +PlugInstall +PlugUpdate +qall
