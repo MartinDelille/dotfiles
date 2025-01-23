@@ -46,5 +46,35 @@ config.mouse_bindings = {
 	},
 }
 
+if wezterm.target_triple == "x86_64-pc-windows-msvc" then
+	config.keys = {
+		{
+			key = "h",
+			mods = "CTRL",
+			action = wezterm.action.ActivatePaneDirection("Left"),
+		},
+		{
+			key = "l",
+			mods = "CTRL",
+			action = wezterm.action.ActivatePaneDirection("Right"),
+		},
+		{
+			key = "h",
+			mods = "CTRL|SHIFT",
+			action = wezterm.action.SplitPane({
+				direction = "Left",
+			}),
+		},
+		{
+			key = "l",
+			mods = "CTRL|SHIFT",
+			action = wezterm.action.SplitPane({
+				direction = "Right",
+			}),
+		},
+	}
+	config.default_prog = { "pwsh" }
+end
+
 -- and finally, return the configuration to wezterm
 return config
