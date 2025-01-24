@@ -16,6 +16,8 @@ return {
 				liquid = { "prettier" },
 				lua = { "stylua" },
 				python = { "isort", "black" },
+				gdscript = { "gdformat" },
+				gdshader = { "clang-format" },
 			},
 			format_on_save = function(bufnr)
 				-- Disable with a global or buffer-local variable
@@ -36,6 +38,12 @@ return {
 			end,
 			{ desc = "Format file or range (in visual mode)" }
 		)
+
+		-- Prevent expanding tabs to spaces for GDScript files
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = "gdscript",
+			callback = function() vim.bo.expandtab = false end,
+		})
 
 		vim.api.nvim_create_user_command("FormatDisable", function(args)
 			if args.bang then

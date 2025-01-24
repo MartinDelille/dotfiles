@@ -51,6 +51,7 @@ return {
 				"pylint",
 				"eslint_d",
 				"rust-analyzer",
+				"gdtoolkit",
 			},
 		})
 	end,
