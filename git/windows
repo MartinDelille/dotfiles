@@ -1,5 +1,7 @@
 # vim: set filetype=dosini:
 
+[include]
+	path = ~/dev/md/dotfiles/git/config
 [includeIf "gitdir:~/dev/phonations/**/"]
 	path = ~/dev/md/dotfiles/git/lylo
 [includeIf "gitdir:~/dev/youdub/**/"]
