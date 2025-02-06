@@ -13,6 +13,15 @@ return {
 		},
 	},
 	config = function()
-		require("cmake-tools").setup({})
+		require("cmake-tools").setup({
+			cmake_runner = {
+				default_opts = {
+					terminal = {
+						split_direction = "horizontal",
+						split_size = 31,
+					},
+				},
+			},
+		})
 	end,
 }

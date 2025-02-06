@@ -104,5 +104,9 @@ return {
 			end,
 			["rust_analyzer"] = function() end,
 		})
+
+		lspconfig.gdscript.setup({
+			capabilities = capabilities,
+		})
 	end,
 }
