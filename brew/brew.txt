@@ -12,6 +12,13 @@ git-open
 glab
 imagemagick
 jq
+keith/formulae/reminders-cli
+mysql
+httpd
+llvm
+scons
+shivammathur/php/php@7.4
+ninja
 lab
 m1ddc
 neovim
@@ -24,7 +31,6 @@ wakeonlan
 wget
 yq
 yt-dlp
-exercism
 glslviewer
 jakehilborn/jakehilborn/displayplacer
 jandedobbeleer/oh-my-posh/oh-my-posh
@@ -32,7 +38,5 @@ jesseduffield/lazygit/lazygit
 ollama
 rclone
 ripgrep
-speedtest-cli
 tmux
-thefuck
 zoxide
