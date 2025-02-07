@@ -11,7 +11,6 @@ return {
 		"CopilotC-Nvim/CopilotChat.nvim",
 		dependencies = {
 			{ "github/copilot.vim" },
-			{ "nvim-lua/plenary.nvim" },
 		},
 		build = "make tiktoken",
 		opts = {
@@ -39,6 +38,12 @@ return {
 				end,
 				desc = "CopilotChat - Quick Chat",
 			},
+			{
+				"<leader>ccp",
+				function() require("CopilotChat").select_prompt() end,
+				desc = "CopilotChat - Prompt actions",
+			},
+			{ "<leader>ccm", ":CopilotChatModel<CR>", desc = "CopilotChat - Model" },
 		},
 	},
 }
