@@ -5,6 +5,6 @@ New-Item -Force -ItemType SymbolicLink -Path ~/.gitconfig -Value $PSScriptRoot/g
 
 scoop bucket add extras
 scoop bucket add nerd-fonts
-scoop install git-aliases posh-git diff-so-fancy make neovim Meslo-NF-Mono wezterm
+scoop install git-aliases posh-git diff-so-fancy make neovim Meslo-NF-Mono wezterm fd
 scoop update neovim
 
