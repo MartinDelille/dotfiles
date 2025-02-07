@@ -39,6 +39,14 @@ return {
 				end,
 				desc = "CopilotChat - Quick Chat",
 			},
+			{
+				"<leader>ccp",
+				function()
+					local actions = require("CopilotChat.actions")
+					require("CopilotChat.integrations.snacks").pick(actions.prompt_actions())
+				end,
+				desc = "CopilotChat - Prompt actions",
+			},
 		},
 	},
 }

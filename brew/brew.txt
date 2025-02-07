@@ -3,6 +3,7 @@ cmake
 curl
 diff-so-fancy
 eza
+fd
 ffmpeg
 getsentry/tools/sentry-cli
 gh
