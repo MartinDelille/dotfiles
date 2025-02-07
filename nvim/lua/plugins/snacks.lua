@@ -54,6 +54,7 @@ return {
 		input = { enabled = true },
 		picker = {
 			enabled = true,
+			hidden = true,
 			sources = {
 				colorschemes = {
 					confirm = function(picker, item)
