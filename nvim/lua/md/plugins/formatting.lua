@@ -19,20 +19,23 @@ return {
 			},
 			format_on_save = function(bufnr)
 				-- Disable with a global or buffer-local variable
-				if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
-					return
-				end
+				if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then return end
 				return { timeout_ms = 500, lsp_fallback = true }
 			end,
 		})
 
-		vim.keymap.set({ "n", "v" }, "<leader>mp", function()
-			conform.format({
-				lsp_fallback = true,
-				async = false,
-				timeout_ms = 1000,
-			})
-		end, { desc = "Format file or range (in visual mode)" })
+		vim.keymap.set(
+			{ "n", "v" },
+			"<leader>mp",
+			function()
+				conform.format({
+					lsp_fallback = true,
+					async = false,
+					timeout_ms = 1000,
+				})
+			end,
+			{ desc = "Format file or range (in visual mode)" }
+		)
 
 		vim.api.nvim_create_user_command("FormatDisable", function(args)
 			if args.bang then
