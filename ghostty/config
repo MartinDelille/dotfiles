@@ -1,0 +1,7 @@
+# vim: set filetype=conf:
+
+theme = onehalflight
+theme = catppuccin-frappe
+custom-shader = shaders/galaxy.glsl
+
+

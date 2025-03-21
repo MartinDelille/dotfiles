@@ -40,6 +40,7 @@ return {
 				"gdscript",
 				"godot_resource",
 				"gdshader",
+				"glsl",
 			},
 			incremental_selection = {
 				enable = true,
