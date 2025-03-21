@@ -66,5 +66,6 @@ PERL_MM_OPT="INSTALL_BASE=$PERL_ROOT"; export PERL_MM_OPT;
 
 
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-  eval "$(oh-my-posh init zsh)"
+  eval "$(oh-my-posh init zsh --config ~/.dotfiles/zsh/omp.yaml)"
 fi
+
