@@ -10,3 +10,6 @@
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule "ghostty/shaders"]
+	path = ghostty/shaders
+	url = https://github.com/hackr-sh/ghostty-shaders
