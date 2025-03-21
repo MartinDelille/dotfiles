@@ -1,5 +1,5 @@
-require("md/core/options")
-require("md/core/keymaps")
+require("core/options")
+require("core/keymaps")
 
 ---@param fallback? string
 ---@return string|nil
