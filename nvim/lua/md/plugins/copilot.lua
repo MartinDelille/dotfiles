@@ -14,6 +14,7 @@ return {
 		},
 		build = "make tiktoken",
 		opts = {
+			-- model = "claude-3.7-sonnet",
 			debug = true,
 			mappings = {
 				complete = {
