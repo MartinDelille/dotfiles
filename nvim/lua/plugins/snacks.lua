@@ -46,7 +46,7 @@ return {
 					},
 					{ icon = " ", key = "q", desc = "Quit", action = ":qa" },
 				},
-				header = require("md.ascii.pacman_ghost"),
+				header = require("ascii.pacman_ghost"),
 			},
 		},
 		explorer = { enabled = true },

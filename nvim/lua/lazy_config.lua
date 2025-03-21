@@ -12,9 +12,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	{ import = "md.plugins" },
-	{ import = "md.plugins.lsp" },
-	{ import = "md.themes" },
+	{ import = "plugins" },
+	{ import = "plugins.lsp" },
+	{ import = "themes" },
 }, {
 	checker = {
 		enabled = true,
