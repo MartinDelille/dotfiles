@@ -37,7 +37,7 @@ alias lo="ls -ls modified"
 alias lodl="lo ~/Downloads"
 alias d="cd ~/.dotfiles"
 alias rm="Use trash or full /bin/rm"
-alias dnv="cd ~/.config/nvim/lua/md"
+alias dnv="cd ~/.config/nvim/lua/md/plugins"
 alias dv="cd ~/dev/md"
 alias cci="cd ~/dev/conan/cci/recipes"
 alias adm="cd ~/dev/adm/atelier-medias.org"
@@ -64,6 +64,7 @@ alias ghrvw="sleep 1 && gh repo view --web"
 # Alias waiting to be merged here: <https://github.com/ohmyzsh/ohmyzsh/pull/9676>
 alias gcfx='git commit --fixup'
 alias glom='git log --oneline --decorate --color $(git_main_branch)..'
+alias glov='git log --oneline --decorate --color origin/$(git_develop_branch)..'
 alias grbmi='git rebase $(git_main_branch) --interactive'
 alias grbmia='git rebase $(git_main_branch) --interactive --autosquash'
 alias gsuri='git submodule update --recursive --init'
@@ -91,11 +92,7 @@ alias rmorig="find . -name '*.orig' -exec trash {} \;"
 [ -f /usr/local/bin/nvim ] && alias v=nvim
 alias pgssh="pgs spiron.local && ssh spiron.local -p 2222"
 
-## Send a notification to the terminal (iTerm2)
-function n {
-  echo -en "\e]9;$1\e\\"
-}
-alias glci="glab ci trace; echo -en '\e]9;glab ci trace\e\\'"
+alias glci="glab ci trace; say 'CI done'"
 
 ## Sourcing OS-specific things
 OS=$(uname -s); export OS
