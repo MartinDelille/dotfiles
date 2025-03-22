@@ -38,17 +38,21 @@ echo "### Linking configuration ###"
 ln -sf $root/zsh/rc.zsh ~/.zshrc
 ln -sf $root/zsh/env.zsh ~/.zshenv
 ln -sf $root/wezterm.lua ~/.wezterm.lua
+rm -rf ~/.config/ghostty
 ln -sf $root/ghostty ~/.config/ghostty
 ln -sf $root/zsh/zimrc.zsh ~/.zimrc
 ln -sf $root/zsh/p10k.zsh ~/.p10k.zsh
 ln -sf $root/tmux/tmux.conf ~/.tmux.conf
+rm -rf ~/.tmux
 ln -sf $root/tmux/ ~/.tmux
 mkdir -p ~/.config/fish
 ln -sf $root/fish/config.fish ~/.config/fish/config.fish
 ln -sf $root/git/unix ~/.gitconfig
+rm -rf ~/.config/git
 ln -sf $root/git ~/.config/git
 ln -sf $root/git/ignore ~/.gitignore
 ln -sf $root/vimrc ~/.vimrc
+rm -rf ~/.config/nvim
 ln -sf $root/nvim ~/.config/nvim
 ln -sf $root/ackrc ~/.ackrc
 ln -sf $root/tigrc ~/.tigrc
