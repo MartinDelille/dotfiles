@@ -38,11 +38,6 @@ alias uma="umount /Volumes/^Macintosh*/;sleep 1;l /Volumes"
 function pbc {
   cat $1 | pbcopy
 }
-function lci {
-  sleep 2
-  lab ci trace $1
-  say $(basename $(pwd))
-}
 alias lcv="sleep 2;glab ci view"
 
 function pbsha {
