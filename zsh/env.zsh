@@ -36,7 +36,9 @@ alias l="ls -lah"
 alias lo="ls -ls modified"
 alias lodl="lo ~/Downloads"
 alias d="cd ~/.dotfiles"
-alias rm="Use trash or full /bin/rm"
+if [ "$TERM_PROGRAM" != "vscode" ]; then
+  alias rm="Use trash or full /bin/rm"
+fi
 alias dnv="cd ~/.config/nvim/lua/plugins"
 alias dv="cd ~/dev/md"
 alias cci="cd ~/dev/conan/cci/recipes"
@@ -69,6 +71,7 @@ alias grbmi='git rebase $(git_main_branch) --interactive'
 alias grbmia='git rebase $(git_main_branch) --interactive --autosquash'
 alias gsuri='git submodule update --recursive --init'
 
+alias greset="git reset"
 alias greseth="git reset HEAD~1"
 alias gresethh="git reset HEAD~2"
 alias gresethhh="git reset HEAD~3"
@@ -80,7 +83,7 @@ alias gshh="git show HEAD~1"
 alias gshhh="git show HEAD~2"
 alias gshhhh="git show HEAD~3"
 alias gafx="git autofixup -v"
-alias gafxm="git autofixup master -v"
+alias gafxm='git autofixup $(git_main_branch) -v'
 alias gafm="git autofixup main -v"
 alias gcwrm="git commit -m wip_remove"
 alias glof="git log --oneline --decorate --graph --follow"
