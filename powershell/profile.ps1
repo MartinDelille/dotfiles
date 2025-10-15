@@ -37,10 +37,13 @@ Function mcd ($path) { md $path;cd $path }
 Function qtlog { vi $Env:QT_LOGGING_FILE }
 Function say ($content) { (New-Object System.Speech.Synthesis.SpeechSynthesizer).Speak($content)}
 Function kw {
-  if($?) {
-    say 'kowabunga'
+  $success = $?
+  Add-Type -AssemblyName System.Speech
+  $speak = New-Object System.Speech.Synthesis.SpeechSynthesizer
+  if($success) {
+    $speak.Speak("done")
   } else {
-    say 'bad'
+    $speak.Speak("bad")
   }
 }
 Function lmb { lab mr b }
