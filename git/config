@@ -16,7 +16,9 @@
 [core]
 	editor = nvim
 	excludesfile = ~/.gitignore
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	pager = delta
+[delta]
+  navigate = true
 [push]
 	default = simple
 [gitopen "gitlab"]
@@ -36,10 +38,11 @@
 [pull]
 	ff = only
 [interactive]
-	diffFilter = diff-so-fancy --patch
+	diffFilter = delta --color-only
 [init]
 	defaultBranch = main
 [include]
   path = ~/.dotfiles/git/maintenance
 [merge]
 	tool = nvimdiff3
+  conflictStyle = zdiff3
