@@ -1,4 +1,5 @@
 export EDITOR=nvim
+export MANPAGER='nvim +Man!'
 # Oh my zsh
 export DEFAULT_USER=`whoami`
 #Add my custom script
@@ -136,9 +137,45 @@ function dfs {
   defaults read tv.lylo.$app
 }
 
-function gcfxf {
-  git log -n 1 --pretty=format:%h $1 | xargs git commit --fixup
+function git_select_commit() {
+  local range="$1"
+  local format="%C(auto)%h %C(cyan)%ad%C(auto) %C(yellow)%d%C(auto) %s"
+  git log --color=always --date=format:'%Y-%m-%d %H:%M:%S' \
+    --pretty=format:"$format" $range | fzf --ansi | awk '{print $1}'
 }
+
+function gcfxf {
+  main_branch=$(git_main_branch)
+  commit=$(git_select_commit "$main_branch..")
+  if [ -n "$commit" ]; then
+    git commit --fixup="$commit"
+  fi
+}
+
+function gshf {
+  main_branch=$(git_main_branch)
+  commit=$(git_select_commit "$main_branch..")
+  if [ -n "$commit" ]; then
+    git show "$commit"
+  fi
+}
+
+function gcpbf {
+  main_branch=$(git_main_branch)
+  branch="$1"
+  if [ -z "$branch" ]; then
+    branch=$(git branch --all --format='%(refname:short)' --color=always | fzf --ansi )
+  fi
+  if [ -z "$branch" ]; then
+    echo "Error: No branch selected." >&2
+    return 1
+  fi
+  commit=$(git_select_commit "${main_branch}..${branch}")
+  if [ -n "$commit" ]; then
+    git cherry-pick "$commit"
+  fi
+}
+
 [ -f $HOME/.cargo ] && . "$HOME/.cargo/env"
 
 function pipreq() {

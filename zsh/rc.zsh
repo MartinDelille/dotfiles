@@ -36,6 +36,8 @@ setopt autocd
 [ -f $HOME/.secret ] && source $HOME/.secret
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
 
 # Make Ctrl+e accept autosuggestion
 bindkey '^e' autosuggest-accept
