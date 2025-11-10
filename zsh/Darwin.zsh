@@ -33,7 +33,14 @@ alias svenv='source venv/bin/activate'
 alias ytc='yt-dlp "$(pbpaste)"'
 
 setopt extendedglob
-alias uma="umount /Volumes/^Macintosh*/;sleep 1;l /Volumes"
+function uma {
+  echo "Before unmounting:"
+  /bin/ls /Volumes
+  umount /Volumes/^Macintosh*/
+  sleep 1
+  echo "After unmounting:"
+  /bin/ls /Volumes
+}
 
 function pbc {
   cat $1 | pbcopy
