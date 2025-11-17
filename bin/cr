@@ -1,27 +1,22 @@
-#! python
-# coding: utf-8
-
-# Copy file given in argument in the clipboard
+#!/bin/bash
+# Copy relative file(s) given in argument to clipboard
 # If no files are given, copy the current directory path
 
-import os
-import sys
+if [ $# -eq 0 ]; then
+  text="."
+else
+  text=""
+  for arg in "$@"; do
+    rel_path="$arg"
+    text+="$rel_path"$'\n'
+  done
+  # Remove trailing newline
+  text="${text%$'\n'}"
+fi
 
-import pyperclip
+if [[ "$text" == *" "* ]]; then
+  text="\"$text\""
+fi
 
-first = 1
-text = ""
-if len(sys.argv) == 1:
-    text = os.getcwd()
-else:
-    for arg in sys.argv:
-        if first == 0:
-            text += os.path.relpath(arg) + "\n"
-        first = 0
-    text = text[:-1]
-
-if " " in text:
-    text = '"' + text + '"'
-
-print(text)
-pyperclip.copy(text)
+echo "$text"
+printf "%s" "$text" | pbcopy

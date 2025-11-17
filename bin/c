@@ -1,28 +1,56 @@
-#! python
-# coding: utf-8
-
-# Copy file given in argument in the clipboard
+#!/bin/bash
+# Copy file(s) given in argument to clipboard
 # If no files are given, copy the current directory path
 
-import os
-import sys
+if [ $# -eq 0 ]; then
+  text="$(pwd)"
+else
+  text=""
+  for arg in "$@"; do
+    if [ "$arg" = "." ]; then
+      abs_path="$(pwd)"
+    else
+      # Expand ~ to $HOME if present
+      if [[ "$arg" == ~* ]]; then
+        expanded_arg="$HOME${arg:1}"
+      else
+        expanded_arg="$arg"
+      fi
 
-import pyperclip
+      # Use realpath to get the absolute path
+      if command -v realpath &>/dev/null; then
+        abs_path="$(realpath "$expanded_arg" 2>/dev/null)"
+      else
+        # Fallback for systems without realpath
+        abs_path="$(cd "$(dirname "$expanded_arg")" 2>/dev/null && pwd)"/"$(basename "$expanded_arg")"
+      fi
 
-first = 1
-text = ""
-if len(sys.argv) == 1:
-    text = os.getcwd()
-else:
-    for arg in sys.argv:
-        if first == 0:
-            file_path = os.path.abspath(arg)
-            text += file_path + "\n"
-        first = 0
-    text = text[:-1]
+      # If path resolution failed, use the original argument
+      if [ -z "$abs_path" ]; then
+        abs_path="$expanded_arg"
+      fi
 
-if " " in text:
-    text = '"' + text + '"'
+      # Replace $HOME with ~ if path is under home directory
+      if [[ "$abs_path" == "$HOME"* ]]; then
+        abs_path="~${abs_path#$HOME}"
+      fi
+    fi
 
-print(text)
-pyperclip.copy(text)
+    # Quote path if it contains spaces, but handle ~ specially
+    if [[ "$abs_path" == *" "* ]]; then
+      if [[ "$abs_path" == ~* ]]; then
+        # Quote only the part after ~
+        abs_path="~\"${abs_path#\~}\""
+      else
+        abs_path="\"$abs_path\""
+      fi
+    fi
+
+    text+="$abs_path"$'\n'
+  done
+  # Remove trailing newline
+  text="${text%$'\n'}"
+fi
+
+echo "$text"
+printf "%s" "$text" | pbcopy
