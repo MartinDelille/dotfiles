@@ -22,7 +22,7 @@ export IRCSERVER=irc.freenode.net
 # GPG
 export GPG_TTY=$(tty)
 # Other
-export HOMEBREW_EDITOR=vi
+export HOMEBREW_EDITOR=nvim
 export TERM="xterm-256color"
 export CONAN_HOOK_ERROR_LEVEL=40
 
@@ -63,6 +63,7 @@ alias lmb="glab mr view --web"
 alias play="ffplay -autoexit"
 alias ghprb="sleep 1 && gh pr view --web"
 alias ghrvw="sleep 1 && gh repo view --web"
+alias oc=opencode
 
 # Alias waiting to be merged here: <https://github.com/ohmyzsh/ohmyzsh/pull/9676>
 alias gcfx='git commit --fixup'
@@ -156,7 +157,13 @@ function gshf {
   main_branch=$(git_main_branch)
   commit=$(git_select_commit "$main_branch..")
   if [ -n "$commit" ]; then
-    git show "$commit"
+    echo -n "$commit" | pbcopy
+    # if gshf argument is given, show the commit for the file passed as argument
+    if [ -n "$1" ]; then
+      git show "$commit" -- "$1"
+    else
+      git show "$commit"
+    fi
   fi
 }
 
@@ -173,6 +180,30 @@ function gcpbf {
   commit=$(git_select_commit "${main_branch}..${branch}")
   if [ -n "$commit" ]; then
     git cherry-pick "$commit"
+  fi
+}
+
+function fzf_git_commit_widget() {
+  local commit
+  commit=$(git_select_commit)
+  if [[ -n $commit ]]; then
+    LBUFFER+="$commit"
+  fi
+  zle reset-prompt
+}
+zle -N fzf_git_commit_widget
+bindkey '^g' fzf_git_commit_widget
+
+
+# Select a running process by name using fzf and kill it
+function killf() {
+  local selection pid
+  selection=$(ps -u $USER -o pid,comm,args | grep -v "ps -u" | grep -v "fzf" | fzf --header="Select process to kill" --ansi)
+  if [[ -n "$selection" ]]; then
+    pid=$(awk '{print $1}' <<< "$selection")
+    if [[ -n "$pid" ]]; then
+      kill "$pid" && echo "Killed process $pid"
+    fi
   fi
 }
 
