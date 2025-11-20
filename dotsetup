@@ -14,8 +14,8 @@ command_exists () {
 
 if [[ "$OSTYPE" == linux* ]]; then
   sudo apt update
-  echo "### Linux specific: Install Git, Vim and ZSH ###"
-  sudo apt install -y git vim zsh openssh-server curl fish
+  echo "### Linux specific: Install Git, Neovim and ZSH ###"
+  sudo apt install -y git nvim zsh openssh-server curl fish
 fi
 
 if [[ "$OSTYPE" == darwin* ]]; then
@@ -51,9 +51,6 @@ ln -sf $root/git/unix ~/.gitconfig
 rm -rf ~/.config/git
 ln -sf $root/git ~/.config/git
 ln -sf $root/git/ignore ~/.gitignore
-ln -sf $root/vimrc ~/.vimrc
-rm -rf ~/.config/nvim
-ln -sf $root/nvim ~/.config/nvim
 ln -sf $root/ackrc ~/.ackrc
 ln -sf $root/tigrc ~/.tigrc
 ln -sf $root/conan/Makefile ~/dev/conan/cci/recipes
