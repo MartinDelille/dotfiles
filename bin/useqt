@@ -1,0 +1,4 @@
+#!/bin/bash
+
+export CMAKE_PREFIX_PATH=~/Qt/6.10.0/macos
+
