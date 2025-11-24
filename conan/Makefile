@@ -11,6 +11,15 @@ build = ${lib}/${version}@cci_testing/testing
 default: create
 	echo ${lib}
 
+export:
+	source venv/bin/activate && \
+		conan export "${folder}" --version ${version} \
+		--user=cci_testing \
+		--channel=testing \
+		-pr:b ${build_profile} \
+		-pr:h ${host_profile} \
+		--build ${build}
+
 create:
 	source venv/bin/activate && \
 		conan create "${folder}" --version ${version} \

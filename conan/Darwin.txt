@@ -6,3 +6,8 @@ compiler.libcxx=libc++
 compiler.version=15
 compiler.cppstd=20
 os=Macos
+os.version=13.0
+[options]
+*/*:shared=False
+qt/*:with_pq=False
+qt/*:opengl=no
