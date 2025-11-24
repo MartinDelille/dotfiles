@@ -2,14 +2,14 @@
 
 set -e
 
-script_path=`pwd`/$0
+script_path=$(pwd)/$0
 script_relative_path='/dotsetup'
-root=${script_path%$script_relative_path};
+root=${script_path%$script_relative_path}
 
 echo "Dotfiles root: $root"
 
-command_exists () {
-  type "$1" &> /dev/null ;
+command_exists() {
+  type "$1" &>/dev/null
 }
 
 if [[ "$OSTYPE" == linux* ]]; then
@@ -23,10 +23,10 @@ if [[ "$OSTYPE" == darwin* ]]; then
     echo "### Brew ###"
     command_exists brew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-    xargs brew install < $root/brew/brew.txt
+    xargs brew install <$root/brew/brew.txt
     if [[ "$2" == "cask" ]]; then
       echo "### Cask ###"
-      xargs brew install --cask < $root/brew/cask.txt
+      xargs brew install --cask <$root/brew/cask.txt
     fi
   fi
 fi
@@ -57,5 +57,3 @@ ln -sf $root/conan/Makefile ~/dev/conan/cci/recipes
 ln -sf $root/conan/Darwin.txt ~/dev/conan/cci/recipes/Darwin.txt
 ln -sf $root/conan/ios.txt ~/dev/conan/cci/recipes/ios.txt
 cp $root/conan/gitignore ~/dev/conan/cci/recipes/.gitignore
-
-
