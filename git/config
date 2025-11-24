@@ -19,6 +19,7 @@
 	pager = delta
 [delta]
   navigate = true
+  features = mellow-barbet
 [push]
 	default = simple
 [gitopen "gitlab"]
@@ -43,6 +44,7 @@
 	defaultBranch = main
 [include]
   path = ~/.dotfiles/git/maintenance
+  path = ~/.dotfiles/git/themes.gitconfig
 [merge]
 	tool = nvimdiff3
   conflictStyle = zdiff3
