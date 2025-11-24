@@ -26,6 +26,8 @@ export HOMEBREW_EDITOR=nvim
 export TERM="xterm-256color"
 export CONAN_HOOK_ERROR_LEVEL=40
 
+export PATH=~/.ghcup/bin:$PATH
+
 # Various alias
 alias m="make"
 alias mm="make"
@@ -69,6 +71,7 @@ alias oc=opencode
 alias gcfx='git commit --fixup'
 alias glom='git log --oneline --decorate --color $(git_main_branch)..'
 alias glov='git log --oneline --decorate --color origin/$(git_develop_branch)..'
+alias grbia='git rebase --interactive --autosquash'
 alias grbmi='git rebase $(git_main_branch) --interactive'
 alias grbmia='git rebase $(git_main_branch) --interactive --autosquash'
 alias gsuri='git submodule update --recursive --init'
@@ -96,8 +99,10 @@ alias rmorig="find . -name '*.orig' -exec trash {} \;"
 [ -f /usr/local/bin/nvim ] && alias vi=nvim
 [ -f /usr/local/bin/nvim ] && alias v=nvim
 alias pgssh="pgs spiron.local && ssh spiron.local -p 2222"
+alias sshwb="ssh win_build.tourcoing"
+alias sshmb="ssh mac_build_silicon.tourcoing"
 
-alias glci="glab ci trace; say 'CI done'"
+alias glci="glab ci status; say 'CI done'"
 
 ## Sourcing OS-specific things
 OS=$(uname -s); export OS
@@ -193,19 +198,6 @@ function fzf_git_commit_widget() {
 }
 zle -N fzf_git_commit_widget
 bindkey '^g' fzf_git_commit_widget
-
-
-# Select a running process by name using fzf and kill it
-function killf() {
-  local selection pid
-  selection=$(ps -u $USER -o pid,comm,args | grep -v "ps -u" | grep -v "fzf" | fzf --header="Select process to kill" --ansi)
-  if [[ -n "$selection" ]]; then
-    pid=$(awk '{print $1}' <<< "$selection")
-    if [[ -n "$pid" ]]; then
-      kill "$pid" && echo "Killed process $pid"
-    fi
-  fi
-}
 
 [ -f $HOME/.cargo ] && . "$HOME/.cargo/env"
 

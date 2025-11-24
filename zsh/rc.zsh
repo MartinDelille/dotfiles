@@ -113,3 +113,49 @@ if [ "$TERM_PROGRAM" != "Apple_Terminal" ] && [ "$TERM_PROGRAM" != "vscode" ]; t
   eval "$(oh-my-posh init zsh --config ~/.dotfiles/zsh/omp.yaml)"
 fi
 
+nt() {
+    local default_title="Notification"
+    local default_message="You have a new notification"
+    local title message
+
+    if [ $# -eq 0 ]; then
+        title="$default_title"
+        message="$default_message"
+    elif [ $# -eq 1 ]; then
+        title="$default_title"
+        message="$1"
+    else
+        title="$1"
+        message="$2"
+    fi
+
+    if [ -n "$TMUX" ]; then
+        # Inside tmux - wrap the escape sequence
+        printf '\ePtmux;\e\e]777;notify;%s;%s\e\e\\\e\\' "$title" "$message"
+    else
+        # Outside tmux - direct escape sequence
+        printf '\e]777;notify;%s;%s\e\\'  "$title" "$message"
+    fi
+}
+
+bii() {
+  if [[ -z "$1" ]]; then
+    echo "Usage: bii <package>"
+    return 1
+  fi
+
+  local pkg="$1"
+  brew info "$pkg"
+  if brew info "$pkg" | grep -q "Not installed"; then
+    read "reply?Install $pkg? (y/n): "
+    if [[ "$reply" == "y" ]]; then
+      brew install "$pkg"
+    else
+      echo "Not installing $pkg."
+    fi
+  else
+    echo "$pkg is already installed."
+  fi
+}
+
+# zprof
