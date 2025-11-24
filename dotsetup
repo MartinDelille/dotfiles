@@ -36,7 +36,6 @@ git -C $root submodule update --init
 
 echo "### Linking configuration ###"
 ln -sf $root/zsh/rc.zsh ~/.zshrc
-ln -sf $root/zsh/env.zsh ~/.zshenv
 ln -sf $root/wezterm.lua ~/.wezterm.lua
 rm -rf ~/.config/ghostty
 ln -sf $root/ghostty ~/.config/ghostty
