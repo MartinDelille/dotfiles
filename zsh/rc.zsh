@@ -1,6 +1,3 @@
-autoload -Uz compinit
-compinit
-
 #zmodload zsh/zprof
 
 export LANG="en_US.UTF-8"
@@ -16,20 +13,81 @@ DOTFILES=${HOME}/.dotfiles
 fpath=(${DOTFILES}/functions $fpath)
 
 DOTFILES_ZSH=${DOTFILES}/zsh
-ZIM_HOME=${DOTFILES}/vendors/zimfw/
 
-# Install missing modules, and update ${ZIM_HOME}/init.zsh if missing or outdated.
-if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
-  source ${ZIM_HOME}/zimfw.zsh init -q
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+source "${ZINIT_HOME}/zinit.zsh"
+
+
+# Plugins
+
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+
+zinit ice wait lucid atload'_zsh_highlight_bind_widgets'
+zinit light zsh-users/zsh-syntax-highlighting
+
+zinit ice wait lucid
+zinit light Aloxaf/fzf-tab
+
+zinit ice wait lucid
+zinit light kutsan/zsh-system-clipboard
+
+zinit ice wait lucid
+zinit light mattberther/zsh-pyenv
+
+zinit ice wait lucid
+zinit light rbenv/rbenv
+
+# Initialize rbenv
+eval "$(rbenv init - zsh)"
+
+eval "$(direnv hook zsh)"
+
+
+# Snippets
+zinit snippet OMZP::1password
+# zinit snippet OMZP::macos
+zinit snippet OMZP::git
+
+# Load completion
+# autoload -Uz compinit -C
+# autoload -U compinit && compinit
+
+zstyle ':completion:*' rehash true
+autoload -Uz compinit
+if [[ -n "$ZSH_COMPDUMP" ]]; then
+  compinit -C
+else
+  compinit
 fi
+zinit cdreplay -q
 
-# Initialize modules.
-source ${ZIM_HOME}/init.zsh
+bindkey -v
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+bindkey '^f' autosuggest-accept
 
-bindkey "^[[A" history-substring-search-up
-bindkey "^[[B" history-substring-search-down
 
-#zprof
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*' list-colors '${(s.:.)LS_COLORS}'
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls $realpath'
+
+HISTSIZE=10000000
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt share_history
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+setopt autocd
+setopt inc_append_history_time
 
 setopt autocd
 
@@ -38,22 +96,6 @@ setopt autocd
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
-
-# Make Ctrl+e accept autosuggestion
-bindkey '^e' autosuggest-accept
-
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
-export HISTSIZE=10000000
-export SAVEHIST=$HISTSIZE
-setopt share_history
-setopt hist_ignore_all_dups
-setopt hist_ignore_space
-setopt autocd
-setopt inc_append_history_time
-
-# Ruby / rbenv
-eval "$(rbenv init - zsh)"
 
 [ -f /opt/homebrew/bin/thefuck ] && eval $(thefuck --alias)
 

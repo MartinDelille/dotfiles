@@ -4,9 +4,6 @@
 [submodule "vendors/mastering-zsh"]
 	path = vendors/mastering-zsh
 	url = https://github.com/rothgar/mastering-zsh
-[submodule "vendors/zimfw"]
-	path = vendors/zimfw
-	url = https://github.com/zimfw/zimfw
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
