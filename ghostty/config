@@ -7,3 +7,7 @@ theme = One Half Light
 theme = dark:Catppuccin Frappe, light:One Half Light
 theme = Catppuccin Frappe
 # custom-shader = tunnel.glsl
+# custom-shader = cursor_smear.glsl
+# custom-shader = cursor_blaze_no_trail.glsl
+custom-shader = cursor_blaze.glsl
+
