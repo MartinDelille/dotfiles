@@ -26,6 +26,7 @@ alias dws§="defaults write tv.lylo.SilcroW"
 alias dr§="defaults read ~/Library/Preferences/tv.lylo.SilcroW"
 alias dw§="defaults write ~/Library/Preferences/tv.lylo.SilcroW"
 alias ghprw="sleep 1;gh pr checks --watch; kw"
+alias ghrw="sleep 1;gh run watch; kw"
 alias ic='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
 alias thd='theme "Solarized Dark"'
 alias thl='theme OneHalfLight'
