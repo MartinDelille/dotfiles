@@ -165,13 +165,22 @@ alias ghprb="sleep 1 && gh pr view --web"
 alias ghrvw="sleep 1 && gh repo view --web"
 alias oc=opencode
 
-# Alias waiting to be merged here: <https://github.com/ohmyzsh/ohmyzsh/pull/9676>
+git_main_ref() {
+  branch="$(git_main_branch)"
+  if git show-ref --verify --quiet "refs/remotes/origin/$branch"; then
+    echo "origin/$branch"
+  else
+    echo "$branch"
+  fi
+}
 alias gcfx='git commit --fixup'
-alias glom='git log --oneline --decorate --color $(git_main_branch)..'
-alias glov='git log --oneline --decorate --color origin/$(git_develop_branch)..'
+alias glo='git log --decorate --color --pretty="format:%C(auto)%h %C(cyan)%cd%C(auto) %d %s" --date=format:%Y-%m-%d\ %H:%M'
+alias glog=glo
+alias glom='git log --decorate --color --pretty="format:%C(auto)%h %C(cyan)%cd%C(auto) %d %s" --date=format:%Y-%m-%d\ %H:%M $(git_main_ref)..'
+alias glov='git log --decorate --color --pretty="format:%C(auto)%h %C(cyan)%cd%C(auto) %d %s" --date=format:%Y-%m-%d\ %H:%M origin/$(git_develop_branch)..'
 alias grbia='git rebase --interactive --autosquash'
-alias grbmi='git rebase $(git_main_branch) --interactive'
-alias grbmia='git rebase $(git_main_branch) --interactive --autosquash'
+alias grbmi='git rebase $(git_main_ref) --interactive'
+alias grbmia='git rebase $(git_main_ref) --interactive --autosquash'
 alias gsuri='git submodule update --recursive --init'
 
 alias greset="git reset"
@@ -186,7 +195,7 @@ alias gshh="git show HEAD~1"
 alias gshhh="git show HEAD~2"
 alias gshhhh="git show HEAD~3"
 alias gafx="git autofixup -v"
-alias gafxm='git autofixup $(git_main_branch) -v'
+alias gafxm='git autofixup $(git_main_ref) -v'
 alias gafm="git autofixup main -v"
 alias gcwrm="git commit -m wip_remove"
 alias glof="git log --oneline --decorate --graph --follow"
@@ -249,16 +258,14 @@ function git_select_commit() {
 }
 
 function gcfxf {
-  main_branch=$(git_main_branch)
-  commit=$(git_select_commit "$main_branch..")
+  commit=$(git_select_commit "$(git_main_ref)..")
   if [ -n "$commit" ]; then
     git commit --fixup="$commit"
   fi
 }
 
 function gshf {
-  main_branch=$(git_main_branch)
-  commit=$(git_select_commit "$main_branch..")
+  commit=$(git_select_commit "$(git_main_ref)..")
   if [ -n "$commit" ]; then
     echo -n "$commit" | pbcopy
     # if gshf argument is given, show the commit for the file passed as argument
@@ -271,7 +278,6 @@ function gshf {
 }
 
 function gcpbf {
-  main_branch=$(git_main_branch)
   branch="$1"
   if [ -z "$branch" ]; then
     branch=$(git branch --all --format='%(refname:short)' --color=always | fzf --ansi )
@@ -280,7 +286,7 @@ function gcpbf {
     echo "Error: No branch selected." >&2
     return 1
   fi
-  commit=$(git_select_commit "${main_branch}..${branch}")
+  commit=$(git_select_commit "${git_main_ref}..${branch}")
   if [ -n "$commit" ]; then
     git cherry-pick "$commit"
   fi
