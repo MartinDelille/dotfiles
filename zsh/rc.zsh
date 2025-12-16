@@ -211,6 +211,8 @@ alias sshmb="ssh mac_build_silicon.tourcoing"
 
 alias glci="glab ci status; say 'CI done'"
 
+source ~/.dotfiles/zsh/gli.zsh
+
 ## Sourcing OS-specific things
 OS=$(uname -s); export OS
 if [[ -f ~/.dotfiles/zsh/${OS}.zsh ]]; then
