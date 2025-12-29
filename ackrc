@@ -1,5 +1,6 @@
   --ignore-directory=is:build
   --ignore-directory=is:venv
+  --ignore-directory=is:.venv
   --ignore-directory=is:doc/html
   --ignore-directory=is:_site
   --ignore-directory=is:vendor
