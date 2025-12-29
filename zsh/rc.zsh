@@ -108,11 +108,6 @@ PERL_LOCAL_LIB_ROOT="$PERL_ROOT${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}";
 PERL_MB_OPT="--install_base \"$PERL_ROOT\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=$PERL_ROOT"; export PERL_MM_OPT;
 
-
-if [ "$TERM_PROGRAM" != "Apple_Terminal" ] && [ "$TERM_PROGRAM" != "vscode" ]; then
-  eval "$(oh-my-posh init zsh --config ~/.dotfiles/zsh/omp.yaml)"
-fi
-
 export EDITOR=nvim
 export MANPAGER='nvim +Man!'
 
@@ -358,5 +353,9 @@ bii() {
     echo "$pkg is already installed."
   fi
 }
+
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ] && [ "$TERM_PROGRAM" != "vscode" ]; then
+  eval "$(starship init zsh)"
+fi
 
 # zprof

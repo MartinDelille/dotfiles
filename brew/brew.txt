@@ -33,6 +33,7 @@ rclone
 ripgrep
 scons
 shivammathur/php/php@7.4
+starship
 tmux
 trash-cli
 tree
