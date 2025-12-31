@@ -43,6 +43,10 @@ gli() {
     job_id=$(echo "$selected" | awk '{print $1}')
     if [[ -n "$job_id" ]]; then
       glab ci trace "$job_id"
+      local job_name
+      job_name=$(echo "$selected" | awk '{ $1=""; $NF=""; sub(/^ /, ""); print }')
+      echo "Viewing logs for job: $job_name"
+      say -v Samantha $job_name
     fi
   fi
 

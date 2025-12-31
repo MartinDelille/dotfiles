@@ -204,7 +204,7 @@ alias pgssh="pgs spiron.local && ssh spiron.local -p 2222"
 alias sshwb="ssh win_build.tourcoing"
 alias sshmb="ssh mac_build_silicon.tourcoing"
 
-alias glci="glab ci status; say 'CI done'"
+alias glci=gli
 
 source ~/.dotfiles/zsh/gli.zsh
 
