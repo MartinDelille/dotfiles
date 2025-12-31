@@ -69,6 +69,9 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^f' autosuggest-accept
 
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^x^e' edit-command-line
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' list-colors '${(s.:.)LS_COLORS}'
