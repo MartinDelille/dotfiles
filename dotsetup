@@ -41,7 +41,7 @@ rm -rf ~/.config/ghostty
 ln -sf $root/ghostty ~/.config/ghostty
 ln -sf $root/zsh/zimrc.zsh ~/.zimrc
 ln -sf $root/zsh/p10k.zsh ~/.p10k.zsh
-ln -sf $root/zsh/starship.toml ~/.config/starship.toml
+ln -sf $root/starship.toml ~/.config/starship.toml
 ln -sf $root/tmux/tmux.conf ~/.tmux.conf
 rm -rf ~/.tmux
 ln -sf $root/tmux/ ~/.tmux

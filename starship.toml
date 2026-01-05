@@ -1,0 +1,30 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+[cmake]
+disabled = true
+
+[aws]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[directory]
+truncation_length = 5
+truncation_symbol = "…/"
+
+[direnv]
+disabled = false
+
+[lua]
+disabled = true
+
+[package]
+disabled = true
+
+[python]
+disabled = true
