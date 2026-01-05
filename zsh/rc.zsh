@@ -125,6 +125,8 @@ export TERM="xterm-256color"
 export HOMEBREW_EDITOR=nvim
 
 # Various alias
+alias -g C='| pbcopy'
+
 alias m="make"
 alias mm="make"
 alias i="invoke"
@@ -203,9 +205,10 @@ alias rmorig="find . -name '*.orig' -exec trash {} \;"
 [ -f /opt/homebrew/bin/nvim ] && alias e=nvim
 [ -f /usr/local/bin/nvim ] && alias vi=nvim
 [ -f /usr/local/bin/nvim ] && alias v=nvim
-alias pgssh="pgs spiron.local && ssh spiron.local -p 2222"
+alias pgssh="pgs spiron.local && ssh spiron.local"
 alias sshwb="ssh win_build.tourcoing"
 alias sshmb="ssh mac_build_silicon.tourcoing"
+alias sshsp="ssh spiron.local"
 
 alias glci=gli
 
