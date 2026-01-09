@@ -3,7 +3,6 @@
 window-save-state = always
 command = "/bin/bash -c '/opt/homebrew/bin/tmux attach || /opt/homebrew/bin/tmux new'"
 
-theme = One Half Light
 theme = dark:Catppuccin Frappe, light:One Half Light
-theme = Catppuccin Frappe
-# custom-shader = tunnel.glsl
+custom-shader = cursor_blaze.glsl
+
