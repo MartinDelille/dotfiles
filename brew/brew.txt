@@ -1,4 +1,5 @@
 ack
+anomalyco/tap/opencode
 cmake
 curl
 diff-so-fancy
