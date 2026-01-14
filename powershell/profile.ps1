@@ -20,6 +20,7 @@ Set-Alias which get-command
 Set-Alias l ls
 Set-Alias m make
 Set-Alias o ii
+Set-Alias trash Remove-ItemSafely
 if(Get-Command nvim) {
   Set-Alias v nvim
   Set-Alias vi nvim
@@ -51,6 +52,7 @@ Function lmb { lab mr b }
 Function lcv { lab ci view }
 Function lci { sleep 1; lab ci trace; say (git describe --all) }
 Function q { Invoke-Item "C:\Qt\Tools\QtCreator\bin\qtcreator.exe" }
+Function oc { opencode }
 
 ~/.secret.ps1
 
