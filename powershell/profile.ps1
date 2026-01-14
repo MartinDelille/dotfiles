@@ -86,3 +86,10 @@ Function hd($file) { hexdump -C $file | more }
 
 $Env:CONAN_PRINT_RUN_COMMANDS  = 1
 cd ~/dev/phonations/core
+
+$ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
+if (Test-Path($ChocolateyProfile)) {
+  Import-Module "$ChocolateyProfile"
+}
+
+Invoke-Expression (&starship init powershell)
