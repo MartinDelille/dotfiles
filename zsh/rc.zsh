@@ -125,7 +125,7 @@ export TERM="xterm-256color"
 export HOMEBREW_EDITOR=nvim
 
 # Various alias
-alias -g C='| pbcopy'
+alias -g C='|& pbcopy'
 
 alias m="make"
 alias mm="make"
