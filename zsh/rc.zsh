@@ -40,6 +40,9 @@ zinit light "mattberther/zsh-pyenv"
 zinit ice wait lucid
 zinit light "rbenv/rbenv"
 
+zinit ice wait lucid
+zinit light "lukechilds/zsh-nvm"
+
 # Initialize rbenv
 eval "$(rbenv init - zsh)"
 
@@ -363,5 +366,8 @@ bii() {
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ] && [ "$TERM_PROGRAM" != "vscode" ]; then
   eval "$(starship init zsh)"
 fi
+
+# Load Angular CLI autocompletion.
+source <($HOME/.nvm/current/bin/ng completion script)
 
 # zprof
