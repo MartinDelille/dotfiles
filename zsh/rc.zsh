@@ -22,23 +22,23 @@ source "${ZINIT_HOME}/zinit.zsh"
 
 # Plugins
 
-zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
+zinit light "zsh-users/zsh-completions"
+zinit light "zsh-users/zsh-autosuggestions"
 
 zinit ice wait lucid atload'_zsh_highlight_bind_widgets'
-zinit light zsh-users/zsh-syntax-highlighting
+zinit light "zsh-users/zsh-syntax-highlighting"
 
 zinit ice wait lucid
-zinit light Aloxaf/fzf-tab
+zinit light "Aloxaf/fzf-tab"
 
 zinit ice wait lucid
-zinit light kutsan/zsh-system-clipboard
+zinit light "kutsan/zsh-system-clipboard"
 
 zinit ice wait lucid
-zinit light mattberther/zsh-pyenv
+zinit light "mattberther/zsh-pyenv"
 
 zinit ice wait lucid
-zinit light rbenv/rbenv
+zinit light "rbenv/rbenv"
 
 # Initialize rbenv
 eval "$(rbenv init - zsh)"
