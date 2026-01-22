@@ -29,11 +29,6 @@ else
       if [ -z "$abs_path" ]; then
         abs_path="$expanded_arg"
       fi
-
-      # Replace $HOME with ~ if path is under home directory
-      if [[ "$abs_path" == "$HOME"* ]]; then
-        abs_path="~${abs_path#$HOME}"
-      fi
     fi
 
     # Quote path if it contains spaces, but handle ~ specially
