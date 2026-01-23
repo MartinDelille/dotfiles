@@ -1,4 +1,4 @@
-#zmodload zsh/zprof
+# zmodload zsh/zprof
 
 export LANG="en_US.UTF-8"
 export LC_COLLATE="en_US.UTF-8"
