@@ -129,6 +129,7 @@ export HOMEBREW_EDITOR=nvim
 
 # Various alias
 alias -g C='|& pbcopy'
+alias -g L='|& less -R'
 
 alias m="make"
 alias mm="make"
@@ -194,6 +195,7 @@ alias gcfxh="git commit --fixup HEAD"
 alias gcfxhh="git commit --fixup HEAD~1"
 alias gcfxhhh="git commit --fixup HEAD~2"
 alias gcfxhhhh="git commit --fixup HEAD~3"
+alias gsht="git show --stat"
 alias gshh="git show HEAD~1"
 alias gshhh="git show HEAD~2"
 alias gshhhh="git show HEAD~3"
