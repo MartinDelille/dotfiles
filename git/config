@@ -20,6 +20,7 @@
 [delta]
   navigate = true
   features = mellow-barbet
+  side-by-side = false
 [push]
 	default = simple
 [gitopen "gitlab"]
