@@ -1,4 +1,4 @@
-# zmodload zsh/zprof
+zmodload zsh/zprof
 
 export LANG="en_US.UTF-8"
 export LC_COLLATE="en_US.UTF-8"
@@ -19,6 +19,7 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
+unalias zi 2>/dev/null
 
 # Plugins
 
@@ -28,20 +29,18 @@ zinit light "zsh-users/zsh-autosuggestions"
 zinit ice wait lucid atload'_zsh_highlight_bind_widgets'
 zinit light "zsh-users/zsh-syntax-highlighting"
 
+# export NVM_LAZY_LOAD=true
+
 zinit ice wait lucid
 zinit light "Aloxaf/fzf-tab"
-
-zinit ice wait lucid
 zinit light "kutsan/zsh-system-clipboard"
-
-zinit ice wait lucid
-zinit light "mattberther/zsh-pyenv"
-
-zinit ice wait lucid
 zinit light "rbenv/rbenv"
+zinit light "ajeetdsouza/zoxide"
+# zinit light "lukechilds/zsh-nvm"
 
-zinit ice wait lucid
-zinit light "lukechilds/zsh-nvm"
+# zinit light "mattberther/zsh-pyenv"
+
+alias cd=z
 
 # Initialize rbenv
 eval "$(rbenv init - zsh)"
@@ -59,11 +58,17 @@ zinit snippet OMZP::git
 # autoload -U compinit && compinit
 
 zstyle ':completion:*' rehash true
-autoload -Uz compinit
-if [[ -n "$ZSH_COMPDUMP" ]]; then
-  compinit -C
+if true; then
+  ZSH_COMPDUMP="${ZDOTDIR:-$HOME}/.zcompdump"
+  autoload -Uz compinit
+  compinit -C -d "$ZSH_COMPDUMP"
 else
-  compinit
+  autoload -Uz compinit
+  if [[ -n "$ZSH_COMPDUMP" ]]; then
+    compinit -C
+  else
+    compinit
+  fi
 fi
 zinit cdreplay -q
 
@@ -345,6 +350,11 @@ nt() {
     fi
 }
 
+nts(){
+  nt
+  say "Notification sent"
+}
+
 bii() {
   if [[ -z "$1" ]]; then
     echo "Usage: bii <package>"
@@ -369,7 +379,9 @@ if [ "$TERM_PROGRAM" != "Apple_Terminal" ] && [ "$TERM_PROGRAM" != "vscode" ]; t
   eval "$(starship init zsh)"
 fi
 
-# Load Angular CLI autocompletion.
-source <($HOME/.nvm/current/bin/ng completion script)
+export NVM_DIR="$HOME/.nvm"
+export PATH=$PATH:$NVM_DIR/versions/node/v20.20.0/bin
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  --no-use # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # zprof
