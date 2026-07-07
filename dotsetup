@@ -13,12 +13,14 @@ command_exists() {
 }
 
 if [[ "$OSTYPE" == linux* ]]; then
+  ln -sf $root/git/unix ~/.gitconfig
   sudo apt update
   echo "### Linux specific: Install Git, Neovim and ZSH ###"
-  sudo apt install -y git nvim zsh openssh-server curl fish
+  sudo apt install -y git neovim curl git-delta
 fi
 
 if [[ "$OSTYPE" == darwin* ]]; then
+  ln -sf $root/git/macos ~/.gitconfig
   if [[ "$1" == "brew" ]]; then
     echo "### Brew ###"
     command_exists brew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -47,7 +49,6 @@ rm -rf ~/.tmux
 ln -sf $root/tmux/ ~/.tmux
 mkdir -p ~/.config/fish
 ln -sf $root/fish/config.fish ~/.config/fish/config.fish
-ln -sf $root/git/unix ~/.gitconfig
 rm -rf ~/.config/git
 ln -sf $root/git ~/.config/git
 ln -sf $root/git/ignore ~/.gitignore

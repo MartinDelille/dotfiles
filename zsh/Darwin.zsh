@@ -52,3 +52,34 @@ function pbsha {
   git log --oneline --decorate -n 1 $1
   git log --format=format:%H -n 1 $1 | pbcopy
 }
+
+alias -g C='|& pbcopy'
+
+alias ip="ifconfig | grep 'inet '"
+
+nt() {
+    local default_title="Notification"
+    local default_message="You have a new notification"
+    local title message
+
+    if [ $# -eq 0 ]; then
+        title="$default_title"
+        message="$default_message"
+    elif [ $# -eq 1 ]; then
+        title="$default_title"
+        message="$1"
+    else
+        title="$1"
+        message="$2"
+    fi
+
+    if [ -n "$TMUX" ]; then
+        # Inside tmux - wrap the escape sequence
+        printf '\ePtmux;\e\e]777;notify;%s;%s\e\e\\\e\\' "$title" "$message"
+    else
+        # Outside tmux - direct escape sequence
+        printf '\e]777;notify;%s;%s\e\\'  "$title" "$message"
+    fi
+}
+
+

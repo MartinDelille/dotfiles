@@ -1,0 +1,9 @@
+# vim: set filetype=dosini:
+
+[include]
+	path = ~/.dotfiles/git/config
+[diff "scpt"]
+	textconv = osadecompile
+	binary = true
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"

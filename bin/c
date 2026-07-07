@@ -48,4 +48,15 @@ else
 fi
 
 echo "$text"
-printf "%s" "$text" | pbcopy
+if command -v pbcopy >/dev/null; then
+  # macOS
+  printf "%s" "$text" | pbcopy
+elif command -v xclip >/dev/null; then
+  # Linux (X11)
+  printf "%s" "$text" | xclip -selection clipboard
+elif command -v wl-copy >/dev/null; then
+  # Linux (Wayland)
+  printf "%s" "$text" | wl-copy
+else
+  echo "Error: No clipboard utility found. Install xclip or wl-clipboard." >&2
+fi
