@@ -136,10 +136,12 @@ alias mm="make"
 alias i="invoke"
 alias j="cd ~/dev/phonations/core"
 alias t="cd ~/dev/tests"
-alias ls="eza --icons=always"
+alias ls="eza --color=always --icons=always"
 alias l="ls -lah"
 alias lo="ls -ls modified"
 alias lodl="lo ~/Downloads"
+alias dl="cd ~/Downloads"
+alias loss="lo ~/Documents/screenshots/"
 alias d="cd ~/.dotfiles"
 if [ "$TERM_PROGRAM" != "vscode" ]; then
   alias rm="Use trash or full /bin/rm"
@@ -167,6 +169,8 @@ alias lmb="glab mr view --web"
 alias play="ffplay -autoexit"
 alias ghprb="sleep 1 && gh pr view --web"
 alias ghrvw="sleep 1 && gh repo view --web"
+alias ghprco="gh pr checkout"
+alias ghob="gh observer && nt 'gh observer on branch:' '$(git rev-parse --abrev-ref HEAD)'"
 alias oc=opencode
 
 git_main_ref() {
@@ -185,6 +189,8 @@ alias glov='git log --decorate --color --pretty="format:%C(auto)%h %C(cyan)%cd%C
 alias grbia='git rebase --interactive --autosquash'
 alias grbmi='git rebase $(git_main_ref) --interactive'
 alias grbmia='git rebase $(git_main_ref) --interactive --autosquash'
+alias grbvi='git rebase $(git_develop_branch) --interactive'
+alias grbvia='git rebase $(git_develop_branch) --interactive --autosquash'
 alias gsuri='git submodule update --recursive --init'
 
 alias greset="git reset"
@@ -285,6 +291,17 @@ function gshf {
   fi
 }
 
+function gcof {
+  local branch prev_branch
+  prev_branch=$(git rev-parse --abbrev-ref @{-1} 2>/dev/null)
+  branch=$(git branch --format='%(refname:short)' --sort=-committerdate | \
+    { [ -n "$prev_branch" ] && echo "$prev_branch"; grep -Fxv "$prev_branch"; } | \
+    fzf --ansi)
+  if [ -n "$branch" ]; then
+    git checkout "$branch"
+  fi
+}
+
 function gcpbf {
   branch="$1"
   if [ -z "$branch" ]; then
@@ -320,6 +337,7 @@ function pipreq() {
     echo "Error: Please specify an argument."
   fi
 }
+
 nt() {
     local default_title="Notification"
     local default_message="You have a new notification"
