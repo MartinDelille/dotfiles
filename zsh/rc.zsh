@@ -127,14 +127,22 @@ export TERM="xterm-256color"
 [ -f /opt/homebrew/bin ] && eval "$(/opt/homebrew/bin/brew shellenv)"
 export HOMEBREW_EDITOR=nvim
 
-# Various alias
-alias -g C='|& pbcopy'
+## Sourcing OS-specific things
+OS=$(uname -s); export OS
+if [[ -f ~/.dotfiles/zsh/${OS}.zsh ]]; then
+    if [[ ! -z $ZSHDEBUG ]]; then
+        echo +++ ~/.dotfiles/zsh/${OS}.zsh
+    fi
+    source ~/.dotfiles/zsh/${OS}.zsh
+fi
+
 alias -g L='|& less -R'
 
+# Various alias
 alias m="make"
 alias mm="make"
 alias i="invoke"
-alias j="cd ~/dev/phonations/core"
+alias j="cd ~/dev/$DEFAUT_ORGANISATION/$DEFAUT_PROJECT"
 alias t="cd ~/dev/tests"
 alias ls="eza --color=always --icons=always"
 alias l="ls -lah"
@@ -143,7 +151,7 @@ alias lodl="lo ~/Downloads"
 alias dl="cd ~/Downloads"
 alias d="cd ~/.dotfiles"
 if [ "$TERM_PROGRAM" != "vscode" ]; then
-  alias rm="Use trash or full /bin/rm"
+  alias rm="echo Use trash or full /bin/rm"
 fi
 alias dnv="cd ~/.config/nvim/lua/plugins"
 alias dv="cd ~/dev/md"
@@ -152,7 +160,6 @@ alias adm="cd ~/dev/adm/atelier-medias.org"
 alias dev="cd ~/dev"
 alias dalle="cd ~/dev/phonations/python-scripts/dalle"
 alias pbpc="pbpaste | pbcopy"
-alias ip="ifconfig | grep 'inet '"
 alias ccat="pygmentize -g"
 alias p="pgs && say kowabounga"
 alias acki="ack -i"
@@ -209,11 +216,9 @@ alias gafm="git autofixup main -v"
 alias gcwrm="git commit -m wip_remove"
 alias glof="git log --oneline --decorate --graph --follow"
 alias rmorig="find . -name '*.orig' -exec trash {} \;"
-[ -f /opt/homebrew/bin/nvim ] && alias vi=nvim
-[ -f /opt/homebrew/bin/nvim ] && alias v=nvim
-[ -f /opt/homebrew/bin/nvim ] && alias e=nvim
-[ -f /usr/local/bin/nvim ] && alias vi=nvim
-[ -f /usr/local/bin/nvim ] && alias v=nvim
+[ -f $(brew --prefix)/bin/nvim ] && alias v=nvim
+[ -f $(brew --prefix)/bin/nvim ] && alias vi=nvim
+[ -f $(brew --prefix)/bin/nvim ] && alias e=nvim
 alias pgssh="pgs spiron.local && ssh spiron.local"
 alias sshwb="ssh win_build.tourcoing"
 alias sshmb="ssh mac_build_silicon.tourcoing"
@@ -222,15 +227,6 @@ alias sshsp="ssh spiron.local"
 alias glci=gli
 
 source ~/.dotfiles/zsh/gli.zsh
-
-## Sourcing OS-specific things
-OS=$(uname -s); export OS
-if [[ -f ~/.dotfiles/zsh/${OS}.zsh ]]; then
-    if [[ ! -z $ZSHDEBUG ]]; then
-        echo +++ ~/.dotfiles/zsh/${OS}.zsh
-    fi
-    source ~/.dotfiles/zsh/${OS}.zsh
-fi
 
 if [[ -f ~/.cargo/env ]]; then
     source ~/.cargo/env
@@ -352,7 +348,9 @@ nt() {
         message="$2"
     fi
 
-    if [ -n "$TMUX" ]; then
+    if [ "$(uname)" = "Linux" ] && command -v notify-send &>/dev/null; then
+        notify-send "$title" "$message" -h string:sound-name:dialog-information 
+    elif [ -n "$TMUX" ]; then
         # Inside tmux - wrap the escape sequence
         printf '\ePtmux;\e\e]777;notify;%s;%s\e\e\\\e\\' "$title" "$message"
     else
