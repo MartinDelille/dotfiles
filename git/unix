@@ -1,9 +1,5 @@
 # vim: set filetype=dosini:
 
-[includeIf "gitdir:~/dev/phonations/**/.git"]
-	path = ~/.dotfiles/git/lylo
-[includeIf "gitdir:~/dev/youdub/**/.git"]
-	path = ~/.dotfiles/git/lylo
 [diff "scpt"]
 	textconv = osadecompile
 	binary = true

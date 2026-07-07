@@ -22,9 +22,6 @@
   features = mellow-barbet
 [push]
 	default = simple
-[gitopen "gitlab"]
-	domain = gitlab.lylo.tv
-	protocol = http
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
