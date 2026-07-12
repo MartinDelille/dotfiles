@@ -10,4 +10,6 @@ os.version=13.0
 [options]
 */*:shared=False
 qt/*:with_pq=False
-qt/*:opengl=no
+qt/*:opengl=desktop
+qt/*:qtshadertools=True
+qt/*:qtdeclarative=True

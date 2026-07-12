@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 languages=$(echo "cpp lua python typescript nodejs css" | tr ' ' '\n')
-core_utils=$(echo "tmux sed make git lsof conan grep" | tr ' ' '\n')
+core_utils=$(echo "tmux sed make git lsof conan grep nvm ls rg" | tr ' ' '\n')
 selected=$(printf "$languages\n$core_utils" | fzf)
 if [ "$selected" ]; then
   echo "selection is $selected"
