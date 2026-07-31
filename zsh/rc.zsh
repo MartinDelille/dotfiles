@@ -190,7 +190,7 @@ git_main_ref() {
 }
 alias gcfx='git commit --fixup'
 alias glo='git log --decorate --color --pretty="format:%C(auto)%h %C(cyan)%cd%C(auto) %d %s" --date=format:%Y-%m-%d\ %H:%M'
-alias glog=glo
+alias glog='glo --graph'
 alias glom='git log --decorate --color --pretty="format:%C(auto)%h %C(cyan)%cd%C(auto) %d %s" --date=format:%Y-%m-%d\ %H:%M $(git_main_ref)..'
 alias glov='git log --decorate --color --pretty="format:%C(auto)%h %C(cyan)%cd%C(auto) %d %s" --date=format:%Y-%m-%d\ %H:%M origin/$(git_develop_branch)..'
 alias grbia='git rebase --interactive --autosquash'
@@ -284,6 +284,7 @@ function gshf {
     else
       git show "$commit"
     fi
+    echo "$commit" | copy-to-clipboard
   fi
 }
 
@@ -307,9 +308,18 @@ function gcpbf {
     echo "Error: No branch selected." >&2
     return 1
   fi
-  commit=$(git_select_commit "${git_main_ref}..${branch}")
+  commit=$(git_select_commit "${git_develop_branch}..${branch}")
   if [ -n "$commit" ]; then
     git cherry-pick "$commit"
+  fi
+}
+
+function gdf {
+  local ref=${1:-HEAD}
+  local file
+  file=$(git diff --name-only "$ref" | fzf --ansi --preview "git diff $ref -- {}")
+  if [ -n "$file" ]; then
+    git diff "$ref" -- "$file"
   fi
 }
 
