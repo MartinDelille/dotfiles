@@ -180,52 +180,55 @@ alias ghprco="gh pr checkout"
 alias ghob="gh observer && nt 'gh observer on branch:' '$(git rev-parse --abrev-ref HEAD)'"
 alias oc=opencode
 #
-# Return the most recently updated primary branch (main/develop/master)
-git_primary_branch() {
+# Return the most recently updated primary branch ref (prefer remote when present)
+# Only returns one of: origin/main, origin/develop, origin/master, main, develop, master
+# Falls back to "main" when none are present.
+# Example outputs: "origin/main" or "main"
+git_primary_ref() {
   local branches=(main develop master)
   local best=""
   local best_ts=0
-  local b ref ts
+  local b ref ts remote_flag=0 is_remote=0
 
-  # Ensure we're inside a git repo; otherwise fall back to current branch or 'main'
+  # If not in a git repo, return the canonical fallback
   if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
-    git rev-parse --abbrev-ref HEAD 2>/dev/null || echo "main"
+    echo "main"
     return
   fi
 
   for b in "${branches[@]}"; do
-    if git show-ref --verify --quiet "refs/heads/$b" || git show-ref --verify --quiet "refs/remotes/origin/$b"; then
-      if git show-ref --verify --quiet "refs/heads/$b"; then
-        ref="$b"
-      else
-        ref="origin/$b"
-      fi
-      ts=$(git log -1 --format=%ct "$ref" 2>/dev/null || echo 0)
-      if (( ts > best_ts )); then
-        best_ts=$ts
-        best=$b
-      fi
+    # prefer checking remote ref first for recency across clones
+    if git show-ref --verify --quiet "refs/remotes/origin/$b"; then
+      ref="origin/$b"
+      is_remote=1
+    elif git show-ref --verify --quiet "refs/heads/$b"; then
+      ref="$b"
+      is_remote=0
+    else
+      continue
+    fi
+
+    ts=$(git log -1 --format=%ct "$ref" 2>/dev/null || echo 0)
+    if (( ts > best_ts )); then
+      best_ts=$ts
+      best=$b
+      remote_flag=$is_remote
     fi
   done
 
   if [ -n "$best" ]; then
-    echo "$best"
+    if (( remote_flag )); then
+      echo "origin/$best"
+    else
+      echo "$best"
+    fi
   else
-    git rev-parse --abbrev-ref HEAD 2>/dev/null || echo "main"
-  fi
-}
-
-git_primary_ref() {
-  branch="$(git_primary_branch)"
-  if git show-ref --verify --quiet "refs/remotes/origin/$branch"; then
-    echo "origin/$branch"
-  else
-    echo "$branch"
+    echo "main"
   fi
 }
 alias gcfx='git commit --fixup'
 alias glo='git log --decorate --color --pretty="format:%C(auto)%h %C(cyan)%cd%C(auto) %d %s" --date=format:%Y-%m-%d\ %H:%M'
-alias glog='git log --decorate --color --graph --pretty="format:%C(auto)%h %C(cyan)%cd%C(auto) %d %s" --date=format:%Y-%m-%d\ %H:%M'
+alias glog='glo --graph'
 alias glom='glo $(git_primary_ref)..'
 alias glov=glom
 alias grbia='git rebase --interactive --autosquash'
@@ -319,6 +322,7 @@ function gshf {
     else
       git show "$commit"
     fi
+    echo "$commit" | copy-to-clipboard
   fi
 }
 
@@ -345,6 +349,15 @@ function gcpbf {
   commit=$(git_select_commit "${git_primary_ref}..${branch}")
   if [ -n "$commit" ]; then
     git cherry-pick "$commit"
+  fi
+}
+
+function gdf {
+  local ref=${1:-HEAD}
+  local file
+  file=$(git diff --name-only "$ref" | fzf --ansi --preview "git diff $ref -- {}")
+  if [ -n "$file" ]; then
+    git diff "$ref" -- "$file"
   fi
 }
 
