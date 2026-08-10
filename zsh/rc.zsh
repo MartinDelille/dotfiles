@@ -26,13 +26,25 @@ unalias zi 2>/dev/null
 # Plugins
 
 zinit light "zsh-users/zsh-completions"
+
+# Load completion
+zstyle ':completion:*' rehash true
+autoload -Uz compinit
+if [[ -n "$ZSH_COMPDUMP" ]]; then
+  compinit -C
+else
+  compinit
+fi
+zinit cdreplay -q
+
+# fzf-tab must load after compinit but before other widget-wrapping
+# plugins (autosuggestions, syntax-highlighting), or tab completion
+# gets corrupted by stale autosuggestion overlay text.
+zinit light "Aloxaf/fzf-tab"
 zinit light "zsh-users/zsh-autosuggestions"
 
 zinit ice wait lucid atload'_zsh_highlight_bind_widgets'
 zinit light "zsh-users/zsh-syntax-highlighting"
-
-zinit ice wait lucid
-zinit light "Aloxaf/fzf-tab"
 
 zinit ice wait lucid
 zinit light "kutsan/zsh-system-clipboard"
@@ -62,19 +74,6 @@ eval "$(direnv hook zsh)"
 zinit snippet OMZP::1password
 # zinit snippet OMZP::macos
 zinit snippet OMZP::git
-
-# Load completion
-# autoload -Uz compinit -C
-# autoload -U compinit && compinit
-
-zstyle ':completion:*' rehash true
-autoload -Uz compinit
-if [[ -n "$ZSH_COMPDUMP" ]]; then
-  compinit -C
-else
-  compinit
-fi
-zinit cdreplay -q
 
 bindkey -v
 bindkey '^p' history-search-backward
