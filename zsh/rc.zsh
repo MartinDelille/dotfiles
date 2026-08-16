@@ -179,9 +179,44 @@ alias ghrvw="sleep 1 && gh repo view --web"
 alias ghprco="gh pr checkout"
 alias ghob="gh observer && nt 'gh observer on branch:' '$(git rev-parse --abrev-ref HEAD)'"
 alias oc=opencode
+#
+# Return the most recently updated primary branch (main/develop/master)
+git_primary_branch() {
+  local branches=(main develop master)
+  local best=""
+  local best_ts=0
+  local b ref ts
 
-git_main_ref() {
-  branch="$(git_main_branch)"
+  # Ensure we're inside a git repo; otherwise fall back to current branch or 'main'
+  if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    git rev-parse --abbrev-ref HEAD 2>/dev/null || echo "main"
+    return
+  fi
+
+  for b in "${branches[@]}"; do
+    if git show-ref --verify --quiet "refs/heads/$b" || git show-ref --verify --quiet "refs/remotes/origin/$b"; then
+      if git show-ref --verify --quiet "refs/heads/$b"; then
+        ref="$b"
+      else
+        ref="origin/$b"
+      fi
+      ts=$(git log -1 --format=%ct "$ref" 2>/dev/null || echo 0)
+      if (( ts > best_ts )); then
+        best_ts=$ts
+        best=$b
+      fi
+    fi
+  done
+
+  if [ -n "$best" ]; then
+    echo "$best"
+  else
+    git rev-parse --abbrev-ref HEAD 2>/dev/null || echo "main"
+  fi
+}
+
+git_primary_ref() {
+  branch="$(git_primary_branch)"
   if git show-ref --verify --quiet "refs/remotes/origin/$branch"; then
     echo "origin/$branch"
   else
@@ -191,13 +226,13 @@ git_main_ref() {
 alias gcfx='git commit --fixup'
 alias glo='git log --decorate --color --pretty="format:%C(auto)%h %C(cyan)%cd%C(auto) %d %s" --date=format:%Y-%m-%d\ %H:%M'
 alias glog='git log --decorate --color --graph --pretty="format:%C(auto)%h %C(cyan)%cd%C(auto) %d %s" --date=format:%Y-%m-%d\ %H:%M'
-alias glom='git log --decorate --color --pretty="format:%C(auto)%h %C(cyan)%cd%C(auto) %d %s" --date=format:%Y-%m-%d\ %H:%M $(git_main_ref)..'
-alias glov='git log --decorate --color --pretty="format:%C(auto)%h %C(cyan)%cd%C(auto) %d %s" --date=format:%Y-%m-%d\ %H:%M origin/$(git_develop_branch)..'
+alias glom='glo $(git_primary_ref)..'
+alias glov=glom
 alias grbia='git rebase --interactive --autosquash'
-alias grbmi='git rebase $(git_main_ref) --interactive'
-alias grbmia='git rebase $(git_main_ref) --interactive --autosquash'
-alias grbvi='git rebase $(git_develop_branch) --interactive'
-alias grbvia='git rebase $(git_develop_branch) --interactive --autosquash'
+alias grbmi='git rebase $(git_primary_ref) --interactive'
+alias grbvi=grbmi
+alias grbmia='git rebase $(git_primary_ref) --interactive --autosquash'
+alias grbvia=grbmia
 alias gsuri='git submodule update --recursive --init'
 
 alias greset="git reset"
@@ -213,7 +248,7 @@ alias gshh="git show HEAD~1"
 alias gshhh="git show HEAD~2"
 alias gshhhh="git show HEAD~3"
 alias gafx="git autofixup -v"
-alias gafxm='git autofixup $(git_main_ref) -v'
+alias gafxm='git autofixup $(git_primary_ref) -v'
 alias gafm="git autofixup main -v"
 alias gcwrm="git commit -m wip_remove"
 alias glof="git log --oneline --decorate --graph --follow"
@@ -268,14 +303,14 @@ function git_select_commit() {
 }
 
 function gcfxf {
-  commit=$(git_select_commit "$(git_main_ref)..")
+  commit=$(git_select_commit "$(git_primary_ref)..")
   if [ -n "$commit" ]; then
     git commit --fixup="$commit"
   fi
 }
 
 function gshf {
-  commit=$(git_select_commit "$(git_main_ref)..")
+  commit=$(git_select_commit "$(git_primary_ref)..")
   if [ -n "$commit" ]; then
     echo -n "$commit" | pbcopy
     # if gshf argument is given, show the commit for the file passed as argument
@@ -307,7 +342,7 @@ function gcpbf {
     echo "Error: No branch selected." >&2
     return 1
   fi
-  commit=$(git_select_commit "${git_main_ref}..${branch}")
+  commit=$(git_select_commit "${git_primary_ref}..${branch}")
   if [ -n "$commit" ]; then
     git cherry-pick "$commit"
   fi
