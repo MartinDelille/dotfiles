@@ -14,13 +14,17 @@ command_exists() {
 
 if [[ "$OSTYPE" == linux* ]]; then
   ln -sf $root/git/unix ~/.gitconfig
+  mkdir -p ~/.config/lazygit
+  ln -sf $root/git/lazygit.yml ~/.config/lazygit/config.yml
   sudo apt update
   echo "### Linux specific: Install Git, Neovim and ZSH ###"
-  sudo apt install -y git neovim curl git-delta
+  sudo apt install -y git neovim curl git-delta lazygit
 fi
 
 if [[ "$OSTYPE" == darwin* ]]; then
   ln -sf $root/git/macos ~/.gitconfig
+  mkdir -p ~/Library/Application\ Support/lazygit
+  ln -sf $root/git/lazygit.yml ~/Library/Application\ Support/lazygit/config.yml
   if [[ "$1" == "brew" ]]; then
     echo "### Brew ###"
     command_exists brew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
