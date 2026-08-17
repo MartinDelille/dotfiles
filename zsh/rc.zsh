@@ -267,9 +267,11 @@ alias gafm="git autofixup main -v"
 alias gcwrm="git commit -m wip_remove"
 alias glof="git log --oneline --decorate --graph --follow"
 alias rmorig="find . -name '*.orig' -exec trash {} \;"
-[ -f $(brew --prefix)/bin/nvim ] && alias v=nvim
-[ -f $(brew --prefix)/bin/nvim ] && alias vi=nvim
-[ -f $(brew --prefix)/bin/nvim ] && alias e=nvim
+if command -v nvim &>/dev/null; then
+  alias v=nvim
+  alias vi=nvim
+  alias e=nvim
+fi
 alias pgssh="pgs spiron.local && ssh spiron.local"
 alias sshwb="ssh win_build.tourcoing"
 alias sshmb="ssh mac_build_silicon.tourcoing"
