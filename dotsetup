@@ -48,8 +48,6 @@ ln -sf $root/zsh/rc.zsh ~/.zshrc
 ln -sf $root/wezterm.lua ~/.wezterm.lua
 rm -rf ~/.config/ghostty
 ln -sf $root/ghostty ~/.config/ghostty
-ln -sf $root/zsh/zimrc.zsh ~/.zimrc
-ln -sf $root/zsh/p10k.zsh ~/.p10k.zsh
 ln -sf $root/starship.toml ~/.config/starship.toml
 ln -sf $root/tmux/tmux.conf ~/.tmux.conf
 rm -rf ~/.tmux
@@ -66,4 +64,8 @@ if [[ -d ~/dev/conan/cci/ ]]; then
   ln -sf $root/conan/Darwin.txt ~/dev/conan/cci/recipes/Darwin.txt
   ln -sf $root/conan/ios.txt ~/dev/conan/cci/recipes/ios.txt
   cp $root/conan/gitignore ~/dev/conan/cci/recipes/.gitignore
+  if [[ "$OSTYPE" == darwin* ]]; then
+    ln -sf $root/conan/Darwin.txt ~/dev/conan/cci/recipes/Darwin.txt
+    ln -sf $root/conan/ios.txt ~/dev/conan/cci/recipes/ios.txt
+  fi
 fi
