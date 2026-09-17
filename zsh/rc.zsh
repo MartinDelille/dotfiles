@@ -35,6 +35,10 @@ zinit ice wait lucid
 zinit light "kutsan/zsh-system-clipboard"
 
 zinit ice wait lucid
+zinit light "ajeetdsouza/zoxide"
+alias cd=z
+
+zinit ice wait lucid
 zinit light "mattberther/zsh-pyenv"
 
 zinit ice wait lucid
