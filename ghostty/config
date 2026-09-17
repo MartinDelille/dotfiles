@@ -1,6 +1,7 @@
 # vim: set filetype=conf:
 
 window-save-state = always
+window-decoration = none
 command = "/bin/bash -c '/opt/homebrew/bin/tmux attach || /opt/homebrew/bin/tmux new'"
 
 theme = dark:Catppuccin Frappe, light:One Half Light
