@@ -19,6 +19,7 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
+unalias zi 2>/dev/null
 
 # Plugins
 
@@ -46,9 +47,6 @@ zinit light "rbenv/rbenv"
 
 zinit ice wait lucid
 zinit light "lukechilds/zsh-nvm"
-
-# Initialize rbenv
-eval "$(rbenv init - zsh)"
 
 eval "$(direnv hook zsh)"
 
@@ -125,6 +123,7 @@ export MANPAGER='nvim +Man!'
 export PATH=$PATH:$HOME/.dotfiles/bin
 export PATH=/opt/homebrew/bin:/usr/local/sbin:$PATH
 export PATH=~/.ghcup/bin:$PATH
+export PATH=$PATH:$HOME/.local/bin
 export TERM="xterm-256color"
 
 # Homebrew
@@ -413,6 +412,11 @@ nt() {
     fi
 }
 
+nts(){
+  nt
+  say "Notification sent"
+}
+
 bii() {
   if [[ -z "$1" ]]; then
     echo "Usage: bii <package>"
@@ -437,7 +441,27 @@ if [ "$TERM_PROGRAM" != "Apple_Terminal" ] && [ "$TERM_PROGRAM" != "vscode" ]; t
   eval "$(starship init zsh)"
 fi
 
+export NVM_DIR="$HOME/.nvm"
+export PATH=$PATH:$NVM_DIR/versions/node/v20.20.0/bin
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  --no-use # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 # Load Angular CLI autocompletion.
-source <($HOME/.nvm/current/bin/ng completion script)
+# source <($HOME/.nvm/current/bin/ng completion script)
 
 # zprof
+source ${HOME}/.ghcup/env
+
+eval "$(command gh completion -s zsh)"
+eval "$(zoxide init zsh)"
+alias cd='z'
+
+# export NVIM_APPNAME="nvim_alt"
+eval "$(mise activate zsh)"
+
+export PATH=$PATH:$HOME/.local/share/gh/copilot
+
+# Initialize rbenv
+export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
+eval "$(rbenv init - zsh)"
+
+
