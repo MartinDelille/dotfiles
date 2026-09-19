@@ -1,0 +1,18 @@
+#!/bin/bash
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+M1DDC="/opt/homebrew/bin/m1ddc"
+
+"$M1DDC" display 1 get input
+input=$("$M1DDC" display 1 get input)
+
+echo "input is $input"
+if [ "$input" = "16" ]; then
+  echo "move to pc"
+  "$M1DDC" display 1 set input 17
+  "$SCRIPT_DIR/swclone"
+else
+  echo "move to mac"
+  "$M1DDC" display 1 set input 16
+  "$SCRIPT_DIR/swrestore"
+fi
