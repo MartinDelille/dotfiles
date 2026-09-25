@@ -61,7 +61,9 @@ ln -sf $root/git ~/.config/git
 ln -sf $root/git/ignore ~/.gitignore
 ln -sf $root/ackrc ~/.ackrc
 ln -sf $root/tigrc ~/.tigrc
-ln -sf $root/conan/Makefile ~/dev/conan/cci/recipes
-ln -sf $root/conan/Darwin.txt ~/dev/conan/cci/recipes/Darwin.txt
-ln -sf $root/conan/ios.txt ~/dev/conan/cci/recipes/ios.txt
+if [[ -d ~/dev/conan/cci/ ]]; then
+  ln -sf $root/conan/Makefile ~/dev/conan/cci/recipes
+  ln -sf $root/conan/Darwin.txt ~/dev/conan/cci/recipes/Darwin.txt
+  ln -sf $root/conan/ios.txt ~/dev/conan/cci/recipes/ios.txt
+fi
 cp $root/conan/gitignore ~/dev/conan/cci/recipes/.gitignore
