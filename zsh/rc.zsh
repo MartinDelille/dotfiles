@@ -14,6 +14,8 @@ fpath=(${DOTFILES}/functions $fpath)
 
 DOTFILES_ZSH=${DOTFILES}/zsh
 
+export NVM_DIR="$HOME/.nvm"
+
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
@@ -42,11 +44,16 @@ alias cd=z
 zinit ice wait lucid
 zinit light "mattberther/zsh-pyenv"
 
-zinit ice wait lucid
-zinit light "rbenv/rbenv"
+# if rbenv is installed, initialize it
+if command -v rbenv >/dev/null 2>&1; then
+  zinit ice wait lucid
+  zinit light "rbenv/rbenv"
+fi
 
-zinit ice wait lucid
-zinit light "lukechilds/zsh-nvm"
+if [[ -f "$NVM_DIR/nvm.sh" ]]; then
+  zinit ice wait lucid
+  zinit light "lukechilds/zsh-nvm"
+fi
 
 eval "$(direnv hook zsh)"
 
@@ -103,7 +110,9 @@ setopt autocd
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
+if (( $+commands[fzf] )) && fzf --zsh >/dev/null 2>&1; then
+  source <(fzf --zsh)
+fi
 
 [ -f /opt/homebrew/bin/thefuck ] && eval $(thefuck --alias)
 
@@ -441,7 +450,6 @@ if [ "$TERM_PROGRAM" != "Apple_Terminal" ] && [ "$TERM_PROGRAM" != "vscode" ]; t
   eval "$(starship init zsh)"
 fi
 
-export NVM_DIR="$HOME/.nvm"
 export PATH=$PATH:$NVM_DIR/versions/node/v20.20.0/bin
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  --no-use # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -449,19 +457,18 @@ export PATH=$PATH:$NVM_DIR/versions/node/v20.20.0/bin
 # source <($HOME/.nvm/current/bin/ng completion script)
 
 # zprof
-source ${HOME}/.ghcup/env
+if [[ -f ${HOME}/.ghcup/env ]]; then
+  source ${HOME}/.ghcup/env
+fi
 
 eval "$(command gh completion -s zsh)"
 eval "$(zoxide init zsh)"
 alias cd='z'
 
-# export NVIM_APPNAME="nvim_alt"
-eval "$(mise activate zsh)"
-
 export PATH=$PATH:$HOME/.local/share/gh/copilot
 
-# Initialize rbenv
-export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
-eval "$(rbenv init - zsh)"
-
-
+  # Initialize rbenv
+if command -v rbenv >/dev/null 2>&1; then
+  export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
+  eval "$(rbenv init - zsh)"
+fi
