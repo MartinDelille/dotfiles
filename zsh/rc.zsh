@@ -42,8 +42,11 @@ alias cd=z
 zinit ice wait lucid
 zinit light "mattberther/zsh-pyenv"
 
-zinit ice wait lucid
-zinit light "rbenv/rbenv"
+# if rbenv is installed, initialize it
+if command -v rbenv >/dev/null 2>&1; then
+  zinit ice wait lucid
+  zinit light "rbenv/rbenv"
+fi
 
 zinit ice wait lucid
 zinit light "lukechilds/zsh-nvm"
@@ -460,8 +463,10 @@ eval "$(mise activate zsh)"
 
 export PATH=$PATH:$HOME/.local/share/gh/copilot
 
-# Initialize rbenv
-export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
-eval "$(rbenv init - zsh)"
+  # Initialize rbenv
+if command -v rbenv >/dev/null 2>&1; then
+  export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
+  eval "$(rbenv init - zsh)"
+fi
 
 

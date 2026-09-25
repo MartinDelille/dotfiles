@@ -18,7 +18,7 @@ if [[ "$OSTYPE" == linux* ]]; then
   ln -sf $root/git/lazygit.yml ~/.config/lazygit/config.yml
   sudo apt update
   echo "### Linux specific: Install Git, Neovim and ZSH ###"
-  sudo apt install -y zsh git neovim curl git-delta
+  sudo apt install -y zsh git neovim curl git-delta eza fzf direnv
 fi
 
 command_exists brew /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
