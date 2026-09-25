@@ -14,6 +14,8 @@ fpath=(${DOTFILES}/functions $fpath)
 
 DOTFILES_ZSH=${DOTFILES}/zsh
 
+export NVM_DIR="$HOME/.nvm"
+
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
@@ -59,7 +61,6 @@ if command -v rbenv >/dev/null 2>&1; then
   zinit light "rbenv/rbenv"
 fi
 
-export NVM_DIR="$HOME/.nvm"
 if [[ -f "$NVM_DIR/nvm.sh" ]]; then
   zinit ice wait lucid
   zinit light "lukechilds/zsh-nvm"
