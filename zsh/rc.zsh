@@ -19,17 +19,30 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
+unalias zi 2>/dev/null
 
 # Plugins
 
 zinit light "zsh-users/zsh-completions"
+
+# Load completion
+zstyle ':completion:*' rehash true
+autoload -Uz compinit
+if [[ -n "$ZSH_COMPDUMP" ]]; then
+  compinit -C
+else
+  compinit
+fi
+zinit cdreplay -q
+
+# fzf-tab must load after compinit but before other widget-wrapping
+# plugins (autosuggestions, syntax-highlighting), or tab completion
+# gets corrupted by stale autosuggestion overlay text.
+zinit light "Aloxaf/fzf-tab"
 zinit light "zsh-users/zsh-autosuggestions"
 
 zinit ice wait lucid atload'_zsh_highlight_bind_widgets'
 zinit light "zsh-users/zsh-syntax-highlighting"
-
-zinit ice wait lucid
-zinit light "Aloxaf/fzf-tab"
 
 zinit ice wait lucid
 zinit light "kutsan/zsh-system-clipboard"
@@ -41,14 +54,14 @@ alias cd=z
 zinit ice wait lucid
 zinit light "mattberther/zsh-pyenv"
 
-zinit ice wait lucid
-zinit light "rbenv/rbenv"
+# if rbenv is installed, initialize it
+if command -v rbenv >/dev/null 2>&1; then
+  zinit ice wait lucid
+  zinit light "rbenv/rbenv"
+fi
 
 zinit ice wait lucid
 zinit light "lukechilds/zsh-nvm"
-
-# Initialize rbenv
-eval "$(rbenv init - zsh)"
 
 eval "$(direnv hook zsh)"
 
@@ -57,19 +70,6 @@ eval "$(direnv hook zsh)"
 zinit snippet OMZP::1password
 # zinit snippet OMZP::macos
 zinit snippet OMZP::git
-
-# Load completion
-# autoload -Uz compinit -C
-# autoload -U compinit && compinit
-
-zstyle ':completion:*' rehash true
-autoload -Uz compinit
-if [[ -n "$ZSH_COMPDUMP" ]]; then
-  compinit -C
-else
-  compinit
-fi
-zinit cdreplay -q
 
 bindkey -v
 bindkey '^p' history-search-backward
@@ -125,6 +125,7 @@ export MANPAGER='nvim +Man!'
 export PATH=$PATH:$HOME/.dotfiles/bin
 export PATH=/opt/homebrew/bin:/usr/local/sbin:$PATH
 export PATH=~/.ghcup/bin:$PATH
+export PATH=$PATH:$HOME/.local/bin
 export TERM="xterm-256color"
 
 # Homebrew
@@ -260,9 +261,11 @@ alias gafm="git autofixup main -v"
 alias gcwrm="git commit -m wip_remove"
 alias glof="git log --oneline --decorate --graph --follow"
 alias rmorig="find . -name '*.orig' -exec trash {} \;"
-[ -f $(brew --prefix)/bin/nvim ] && alias v=nvim
-[ -f $(brew --prefix)/bin/nvim ] && alias vi=nvim
-[ -f $(brew --prefix)/bin/nvim ] && alias e=nvim
+if command -v nvim &>/dev/null; then
+  alias v=nvim
+  alias vi=nvim
+  alias e=nvim
+fi
 alias pgssh="pgs spiron.local && ssh spiron.local"
 alias sshwb="ssh win_build.tourcoing"
 alias sshmb="ssh mac_build_silicon.tourcoing"
@@ -413,6 +416,11 @@ nt() {
     fi
 }
 
+nts(){
+  nt
+  say "Notification sent"
+}
+
 bii() {
   if [[ -z "$1" ]]; then
     echo "Usage: bii <package>"
@@ -437,7 +445,29 @@ if [ "$TERM_PROGRAM" != "Apple_Terminal" ] && [ "$TERM_PROGRAM" != "vscode" ]; t
   eval "$(starship init zsh)"
 fi
 
+export NVM_DIR="$HOME/.nvm"
+export PATH=$PATH:$NVM_DIR/versions/node/v20.20.0/bin
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  --no-use # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 # Load Angular CLI autocompletion.
-source <($HOME/.nvm/current/bin/ng completion script)
+# source <($HOME/.nvm/current/bin/ng completion script)
 
 # zprof
+source ${HOME}/.ghcup/env
+
+eval "$(command gh completion -s zsh)"
+eval "$(zoxide init zsh)"
+alias cd='z'
+
+# export NVIM_APPNAME="nvim_alt"
+eval "$(mise activate zsh)"
+
+export PATH=$PATH:$HOME/.local/share/gh/copilot
+
+  # Initialize rbenv
+if command -v rbenv >/dev/null 2>&1; then
+  export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
+  eval "$(rbenv init - zsh)"
+fi
+
+

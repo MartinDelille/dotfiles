@@ -7,3 +7,11 @@ command = "/bin/bash -c '/opt/homebrew/bin/tmux attach || /opt/homebrew/bin/tmux
 theme = dark:Catppuccin Frappe, light:One Half Light
 custom-shader = cursor_blaze.glsl
 
+# custom-shader = tunnel.glsl
+custom-shader = cursor_blaze.glsl
+custom-shader = cursor_blaze_tapered.glsl
+# custom-shader = shaders/glitchy.glsl
+# bell-features = system
+# bell-features = "audio,visual"
+# bell-features = audio
+# bell-audio-path = ~/.dotfiles/ghostty/notif.wav

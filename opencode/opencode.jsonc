@@ -6,6 +6,10 @@
       "enabled": true,
     },
   },
+  "keybinds": {
+    "messages_line_up": "ctrl+y",
+    "messages_line_down": "ctrl+e",
+  },
   "formatter": {
     "qmlformat": {
       "command": ["qmlformat", "--inplace", "$FILE"],
@@ -28,10 +32,10 @@
     },
   },
   "mcp": {
-    //   "blender": {
-    //     "enabled": true,
-    //     "type": "local",
-    //     "command": ["uvx", "blender-mcp"],
-    //   },
+    "blender": {
+      "enabled": false,
+      "type": "local",
+      "command": ["uvx", "blender-mcp"],
+    },
   },
 }
