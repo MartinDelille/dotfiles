@@ -392,33 +392,6 @@ function pipreq() {
   fi
 }
 
-nt() {
-    local default_title="Notification"
-    local default_message="You have a new notification"
-    local title message
-
-    if [ $# -eq 0 ]; then
-        title="$default_title"
-        message="$default_message"
-    elif [ $# -eq 1 ]; then
-        title="$default_title"
-        message="$1"
-    else
-        title="$1"
-        message="$2"
-    fi
-
-    if [ "$(uname)" = "Linux" ] && command -v notify-send &>/dev/null; then
-        notify-send "$title" "$message" -h string:sound-name:dialog-information 
-    elif [ -n "$TMUX" ]; then
-        # Inside tmux - wrap the escape sequence
-        printf '\ePtmux;\e\e]777;notify;%s;%s\e\e\\\e\\' "$title" "$message"
-    else
-        # Outside tmux - direct escape sequence
-        printf '\e]777;notify;%s;%s\e\\'  "$title" "$message"
-    fi
-}
-
 bii() {
   if [[ -z "$1" ]]; then
     echo "Usage: bii <package>"
