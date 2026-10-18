@@ -427,9 +427,6 @@ eval "$(command gh completion -s zsh)"
 eval "$(zoxide init zsh)"
 alias cd='z'
 
-# export NVIM_APPNAME="nvim_alt"
-eval "$(mise activate zsh)"
-
 export PATH=$PATH:$HOME/.local/share/gh/copilot
 
 # Initialize rbenv
