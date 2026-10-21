@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if (($# == 0)); then
+    echo "Usage: ${0##*/} <pdf> [pdf ...]" >&2
+    exit 2
+fi
+
+for pdf in "$@"; do
+    output="${pdf%.*}.cbz"
+
+    if [[ -e "$output" ]]; then
+        echo "Skipping existing: $output"
+        continue
+    fi
+
+    output_path="$(cd "$(dirname "$output")" && pwd)/$(basename "$output")"
+    tmp=$(mktemp -d)
+    trap 'rm -rf "$tmp"' EXIT
+
+    pdftoppm -jpeg -r 150 "$pdf" "$tmp/page"
+
+    (
+        cd "$tmp"
+        zip -q "$output_path" ./*.jpg
+    )
+
+    rm -rf "$tmp"
+    echo "Created: $output"
+done
