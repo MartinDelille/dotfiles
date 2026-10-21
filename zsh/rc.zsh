@@ -427,6 +427,7 @@ eval "$(command gh completion -s zsh)"
 eval "$(zoxide init zsh)"
 alias cd='z'
 
+export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/.local/share/gh/copilot
 
 # Initialize rbenv
