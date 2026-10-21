@@ -185,7 +185,7 @@ alias play="ffplay -autoexit"
 alias ghprb="sleep 1 && gh pr view --web"
 alias ghrvw="sleep 1 && gh repo view --web"
 alias ghprco="gh pr checkout"
-alias ghob="gh observer && nt 'gh observer on branch:' '$(git rev-parse --abrev-ref HEAD)'"
+alias ghob='gh observer && nt "gh observer on branch:" "$(git rev-parse --abbrev-ref HEAD)"'
 alias oc=opencode
 #
 # Return the most recently updated primary branch ref (prefer remote when present)
