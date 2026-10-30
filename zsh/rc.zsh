@@ -424,6 +424,8 @@ if [[ -f ${HOME}/.ghcup/env ]]; then
 fi
 
 eval "$(command gh completion -s zsh)"
+# zoxide owns `zi`; remove any earlier Zinit alias before initializing it.
+unalias zi 2>/dev/null
 eval "$(zoxide init zsh)"
 alias cd='z'
 
