@@ -112,7 +112,7 @@ if (( $+commands[fzf] )) && fzf --zsh >/dev/null 2>&1; then
   source <(fzf --zsh)
 fi
 
-[ -f /opt/homebrew/bin/thefuck ] && eval $(thefuck --alias)
+command -v thefuck >/dev/null 2>&1 && eval "$(thefuck --alias)"
 
 [ -f "$HOME/.config/op/plugins.sh" ] && source "$HOME/.config/op/plugins.sh"
 
@@ -146,6 +146,7 @@ if [[ -f ~/.dotfiles/zsh/${OS}.zsh ]]; then
 fi
 
 alias -g L='|& less -R'
+alias -g W='|& wc -l'
 
 # Various alias
 alias m="make"
@@ -257,8 +258,11 @@ alias gcfxhhh="git commit --fixup HEAD~2"
 alias gcfxhhhh="git commit --fixup HEAD~3"
 alias gsht="git show --stat"
 alias gshh="git show HEAD~1"
+alias gshht="git show HEAD~1 --stat"
 alias gshhh="git show HEAD~2"
+alias gshhht="git show HEAD~2 --stat"
 alias gshhhh="git show HEAD~3"
+alias gshhhht="git show HEAD~3 --stat"
 alias gafx="git autofixup -v"
 alias gafxm='git autofixup $(git_primary_ref) -v'
 alias gafm="git autofixup main -v"
@@ -391,6 +395,11 @@ function pipreq() {
   else
     echo "Error: Please specify an argument."
   fi
+}
+
+nts(){
+  nt
+  say "Notification sent"
 }
 
 bii() {
