@@ -7,3 +7,5 @@
 	binary = true
 [gpg "ssh"]
   program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+[include]
+	path = ~/.dotfiles/git/local

@@ -12,3 +12,5 @@
 	enabled = true
 [rebase]
 	updateRefs = true
+[include]
+	path = ~/.dotfiles/git/local
