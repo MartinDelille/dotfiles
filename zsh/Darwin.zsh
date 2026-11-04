@@ -1,3 +1,6 @@
+# Homebrew (Apple Silicon)
+[[ -x /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
+
 export GIT_CREDENTIAL=osxkeychain
 
 alias ff="mdfind -onlyin ."

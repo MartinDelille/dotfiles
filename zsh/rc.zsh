@@ -16,6 +16,20 @@ DOTFILES_ZSH=${DOTFILES}/zsh
 
 export NVM_DIR="$HOME/.nvm"
 
+typeset -U path fpath manpath infopath
+
+export HOMEBREW_EDITOR=nvim
+
+## Sourcing OS-specific things, early so brew-installed tools (fzf, direnv,
+## ...) and their completions are available to the rest of this file.
+OS=$(uname -s); export OS
+if [[ -f ~/.dotfiles/zsh/${OS}.zsh ]]; then
+    if [[ ! -z $ZSHDEBUG ]]; then
+        echo +++ ~/.dotfiles/zsh/${OS}.zsh
+    fi
+    source ~/.dotfiles/zsh/${OS}.zsh
+fi
+
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
@@ -128,22 +142,8 @@ export MANPAGER='nvim +Man!'
 
 #Add my custom scripts
 export PATH=$PATH:$HOME/.dotfiles/bin
-export PATH=/opt/homebrew/bin:/usr/local/sbin:$PATH
 export PATH=~/.ghcup/bin:$PATH
 export TERM="xterm-256color"
-
-# Homebrew
-[ -f /opt/homebrew/bin ] && eval "$(/opt/homebrew/bin/brew shellenv)"
-export HOMEBREW_EDITOR=nvim
-
-## Sourcing OS-specific things
-OS=$(uname -s); export OS
-if [[ -f ~/.dotfiles/zsh/${OS}.zsh ]]; then
-    if [[ ! -z $ZSHDEBUG ]]; then
-        echo +++ ~/.dotfiles/zsh/${OS}.zsh
-    fi
-    source ~/.dotfiles/zsh/${OS}.zsh
-fi
 
 alias -g L='|& less -R'
 alias -g W='|& wc -l'
