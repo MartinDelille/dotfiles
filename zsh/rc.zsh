@@ -149,7 +149,11 @@ alias -g L='|& less -R'
 alias -g W='|& wc -l'
 
 # Clipboard: copy-to-clipboard/paste-from-clipboard are defined per OS
-alias -g C='|& copy-to-clipboard'
+# C copies the command line (as typed, without the trailing C) and its output
+_clip_cmd_preexec() { _clip_cmd=${1% C} }
+autoload -Uz add-zsh-hook
+add-zsh-hook preexec _clip_cmd_preexec
+alias -g C='|& { print -r -- "\$ $_clip_cmd"; cat } | copy-to-clipboard'
 alias grvc="git rev-parse --short HEAD | tr -d '\n' | copy-to-clipboard"
 alias rgc='rg "$(paste-from-clipboard)"'
 alias ytc='yt-dlp "$(paste-from-clipboard)"'
