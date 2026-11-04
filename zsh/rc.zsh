@@ -66,6 +66,9 @@ zinit ice wait lucid
 zinit light "ajeetdsouza/zoxide"
 alias cd=z
 
+# Put pyenv in PATH now: the plugin is deferred, so direnv could otherwise
+# snapshot a PATH without it and drop pyenv when restoring it on unload.
+path=(~/.pyenv/plugins/pyenv-virtualenv/shims ~/.pyenv/shims ~/.pyenv/bin $path)
 zinit ice wait lucid
 zinit light "mattberther/zsh-pyenv"
 
