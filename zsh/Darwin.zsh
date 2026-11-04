@@ -3,6 +3,9 @@
 
 export GIT_CREDENTIAL=osxkeychain
 
+alias copy-to-clipboard="pbcopy"
+alias paste-from-clipboard="pbpaste"
+
 alias ff="mdfind -onlyin ."
 alias kw="say kowabounga"
 alias wifi="networksetup -setairportpower airport"
@@ -15,7 +18,6 @@ alias b="brew"
 alias bo="HOMEBREW_NO_AUTO_UPDATE=1 pgs && brew"
 alias qtlog="vi ~/Library/Preferences/QtProject/qtlogging.ini"
 alias qtdbg="vi ~/Qt/Qt\ Creator.app/Contents/Resources/debugger/personaltypes.py"
-alias grvc="git rev-parse --short head | tr -d '\n' | pbcopy"
 alias dl="cd ~/Downloads"
 alias s="cd ~/Library/Application\ Support"
 alias defr="defaults read"
@@ -34,7 +36,6 @@ alias ic='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
 alias thd='theme "Solarized Dark"'
 alias thl='theme OneHalfLight'
 alias svenv='source venv/bin/activate'
-alias ytc='yt-dlp "$(pbpaste)"'
 
 setopt extendedglob
 function uma {
@@ -46,17 +47,7 @@ function uma {
   /bin/ls /Volumes
 }
 
-function pbc {
-  cat $1 | pbcopy
-}
 alias lcv="sleep 2;glab ci view"
-
-function pbsha {
-  git log --oneline --decorate -n 1 $1
-  git log --format=format:%H -n 1 $1 | pbcopy
-}
-
-alias -g C='|& pbcopy'
 
 alias ip="ifconfig | grep 'inet '"
 

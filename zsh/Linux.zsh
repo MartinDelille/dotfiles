@@ -10,9 +10,8 @@ export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 export GPG_TTY=$(tty)
 
-alias -g C='|& xclip -selection clipboard'
+alias copy-to-clipboard="xclip -selection clipboard"
+alias paste-from-clipboard="xclip -o -selection clipboard"
 alias o="xdg-open"
 alias or="nautilus --select"
-alias grvc="git rev-parse HEAD | tr -d '\n' | xclip -selection clipboard"
 alias fd=fdfind
-alias rgc='rg "$(xclip -o -selection clipboard)"'

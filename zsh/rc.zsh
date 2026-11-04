@@ -148,6 +148,21 @@ export TERM="xterm-256color"
 alias -g L='|& less -R'
 alias -g W='|& wc -l'
 
+# Clipboard: copy-to-clipboard/paste-from-clipboard are defined per OS
+alias -g C='|& copy-to-clipboard'
+alias grvc="git rev-parse --short HEAD | tr -d '\n' | copy-to-clipboard"
+alias rgc='rg "$(paste-from-clipboard)"'
+alias ytc='yt-dlp "$(paste-from-clipboard)"'
+
+function pbc {
+  cat $1 | copy-to-clipboard
+}
+
+function pbsha {
+  git log --oneline --decorate -n 1 $1
+  git log --format=format:%H -n 1 $1 | copy-to-clipboard
+}
+
 # Various alias
 alias m="make"
 alias mm="make"
@@ -330,14 +345,13 @@ function gcfxf {
 function gshf {
   commit=$(git_select_commit "$(git_primary_ref)..")
   if [ -n "$commit" ]; then
-    echo -n "$commit" | pbcopy
     # if gshf argument is given, show the commit for the file passed as argument
     if [ -n "$1" ]; then
       git show "$commit" -- "$1"
     else
       git show "$commit"
     fi
-    echo "$commit" | copy-to-clipboard
+    echo -n "$commit" | copy-to-clipboard
   fi
 }
 
